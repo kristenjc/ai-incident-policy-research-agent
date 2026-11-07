@@ -1,0 +1,19 @@
+{
+  "Hiring and employment": "Resume screening, job-candidate scoring, workplace monitoring, algorithmic management of workers.",
+  "Chatbots and AI assistants": "General-purpose or companion chatbots and LLM assistants, including hallucinated answers and unsafe advice.",
+  "Synthetic media and deepfakes": "Generating or altering images, video, audio or voice: deepfakes, voice clones, AI art, fake content.",
+  "Content recommendation and moderation": "Social media feeds, recommender systems, search ranking, automated content moderation or filtering.",
+  "Facial recognition and biometrics": "Face recognition, biometric identification or tracking, emotion recognition.",
+  "Law enforcement and criminal justice": "Predictive policing, risk-assessment scores, gunshot or crime detection, courts, immigration enforcement.",
+  "Autonomous vehicles and driver assistance": "Self-driving cars, robotaxis, autopilot, drones used for transport.",
+  "Healthcare and medicine": "Diagnosis, clinical decision support, medical devices, health-insurance decisions, mental-health apps.",
+  "Education": "Grading, proctoring, plagiarism or AI-text detection, tutoring, student monitoring.",
+  "Finance, insurance and credit": "Credit scoring, lending, trading, fraud detection, insurance pricing.",
+  "Government services and public administration": "Benefits eligibility, welfare, tax, public-sector automated decisions.",
+  "Military and defense": "Weapons, targeting, military surveillance or autonomy.",
+  "Robotics and industrial automation": "Factory, warehouse and service robots, industrial control systems.",
+  "Software development and AI agents": "Coding assistants and autonomous agents acting on software, accounts or infrastructure.",
+  "Customer service, retail and advertising": "Support bots, pricing, ad targeting, e-commerce, marketing.",
+  "Consumer devices and smart home": "Voice assistants, toys, wearables, home devices.",
+  "Other or unclear": "Use does not fit any label above, or the description is too vague to tell."
+}

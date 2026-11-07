@@ -1,0 +1,1777 @@
+incident_id,use_case,secondary_use_case,confidence,model
+1,Content recommendation and moderation,Consumer devices and smart home,high,vertex_ai/gemini-3.5-flash-lite
+2,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+3,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+4,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+5,Healthcare and medicine,Robotics and industrial automation,high,vertex_ai/gemini-3.5-flash-lite
+6,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+7,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+8,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+9,Education,Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+10,Hiring and employment,,high,vertex_ai/gemini-3.5-flash-lite
+11,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+12,Software development and AI agents,,medium,vertex_ai/gemini-3.5-flash-lite
+13,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+14,Content recommendation and moderation,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+15,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+16,Content recommendation and moderation,,low,vertex_ai/gemini-3.5-flash-lite
+17,Chatbots and AI assistants,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+18,Content recommendation and moderation,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+19,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+20,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+21,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+22,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+23,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+24,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+25,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+26,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+27,Military and defense,,high,vertex_ai/gemini-3.5-flash-lite
+28,"Finance, insurance and credit",,high,vertex_ai/gemini-3.5-flash-lite
+29,Military and defense,,high,vertex_ai/gemini-3.5-flash-lite
+30,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+31,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+32,Facial recognition and biometrics,Consumer devices and smart home,high,vertex_ai/gemini-3.5-flash-lite
+33,Consumer devices and smart home,,high,vertex_ai/gemini-3.5-flash-lite
+34,Consumer devices and smart home,,high,vertex_ai/gemini-3.5-flash-lite
+35,Hiring and employment,,high,vertex_ai/gemini-3.5-flash-lite
+36,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+37,Hiring and employment,,high,vertex_ai/gemini-3.5-flash-lite
+38,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+39,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+40,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+41,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+42,Government services and public administration,Healthcare and medicine,medium,vertex_ai/gemini-3.5-flash-lite
+43,Education,,high,vertex_ai/gemini-3.5-flash-lite
+44,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+45,Content recommendation and moderation,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+46,Consumer devices and smart home,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+47,Content recommendation and moderation,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+48,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+49,Facial recognition and biometrics,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+50,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+51,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+52,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+53,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+54,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+55,Consumer devices and smart home,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+56,Synthetic media and deepfakes,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+57,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+58,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+59,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+60,Synthetic media and deepfakes,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+61,Software development and AI agents,,medium,vertex_ai/gemini-3.5-flash-lite
+62,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+63,Synthetic media and deepfakes,Consumer devices and smart home,high,vertex_ai/gemini-3.5-flash-lite
+64,Robotics and industrial automation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+65,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+66,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+67,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+68,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+69,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+70,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+71,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+72,Content recommendation and moderation,,medium,vertex_ai/gemini-3.5-flash-lite
+73,Content recommendation and moderation,,medium,vertex_ai/gemini-3.5-flash-lite
+74,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+75,Content recommendation and moderation,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+76,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+77,Robotics and industrial automation,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+78,Education,,high,vertex_ai/gemini-3.5-flash-lite
+79,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+80,Content recommendation and moderation,Other or unclear,low,vertex_ai/gemini-3.5-flash-lite
+81,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+82,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+83,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+84,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+85,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+86,Education,,high,vertex_ai/gemini-3.5-flash-lite
+87,Facial recognition and biometrics,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+89,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+91,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+92,"Finance, insurance and credit",,high,vertex_ai/gemini-3.5-flash-lite
+93,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+94,Hiring and employment,,high,vertex_ai/gemini-3.5-flash-lite
+95,Hiring and employment,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+96,Hiring and employment,Education,high,vertex_ai/gemini-3.5-flash-lite
+97,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+98,Robotics and industrial automation,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+99,Education,,high,vertex_ai/gemini-3.5-flash-lite
+100,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+101,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+102,Consumer devices and smart home,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+103,Content recommendation and moderation,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+104,Healthcare and medicine,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+105,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+106,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+107,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+108,Facial recognition and biometrics,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+109,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+110,Healthcare and medicine,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+111,Hiring and employment,,high,vertex_ai/gemini-3.5-flash-lite
+112,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+113,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+114,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+115,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+116,Hiring and employment,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+117,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+118,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+119,Hiring and employment,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+120,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+121,Military and defense,Autonomous vehicles and driver assistance,high,vertex_ai/gemini-3.5-flash-lite
+122,Facial recognition and biometrics,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+123,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+124,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+125,Robotics and industrial automation,Hiring and employment,medium,vertex_ai/gemini-3.5-flash-lite
+126,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+127,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+128,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+129,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+131,Education,,high,vertex_ai/gemini-3.5-flash-lite
+132,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+133,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+134,Robotics and industrial automation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+135,Education,,high,vertex_ai/gemini-3.5-flash-lite
+136,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+137,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+138,Education,,high,vertex_ai/gemini-3.5-flash-lite
+139,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+140,Education,,high,vertex_ai/gemini-3.5-flash-lite
+141,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+142,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+143,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+144,Content recommendation and moderation,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+145,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+146,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+147,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+148,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+149,"Finance, insurance and credit","Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+150,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+151,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+152,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+153,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+154,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+155,Content recommendation and moderation,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+156,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+157,Hiring and employment,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+158,Education,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+159,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+160,Consumer devices and smart home,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+161,"Customer service, retail and advertising",Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+162,Education,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+163,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+164,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+165,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+166,Facial recognition and biometrics,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+167,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+168,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+169,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+170,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+171,Law enforcement and criminal justice,,medium,vertex_ai/gemini-3.5-flash-lite
+172,Healthcare and medicine,"Finance, insurance and credit",medium,vertex_ai/gemini-3.5-flash-lite
+173,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+174,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+175,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+176,Autonomous vehicles and driver assistance,Robotics and industrial automation,high,vertex_ai/gemini-3.5-flash-lite
+177,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+178,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+179,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+180,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+181,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+182,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+183,"Customer service, retail and advertising",,medium,vertex_ai/gemini-3.5-flash-lite
+184,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+185,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+186,Law enforcement and criminal justice,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+187,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+188,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+189,Government services and public administration,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+190,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+191,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+192,Hiring and employment,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+193,Content recommendation and moderation,Other or unclear,low,vertex_ai/gemini-3.5-flash-lite
+194,Software development and AI agents,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+195,Law enforcement and criminal justice,Education,high,vertex_ai/gemini-3.5-flash-lite
+196,Facial recognition and biometrics,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+197,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+198,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+199,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+200,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+201,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+202,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+203,Hiring and employment,,high,vertex_ai/gemini-3.5-flash-lite
+204,Hiring and employment,,high,vertex_ai/gemini-3.5-flash-lite
+205,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+206,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+207,Law enforcement and criminal justice,Robotics and industrial automation,high,vertex_ai/gemini-3.5-flash-lite
+208,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+209,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+210,Content recommendation and moderation,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+211,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+212,Facial recognition and biometrics,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+213,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+214,Facial recognition and biometrics,Education,high,vertex_ai/gemini-3.5-flash-lite
+215,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+216,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+217,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+218,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+219,Facial recognition and biometrics,,low,vertex_ai/gemini-3.5-flash-lite
+220,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+221,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+222,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+223,Facial recognition and biometrics,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+224,Facial recognition and biometrics,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+225,Healthcare and medicine,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+226,Autonomous vehicles and driver assistance,Content recommendation and moderation,medium,vertex_ai/gemini-3.5-flash-lite
+227,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+228,Content recommendation and moderation,Other or unclear,low,vertex_ai/gemini-3.5-flash-lite
+229,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+230,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+231,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+232,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+233,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+234,Content recommendation and moderation,Autonomous vehicles and driver assistance,medium,vertex_ai/gemini-3.5-flash-lite
+235,Facial recognition and biometrics,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+236,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+238,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+239,Education,Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+240,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+241,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+242,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+243,Content recommendation and moderation,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+244,Law enforcement and criminal justice,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+245,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+246,Law enforcement and criminal justice,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+248,Law enforcement and criminal justice,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+249,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+250,Government services and public administration,,medium,vertex_ai/gemini-3.5-flash-lite
+251,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+252,Military and defense,Education,medium,vertex_ai/gemini-3.5-flash-lite
+253,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+254,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+255,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+256,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+257,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+258,Facial recognition and biometrics,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+259,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+260,Law enforcement and criminal justice,Government services and public administration,medium,vertex_ai/gemini-3.5-flash-lite
+261,Robotics and industrial automation,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+262,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+263,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+264,Law enforcement and criminal justice,Facial recognition and biometrics,medium,vertex_ai/gemini-3.5-flash-lite
+265,Hiring and employment,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+266,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+267,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+268,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+270,Content recommendation and moderation,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+271,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+272,Hiring and employment,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+273,Facial recognition and biometrics,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+274,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+275,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+276,Facial recognition and biometrics,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+277,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+278,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+279,Content recommendation and moderation,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+280,Content recommendation and moderation,Hiring and employment,low,vertex_ai/gemini-3.5-flash-lite
+281,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+282,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+283,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+284,Content recommendation and moderation,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+285,Consumer devices and smart home,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+286,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+287,Healthcare and medicine,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+288,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+289,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+290,Government services and public administration,,medium,vertex_ai/gemini-3.5-flash-lite
+291,Autonomous vehicles and driver assistance,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+292,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+293,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+294,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+295,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+296,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+297,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+298,Facial recognition and biometrics,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+299,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+300,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+301,Education,,high,vertex_ai/gemini-3.5-flash-lite
+302,Education,,high,vertex_ai/gemini-3.5-flash-lite
+303,Content recommendation and moderation,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+304,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+305,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+306,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+307,Facial recognition and biometrics,Consumer devices and smart home,high,vertex_ai/gemini-3.5-flash-lite
+308,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+309,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+310,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+311,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+312,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+313,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+314,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+315,Facial recognition and biometrics,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+316,"Customer service, retail and advertising",Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+317,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+318,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+319,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+320,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+321,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+322,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+323,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+324,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+325,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+326,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+327,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+328,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+329,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+330,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+331,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+332,Content recommendation and moderation,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+333,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+334,"Customer service, retail and advertising",Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+335,Law enforcement and criminal justice,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+336,Law enforcement and criminal justice,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+337,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+339,Education,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+340,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+341,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+343,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+344,Hiring and employment,,high,vertex_ai/gemini-3.5-flash-lite
+345,"Finance, insurance and credit",,high,vertex_ai/gemini-3.5-flash-lite
+346,Robotics and industrial automation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+347,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+348,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+349,Law enforcement and criminal justice,Military and defense,medium,vertex_ai/gemini-3.5-flash-lite
+350,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+351,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+352,Chatbots and AI assistants,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+353,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+354,Hiring and employment,,high,vertex_ai/gemini-3.5-flash-lite
+355,Hiring and employment,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+356,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+357,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+358,Facial recognition and biometrics,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+359,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+360,"Customer service, retail and advertising",Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+361,Consumer devices and smart home,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+362,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+363,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+364,"Customer service, retail and advertising",Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+366,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+367,Synthetic media and deepfakes,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+368,Facial recognition and biometrics,Military and defense,high,vertex_ai/gemini-3.5-flash-lite
+369,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+370,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+371,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+372,Facial recognition and biometrics,Consumer devices and smart home,high,vertex_ai/gemini-3.5-flash-lite
+373,Government services and public administration,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+374,Education,,high,vertex_ai/gemini-3.5-flash-lite
+375,Facial recognition and biometrics,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+376,"Customer service, retail and advertising",,medium,vertex_ai/gemini-3.5-flash-lite
+377,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+378,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+379,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+380,"Customer service, retail and advertising",Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+381,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+382,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+383,Consumer devices and smart home,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+384,Hiring and employment,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+385,Law enforcement and criminal justice,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+386,Hiring and employment,Robotics and industrial automation,high,vertex_ai/gemini-3.5-flash-lite
+387,"Customer service, retail and advertising",,medium,vertex_ai/gemini-3.5-flash-lite
+388,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+389,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+390,Synthetic media and deepfakes,Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+391,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+392,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+393,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+394,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+395,Hiring and employment,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+396,Hiring and employment,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+397,Content recommendation and moderation,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+398,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+399,Chatbots and AI assistants,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+400,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+401,Content recommendation and moderation,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+403,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+404,Facial recognition and biometrics,Education,medium,vertex_ai/gemini-3.5-flash-lite
+405,"Finance, insurance and credit",,high,vertex_ai/gemini-3.5-flash-lite
+406,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+407,"Customer service, retail and advertising",Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+408,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+409,Facial recognition and biometrics,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+410,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+411,Content recommendation and moderation,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+412,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+413,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+414,Content recommendation and moderation,"Customer service, retail and advertising",low,vertex_ai/gemini-3.5-flash-lite
+415,Content recommendation and moderation,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+416,"Customer service, retail and advertising",Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+417,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+418,Hiring and employment,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+419,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+420,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+421,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+422,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+423,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+424,Education,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+425,"Finance, insurance and credit",,high,vertex_ai/gemini-3.5-flash-lite
+426,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+427,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+428,Facial recognition and biometrics,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+429,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+430,Facial recognition and biometrics,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+431,Consumer devices and smart home,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+432,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+433,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+434,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+435,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+436,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+437,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+438,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+439,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+440,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+441,Facial recognition and biometrics,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+443,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+444,Military and defense,,high,vertex_ai/gemini-3.5-flash-lite
+445,Military and defense,,high,vertex_ai/gemini-3.5-flash-lite
+446,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+447,Content recommendation and moderation,,medium,vertex_ai/gemini-3.5-flash-lite
+448,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+449,Healthcare and medicine,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+450,Content recommendation and moderation,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+451,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+452,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+453,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+454,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+455,Chatbots and AI assistants,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+456,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+457,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+458,Consumer devices and smart home,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+459,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+460,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+461,Government services and public administration,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+462,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+463,Consumer devices and smart home,,high,vertex_ai/gemini-3.5-flash-lite
+464,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+465,Synthetic media and deepfakes,Healthcare and medicine,medium,vertex_ai/gemini-3.5-flash-lite
+466,Education,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+467,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+468,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+469,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+470,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+471,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+472,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+473,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+474,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+475,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+476,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+477,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+478,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+479,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+480,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+481,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+482,Chatbots and AI assistants,Education,high,vertex_ai/gemini-3.5-flash-lite
+483,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+484,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+485,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+486,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+487,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+488,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+489,Hiring and employment,,high,vertex_ai/gemini-3.5-flash-lite
+490,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+491,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+492,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+493,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+494,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+495,Synthetic media and deepfakes,Education,high,vertex_ai/gemini-3.5-flash-lite
+496,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+497,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+498,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+499,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+500,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+501,Healthcare and medicine,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+502,Government services and public administration,Healthcare and medicine,medium,vertex_ai/gemini-3.5-flash-lite
+503,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+504,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+505,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+506,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+507,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+508,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+509,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+510,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+511,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+513,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+514,Education,,high,vertex_ai/gemini-3.5-flash-lite
+515,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+516,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+517,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+518,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+519,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+520,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+521,Consumer devices and smart home,,high,vertex_ai/gemini-3.5-flash-lite
+522,"Customer service, retail and advertising",Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+523,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+524,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+525,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+526,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+527,Hiring and employment,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+528,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+529,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+531,Facial recognition and biometrics,Government services and public administration,medium,vertex_ai/gemini-3.5-flash-lite
+532,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+533,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+534,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+535,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+536,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+537,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+538,Education,,high,vertex_ai/gemini-3.5-flash-lite
+539,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+540,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+541,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+543,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+544,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+545,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+546,Government services and public administration,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+547,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+548,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+549,Hiring and employment,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+550,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+551,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+552,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+553,Content recommendation and moderation,Synthetic media and deepfakes,medium,vertex_ai/gemini-3.5-flash-lite
+554,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+555,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+556,Consumer devices and smart home,,high,vertex_ai/gemini-3.5-flash-lite
+557,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+558,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+559,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+560,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+561,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+562,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+563,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+564,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+565,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+566,Software development and AI agents,Other or unclear,low,vertex_ai/gemini-3.5-flash-lite
+567,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+568,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+569,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+570,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+571,Software development and AI agents,,medium,vertex_ai/gemini-3.5-flash-lite
+572,Education,,high,vertex_ai/gemini-3.5-flash-lite
+573,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+574,Synthetic media and deepfakes,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+575,Content recommendation and moderation,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+576,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+577,"Customer service, retail and advertising",Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+578,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+579,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+580,"Customer service, retail and advertising",Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+581,"Customer service, retail and advertising",Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+582,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+583,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+584,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+585,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+586,Education,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+587,Content recommendation and moderation,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+588,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+589,Synthetic media and deepfakes,Content recommendation and moderation,medium,vertex_ai/gemini-3.5-flash-lite
+590,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+591,Healthcare and medicine,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+592,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+593,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+594,Chatbots and AI assistants,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+595,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+596,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+597,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+598,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+599,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+600,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+601,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+602,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+603,Healthcare and medicine,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+604,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+605,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+606,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+607,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+608,Healthcare and medicine,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+609,Content recommendation and moderation,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+610,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+611,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+612,Content recommendation and moderation,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+613,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+614,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+615,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+616,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+617,Synthetic media and deepfakes,Education,high,vertex_ai/gemini-3.5-flash-lite
+618,"Finance, insurance and credit",,high,vertex_ai/gemini-3.5-flash-lite
+619,Facial recognition and biometrics,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+620,Robotics and industrial automation,Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+621,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+622,"Customer service, retail and advertising",Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+623,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+624,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+625,Content recommendation and moderation,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+626,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+627,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+628,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+629,Synthetic media and deepfakes,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+630,Facial recognition and biometrics,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+631,"Customer service, retail and advertising",Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+632,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+633,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+634,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+635,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+636,Chatbots and AI assistants,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+638,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+639,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+640,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+641,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+642,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+643,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+644,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+645,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+646,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+647,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+648,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+649,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+650,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+651,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+652,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+653,"Finance, insurance and credit",,high,vertex_ai/gemini-3.5-flash-lite
+654,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+655,Content recommendation and moderation,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+656,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+657,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+658,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+659,Facial recognition and biometrics,,high,vertex_ai/gemini-3.5-flash-lite
+660,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+661,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+662,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+663,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+664,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+665,Facial recognition and biometrics,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+666,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+667,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+668,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+669,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+670,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+671,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+672,Military and defense,,high,vertex_ai/gemini-3.5-flash-lite
+673,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+674,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+675,Synthetic media and deepfakes,Education,high,vertex_ai/gemini-3.5-flash-lite
+676,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+677,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+678,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+679,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+680,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+681,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+682,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+683,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+684,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+685,Healthcare and medicine,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+686,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+687,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+688,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+689,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+690,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+691,Facial recognition and biometrics,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+692,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+693,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+694,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+695,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+696,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+697,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+698,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+699,Healthcare and medicine,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+700,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+701,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+702,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+703,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+704,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+705,Education,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+706,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+707,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+708,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+709,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+710,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+711,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+712,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+713,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+714,Chatbots and AI assistants,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+715,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+716,Hiring and employment,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+717,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+718,Software development and AI agents,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+719,Content recommendation and moderation,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+720,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+721,Education,"Finance, insurance and credit",medium,vertex_ai/gemini-3.5-flash-lite
+722,Chatbots and AI assistants,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+723,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+724,Education,,high,vertex_ai/gemini-3.5-flash-lite
+725,"Customer service, retail and advertising","Finance, insurance and credit",low,vertex_ai/gemini-3.5-flash-lite
+726,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+727,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+728,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+729,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+730,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+731,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+732,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+733,"Finance, insurance and credit",Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+734,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+735,"Finance, insurance and credit",Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+736,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+737,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+738,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+739,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+740,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+741,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+742,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+743,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+744,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+745,Software development and AI agents,Synthetic media and deepfakes,medium,vertex_ai/gemini-3.5-flash-lite
+746,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+747,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+748,Chatbots and AI assistants,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+749,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+750,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+751,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+752,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+753,Synthetic media and deepfakes,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+754,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+755,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+756,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+757,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+758,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+759,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+760,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+761,Content recommendation and moderation,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+762,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+763,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+764,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+765,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+766,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+767,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+768,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+769,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+770,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+771,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+772,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+773,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+774,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+775,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+776,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+777,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+778,Consumer devices and smart home,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+779,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+780,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+781,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+782,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+783,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+784,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+785,Synthetic media and deepfakes,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+786,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+787,Synthetic media and deepfakes,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+788,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+789,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+790,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+791,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+792,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+793,Chatbots and AI assistants,Education,high,vertex_ai/gemini-3.5-flash-lite
+794,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+795,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+796,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+797,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+798,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+799,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+800,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+801,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+802,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+803,Content recommendation and moderation,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+804,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+805,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+806,Synthetic media and deepfakes,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+807,Government services and public administration,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+808,Education,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+809,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+810,Content recommendation and moderation,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+811,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+812,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+813,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+814,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+815,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+816,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+817,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+818,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+819,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+820,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+821,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+822,Government services and public administration,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+823,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+824,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+825,Synthetic media and deepfakes,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+826,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+827,Healthcare and medicine,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+828,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+829,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+830,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+831,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+832,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+833,"Customer service, retail and advertising",Synthetic media and deepfakes,medium,vertex_ai/gemini-3.5-flash-lite
+834,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+835,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+836,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+837,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+838,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+839,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+840,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+841,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+842,Consumer devices and smart home,,high,vertex_ai/gemini-3.5-flash-lite
+843,Education,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+844,Hiring and employment,Other or unclear,low,vertex_ai/gemini-3.5-flash-lite
+845,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+846,Content recommendation and moderation,Synthetic media and deepfakes,medium,vertex_ai/gemini-3.5-flash-lite
+847,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+848,Synthetic media and deepfakes,Education,high,vertex_ai/gemini-3.5-flash-lite
+849,Education,,high,vertex_ai/gemini-3.5-flash-lite
+850,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+851,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+852,Chatbots and AI assistants,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+853,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+854,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+855,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+856,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+857,"Customer service, retail and advertising",,low,vertex_ai/gemini-3.5-flash-lite
+858,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+859,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+860,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+861,Chatbots and AI assistants,Consumer devices and smart home,high,vertex_ai/gemini-3.5-flash-lite
+862,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+863,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+864,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+865,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+866,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+867,Synthetic media and deepfakes,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+868,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+869,Content recommendation and moderation,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+870,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+871,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+872,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+873,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+874,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+875,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+876,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+877,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+878,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+879,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+880,Synthetic media and deepfakes,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+881,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+882,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+883,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+884,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+885,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+886,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+887,Synthetic media and deepfakes,Education,high,vertex_ai/gemini-3.5-flash-lite
+888,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+889,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+890,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+891,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+892,Consumer devices and smart home,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+893,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+894,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+895,Synthetic media and deepfakes,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+896,Law enforcement and criminal justice,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+897,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+898,Software development and AI agents,,medium,vertex_ai/gemini-3.5-flash-lite
+899,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+900,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+901,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+902,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+903,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+904,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+905,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+906,"Customer service, retail and advertising",Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+907,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+908,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+909,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+910,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+911,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+912,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+913,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+914,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+915,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+916,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+917,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+918,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+919,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+920,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+921,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+922,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+923,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+924,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+925,Facial recognition and biometrics,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+926,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+927,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+928,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+929,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+930,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+931,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+932,Facial recognition and biometrics,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+934,Content recommendation and moderation,,medium,vertex_ai/gemini-3.5-flash-lite
+935,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+936,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+937,Synthetic media and deepfakes,Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+938,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+939,Content recommendation and moderation,Facial recognition and biometrics,low,vertex_ai/gemini-3.5-flash-lite
+940,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+941,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+942,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+943,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+944,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+945,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+946,Synthetic media and deepfakes,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+947,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+948,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+949,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+950,Software development and AI agents,,medium,vertex_ai/gemini-3.5-flash-lite
+951,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+952,Consumer devices and smart home,Synthetic media and deepfakes,medium,vertex_ai/gemini-3.5-flash-lite
+953,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+954,Chatbots and AI assistants,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+955,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+956,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+957,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+958,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+959,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+960,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+961,Facial recognition and biometrics,,low,vertex_ai/gemini-3.5-flash-lite
+962,"Finance, insurance and credit",Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+963,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+964,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+965,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+966,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+967,Content recommendation and moderation,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+968,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+969,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+970,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+971,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+972,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+973,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+974,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+975,Chatbots and AI assistants,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+976,Synthetic media and deepfakes,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+977,Content recommendation and moderation,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+978,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+979,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+980,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+981,Consumer devices and smart home,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+982,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+983,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+984,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+985,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+986,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+987,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+988,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+989,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+990,Synthetic media and deepfakes,Education,high,vertex_ai/gemini-3.5-flash-lite
+991,Government services and public administration,Synthetic media and deepfakes,medium,vertex_ai/gemini-3.5-flash-lite
+992,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+993,Education,,high,vertex_ai/gemini-3.5-flash-lite
+994,Synthetic media and deepfakes,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+995,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+996,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+997,Software development and AI agents,,medium,vertex_ai/gemini-3.5-flash-lite
+998,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+999,"Customer service, retail and advertising",Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1000,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1001,Software development and AI agents,,medium,vertex_ai/gemini-3.5-flash-lite
+1002,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1003,"Finance, insurance and credit",,high,vertex_ai/gemini-3.5-flash-lite
+1004,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1005,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1006,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1007,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1008,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1009,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+1010,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1011,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1012,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1013,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1014,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1015,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1016,Software development and AI agents,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1017,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1018,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1019,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1021,Synthetic media and deepfakes,Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+1022,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1023,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1024,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1025,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1026,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1027,Software development and AI agents,,low,vertex_ai/gemini-3.5-flash-lite
+1028,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1029,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1030,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1031,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1032,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1033,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1034,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1035,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1036,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1037,"Finance, insurance and credit","Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+1038,Government services and public administration,Education,high,vertex_ai/gemini-3.5-flash-lite
+1039,"Customer service, retail and advertising",Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1040,Chatbots and AI assistants,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1041,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1042,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1043,Chatbots and AI assistants,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+1044,Chatbots and AI assistants,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1045,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1046,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+1047,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1048,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1049,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1050,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1051,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1052,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1053,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1054,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1055,Software development and AI agents,Synthetic media and deepfakes,medium,vertex_ai/gemini-3.5-flash-lite
+1056,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1057,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+1058,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1059,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1060,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1061,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1062,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1063,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1064,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1065,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1066,"Finance, insurance and credit",Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+1067,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1068,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+1069,Law enforcement and criminal justice,,medium,vertex_ai/gemini-3.5-flash-lite
+1070,Chatbots and AI assistants,,medium,vertex_ai/gemini-3.5-flash-lite
+1071,Education,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1072,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1073,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1074,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1075,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1076,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1077,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1078,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1079,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1080,Synthetic media and deepfakes,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+1081,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1082,"Finance, insurance and credit",,high,vertex_ai/gemini-3.5-flash-lite
+1083,Healthcare and medicine,"Finance, insurance and credit",low,vertex_ai/gemini-3.5-flash-lite
+1084,Chatbots and AI assistants,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1085,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1086,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1087,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1088,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1089,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1090,"Customer service, retail and advertising",Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+1091,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1092,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1093,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1094,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1095,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1096,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1097,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1098,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1099,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1100,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1101,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1102,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1103,Chatbots and AI assistants,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+1104,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1105,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1106,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1107,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1108,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1109,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+1110,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1111,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1112,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1113,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1114,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1115,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1116,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1117,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1118,Hiring and employment,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+1119,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1120,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1121,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1122,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1123,Education,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1124,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1125,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1126,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1127,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1128,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1129,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1130,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1131,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1132,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1133,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1134,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1135,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1136,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1137,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1138,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1139,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1140,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1141,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1142,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1143,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1144,Software development and AI agents,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+1145,Software development and AI agents,,low,vertex_ai/gemini-3.5-flash-lite
+1146,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1147,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1148,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1149,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1150,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1151,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1152,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1153,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1154,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1155,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1156,Synthetic media and deepfakes,Education,high,vertex_ai/gemini-3.5-flash-lite
+1157,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1158,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1159,Government services and public administration,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+1160,Military and defense,,medium,vertex_ai/gemini-3.5-flash-lite
+1161,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1162,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1163,Facial recognition and biometrics,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1164,Healthcare and medicine,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1165,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1166,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1167,Education,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1168,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1169,Content recommendation and moderation,Synthetic media and deepfakes,medium,vertex_ai/gemini-3.5-flash-lite
+1170,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1171,Chatbots and AI assistants,Synthetic media and deepfakes,low,vertex_ai/gemini-3.5-flash-lite
+1172,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1173,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1174,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1175,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1176,Consumer devices and smart home,Software development and AI agents,medium,vertex_ai/gemini-3.5-flash-lite
+1177,Education,Hiring and employment,low,vertex_ai/gemini-3.5-flash-lite
+1178,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1179,Hiring and employment,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1180,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1181,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1182,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1183,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1184,Software development and AI agents,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+1185,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1186,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1187,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1188,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1189,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1190,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1191,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1192,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1193,Government services and public administration,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1194,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1195,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1196,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1197,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1198,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1199,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1200,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1201,Software development and AI agents,Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+1202,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1203,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1204,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1205,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1206,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1207,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1208,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1209,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1210,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1211,Chatbots and AI assistants,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1212,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1213,Hiring and employment,,low,vertex_ai/gemini-3.5-flash-lite
+1214,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1215,Education,,high,vertex_ai/gemini-3.5-flash-lite
+1216,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1217,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1218,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1219,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+1220,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1221,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1222,"Finance, insurance and credit",,high,vertex_ai/gemini-3.5-flash-lite
+1223,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1224,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1225,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1226,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1227,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1228,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1229,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1230,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1231,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1232,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1233,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1234,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1235,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1236,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1237,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1238,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1239,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1240,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1241,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1242,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1243,Consumer devices and smart home,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1244,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1245,Education,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+1246,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1249,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1250,Law enforcement and criminal justice,,medium,vertex_ai/gemini-3.5-flash-lite
+1251,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+1252,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1253,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1254,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1255,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1256,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1257,Law enforcement and criminal justice,,high,vertex_ai/gemini-3.5-flash-lite
+1258,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1259,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1260,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1261,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1262,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1263,Software development and AI agents,Military and defense,high,vertex_ai/gemini-3.5-flash-lite
+1264,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1265,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1266,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1267,Law enforcement and criminal justice,Education,high,vertex_ai/gemini-3.5-flash-lite
+1268,"Customer service, retail and advertising",Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1269,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1270,Education,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1271,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1272,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1273,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1274,"Customer service, retail and advertising",Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1275,"Customer service, retail and advertising",,low,vertex_ai/gemini-3.5-flash-lite
+1276,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1277,Chatbots and AI assistants,Consumer devices and smart home,high,vertex_ai/gemini-3.5-flash-lite
+1278,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1279,Chatbots and AI assistants,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1280,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1281,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1282,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1283,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1284,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1285,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1286,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1287,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1288,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1289,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1290,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1291,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1292,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1293,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1294,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1295,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1296,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1297,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1298,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1299,Law enforcement and criminal justice,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1300,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1301,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1302,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1303,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+1304,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1305,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1306,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1307,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+1308,Chatbots and AI assistants,Software development and AI agents,medium,vertex_ai/gemini-3.5-flash-lite
+1309,Chatbots and AI assistants,Software development and AI agents,medium,vertex_ai/gemini-3.5-flash-lite
+1310,Government services and public administration,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1311,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1312,Law enforcement and criminal justice,,medium,vertex_ai/gemini-3.5-flash-lite
+1313,Robotics and industrial automation,Software development and AI agents,medium,vertex_ai/gemini-3.5-flash-lite
+1314,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1316,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+1317,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1318,Education,,high,vertex_ai/gemini-3.5-flash-lite
+1319,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1320,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1321,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1322,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1323,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1324,Healthcare and medicine,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1325,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1326,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1327,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1328,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1329,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1330,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1331,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1332,Synthetic media and deepfakes,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+1333,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1334,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1335,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1336,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1337,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1338,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1339,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1340,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1341,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1342,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1343,Hiring and employment,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+1344,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1345,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1346,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1347,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1348,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1349,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+1350,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1351,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1352,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1353,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1355,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1356,Chatbots and AI assistants,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1357,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1358,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1359,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1360,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1361,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1362,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1363,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1364,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1365,Software development and AI agents,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1366,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1367,Autonomous vehicles and driver assistance,,medium,vertex_ai/gemini-3.5-flash-lite
+1368,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1369,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1370,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1371,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1372,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1373,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1374,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+1375,Chatbots and AI assistants,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1376,Autonomous vehicles and driver assistance,,low,vertex_ai/gemini-3.5-flash-lite
+1377,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1378,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1379,Synthetic media and deepfakes,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1380,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1381,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1382,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1383,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1384,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1385,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1386,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1387,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1388,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1389,Consumer devices and smart home,,high,vertex_ai/gemini-3.5-flash-lite
+1390,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1391,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1392,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1393,"Customer service, retail and advertising",Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1394,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1395,Software development and AI agents,,medium,vertex_ai/gemini-3.5-flash-lite
+1396,"Finance, insurance and credit","Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+1397,Synthetic media and deepfakes,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1398,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1399,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1400,Law enforcement and criminal justice,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1401,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+1402,Government services and public administration,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1403,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1404,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1405,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1406,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1407,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1408,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1409,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1410,Synthetic media and deepfakes,Education,high,vertex_ai/gemini-3.5-flash-lite
+1411,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1412,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1413,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1414,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1415,Chatbots and AI assistants,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1416,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1417,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1418,Consumer devices and smart home,,high,vertex_ai/gemini-3.5-flash-lite
+1419,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1420,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1421,Synthetic media and deepfakes,Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+1422,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1423,Education,,high,vertex_ai/gemini-3.5-flash-lite
+1424,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1425,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1426,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1427,"Customer service, retail and advertising","Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1428,"Customer service, retail and advertising","Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1429,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1430,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1431,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1432,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1433,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1434,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1435,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1436,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+1437,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+1438,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1439,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1440,Autonomous vehicles and driver assistance,Robotics and industrial automation,high,vertex_ai/gemini-3.5-flash-lite
+1441,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1442,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1443,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1444,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+1445,Synthetic media and deepfakes,Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
+1446,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+1447,Software development and AI agents,Chatbots and AI assistants,low,vertex_ai/gemini-3.5-flash-lite
+1448,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1449,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1450,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1451,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1452,Synthetic media and deepfakes,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1453,Software development and AI agents,,low,vertex_ai/gemini-3.5-flash-lite
+1454,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1455,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1456,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1457,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1458,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1459,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1460,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1461,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1462,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1463,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1464,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1465,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1466,Content recommendation and moderation,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+1467,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
+1468,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1469,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1470,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1471,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1472,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1473,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1474,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1475,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1476,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1477,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1478,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1479,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1480,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1481,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1482,Synthetic media and deepfakes,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+1483,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1484,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1485,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1486,"Finance, insurance and credit",Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+1487,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1488,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1489,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1490,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1491,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1492,Military and defense,,high,vertex_ai/gemini-3.5-flash-lite
+1493,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1494,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1495,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1496,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1497,Law enforcement and criminal justice,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+1498,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1499,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1500,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1501,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1502,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1503,Education,,high,vertex_ai/gemini-3.5-flash-lite
+1504,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1505,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1506,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1507,Software development and AI agents,Education,medium,vertex_ai/gemini-3.5-flash-lite
+1508,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1509,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1510,"Customer service, retail and advertising",Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1511,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1512,Software development and AI agents,Chatbots and AI assistants,low,vertex_ai/gemini-3.5-flash-lite
+1513,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1514,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1515,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1516,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1517,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1518,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1519,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1520,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1521,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1522,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1523,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1524,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1525,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1526,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1527,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1528,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+1529,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1530,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1531,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1532,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1533,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1534,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1535,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1536,Robotics and industrial automation,,high,vertex_ai/gemini-3.5-flash-lite
+1537,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1538,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1539,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1540,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1541,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1542,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1543,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1544,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1545,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1546,Consumer devices and smart home,,medium,vertex_ai/gemini-3.5-flash-lite
+1547,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1548,Government services and public administration,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1549,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1550,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1551,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1552,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1553,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1554,Content recommendation and moderation,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+1555,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1556,Chatbots and AI assistants,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1557,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1558,Software development and AI agents,,medium,vertex_ai/gemini-3.5-flash-lite
+1559,"Customer service, retail and advertising","Finance, insurance and credit",medium,vertex_ai/gemini-3.5-flash-lite
+1560,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1561,Military and defense,Autonomous vehicles and driver assistance,high,vertex_ai/gemini-3.5-flash-lite
+1562,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1563,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1564,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1565,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1566,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1567,Autonomous vehicles and driver assistance,Robotics and industrial automation,high,vertex_ai/gemini-3.5-flash-lite
+1568,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1569,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1570,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1571,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1572,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1573,Law enforcement and criminal justice,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1574,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1575,Hiring and employment,,high,vertex_ai/gemini-3.5-flash-lite
+1576,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1577,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1578,Software development and AI agents,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1579,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1580,Chatbots and AI assistants,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
+1581,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1582,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1583,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1584,Hiring and employment,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1585,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
+1586,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1587,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+1588,"Customer service, retail and advertising",Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1589,"Customer service, retail and advertising",Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1590,Chatbots and AI assistants,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+1591,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1592,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1593,Healthcare and medicine,Hiring and employment,medium,vertex_ai/gemini-3.5-flash-lite
+1594,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1595,Law enforcement and criminal justice,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+1596,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1597,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1598,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1599,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1600,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1601,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1602,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1603,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1604,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1605,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1606,Government services and public administration,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+1607,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1608,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1609,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1610,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1611,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1612,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1613,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1614,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1615,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1616,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1617,Hiring and employment,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+1618,"Finance, insurance and credit","Customer service, retail and advertising",low,vertex_ai/gemini-3.5-flash-lite
+1619,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1620,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1621,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1622,"Customer service, retail and advertising",Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+1623,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1624,Chatbots and AI assistants,Military and defense,high,vertex_ai/gemini-3.5-flash-lite
+1625,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1626,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1627,Software development and AI agents,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1628,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1629,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1630,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
+1631,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+1632,Education,,high,vertex_ai/gemini-3.5-flash-lite
+1633,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1634,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1635,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1636,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1637,Synthetic media and deepfakes,Education,high,vertex_ai/gemini-3.5-flash-lite
+1638,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1639,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1640,"Customer service, retail and advertising","Finance, insurance and credit",medium,vertex_ai/gemini-3.5-flash-lite
+1641,Chatbots and AI assistants,Software development and AI agents,medium,vertex_ai/gemini-3.5-flash-lite
+1642,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1643,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1644,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1645,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1646,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1647,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1648,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1649,Software development and AI agents,Military and defense,low,vertex_ai/gemini-3.5-flash-lite
+1650,Chatbots and AI assistants,,medium,vertex_ai/gemini-3.5-flash-lite
+1651,Chatbots and AI assistants,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+1652,Chatbots and AI assistants,,medium,vertex_ai/gemini-3.5-flash-lite
+1653,Content recommendation and moderation,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1654,Chatbots and AI assistants,Healthcare and medicine,low,vertex_ai/gemini-3.5-flash-lite
+1655,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1656,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1657,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1658,Software development and AI agents,,medium,vertex_ai/gemini-3.5-flash-lite
+1659,Content recommendation and moderation,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1660,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1661,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1662,Hiring and employment,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+1663,Chatbots and AI assistants,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+1664,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+1665,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1666,Consumer devices and smart home,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1667,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1668,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1669,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1670,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1671,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1672,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1673,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1674,Chatbots and AI assistants,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1675,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1676,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1677,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+1678,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1679,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1680,Software development and AI agents,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1681,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+1682,Software development and AI agents,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+1683,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1684,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1685,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1686,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1687,Military and defense,Software development and AI agents,high,vertex_ai/gemini-3.5-flash-lite
+1688,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1689,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1690,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1691,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1692,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1693,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1694,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1695,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+1696,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1697,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1698,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1699,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1700,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1701,Chatbots and AI assistants,Military and defense,high,vertex_ai/gemini-3.5-flash-lite
+1702,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1703,Law enforcement and criminal justice,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+1704,Law enforcement and criminal justice,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+1705,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1706,Law enforcement and criminal justice,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+1707,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1708,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1709,Other or unclear,,high,vertex_ai/gemini-3.5-flash-lite
+1710,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1711,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1712,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1713,Law enforcement and criminal justice,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+1714,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1715,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1716,Facial recognition and biometrics,Law enforcement and criminal justice,medium,vertex_ai/gemini-3.5-flash-lite
+1717,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1718,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1719,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1720,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1721,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1722,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1723,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1724,Chatbots and AI assistants,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1725,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1726,Education,Other or unclear,low,vertex_ai/gemini-3.5-flash-lite
+1727,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1728,Software development and AI agents,Chatbots and AI assistants,medium,vertex_ai/gemini-3.5-flash-lite
+1729,"Customer service, retail and advertising","Finance, insurance and credit",medium,vertex_ai/gemini-3.5-flash-lite
+1730,Chatbots and AI assistants,Healthcare and medicine,high,vertex_ai/gemini-3.5-flash-lite
+1731,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1732,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1733,Software development and AI agents,,low,vertex_ai/gemini-3.5-flash-lite
+1734,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1735,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1736,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1737,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1738,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1739,Chatbots and AI assistants,Military and defense,high,vertex_ai/gemini-3.5-flash-lite
+1740,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1741,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1742,Chatbots and AI assistants,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1743,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1744,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1745,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1746,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1747,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1748,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1749,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1750,Education,Other or unclear,low,vertex_ai/gemini-3.5-flash-lite
+1751,Software development and AI agents,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1752,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1753,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1754,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+1755,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1756,"Customer service, retail and advertising",,medium,vertex_ai/gemini-3.5-flash-lite
+1757,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1758,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1759,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
+1760,Law enforcement and criminal justice,Facial recognition and biometrics,medium,vertex_ai/gemini-3.5-flash-lite
+1761,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1762,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1763,Healthcare and medicine,,high,vertex_ai/gemini-3.5-flash-lite
+1764,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1765,"Customer service, retail and advertising",Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1766,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1767,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1768,Healthcare and medicine,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+1769,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1770,Hiring and employment,Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+1771,Healthcare and medicine,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1772,"Customer service, retail and advertising",Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1773,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1774,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1775,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1776,Chatbots and AI assistants,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1777,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1778,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1779,Software development and AI agents,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
+1780,"Customer service, retail and advertising",Facial recognition and biometrics,high,vertex_ai/gemini-3.5-flash-lite
+1781,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1782,Software development and AI agents,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1783,Chatbots and AI assistants,,high,vertex_ai/gemini-3.5-flash-lite
+1784,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1785,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+1786,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1787,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
+1788,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1789,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1790,Chatbots and AI assistants,Government services and public administration,high,vertex_ai/gemini-3.5-flash-lite
+1791,Software development and AI agents,,medium,vertex_ai/gemini-3.5-flash-lite
+1792,Healthcare and medicine,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+1793,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
+1794,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1795,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1796,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite
+1797,Software development and AI agents,,high,vertex_ai/gemini-3.5-flash-lite

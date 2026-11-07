@@ -1,0 +1,43 @@
+{
+  "built": "2026-11-07",
+  "aiid_source": "AIID_Excel_Export-20261102.xlsx",
+  "agora_source": "documents.csv, segments.csv, authorities.csv",
+  "counts": {
+    "incidents": 1784,
+    "agora_documents": 1255,
+    "agora_segments_kept": 10215
+  },
+  "aiid_latest_incident_date": "2026-10-30",
+  "aiid_year_range": [
+    1983,
+    2026
+  ],
+  "coverage": {
+    "mit_risk_class": 0.839,
+    "csetv1": 0.112,
+    "gmf": 0.015
+  },
+  "agora_status_counts": {
+    "Enacted": 546,
+    "Defunct": 422,
+    "Proposed": 287
+  },
+  "agora_jurisdiction_counts": {
+    "United States": 1155,
+    "China": 32,
+    "": 29,
+    "Multinational": 21,
+    "Other countries": 18
+  },
+  "agora_annotated_docs": 893,
+  "agora_segments_with_tags": 4170,
+  "caveats": [
+    "AIID counts reflect news coverage and editor curation, not true incident rates.",
+    "The latest AIID year is partial. Compare full years only.",
+    "Only the MIT taxonomy covers most incidents; CSETv1 and GMF cover a small minority.",
+    "AGORA is dominated by US documents and many are proposed or defunct bills, not law in force.",
+    "AGORA tags exist only for annotated documents/segments; some are unreviewed machine output.",
+    "AGORA is not a complete record of AI-relevant law.",
+    "risk_crosswalk.csv (MIT risk domain -> AGORA tags) is hand-made by the project authors, not an official mapping. It reflects judgment calls and has not been validated."
+  ]
+}

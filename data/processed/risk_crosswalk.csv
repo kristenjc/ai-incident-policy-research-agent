@@ -1,0 +1,25 @@
+mit_risk_domain,agora_column,agora_tag
+Discrimination and Toxicity,risk_factors,Bias
+Discrimination and Toxicity,harms,Discrimination
+Discrimination and Toxicity,harms,Detrimental content
+Privacy & Security,risk_factors,Privacy
+Privacy & Security,risk_factors,Security
+Privacy & Security,risk_factors,Security: Cybersecurity
+Privacy & Security,harms,"Violation of civil or human rights, including privacy"
+Misinformation,harms,Detrimental content
+Misinformation,risk_factors,Security: Dissemination
+Malicious Actors & Misuse,risk_factors,Security
+Malicious Actors & Misuse,risk_factors,Security: Cybersecurity
+Malicious Actors & Misuse,risk_factors,Security: Dissemination
+Malicious Actors & Misuse,harms,Financial loss
+Human-Computer Interaction,risk_factors,Transparency
+Human-Computer Interaction,risk_factors,Interpretability and explainability
+Human-Computer Interaction,risk_factors,Safety
+Socioeconomic & Environmental Harms,harms,Ecological harm
+Socioeconomic & Environmental Harms,harms,Financial loss
+"AI system safety, failures, and limitations",risk_factors,Reliability
+"AI system safety, failures, and limitations",risk_factors,Reliability: Robustness
+"AI system safety, failures, and limitations",risk_factors,Safety
+"AI system safety, failures, and limitations",harms,Harm to health/safety
+"AI system safety, failures, and limitations",harms,Harm to property
+"AI system safety, failures, and limitations",harms,Harm to infrastructure
