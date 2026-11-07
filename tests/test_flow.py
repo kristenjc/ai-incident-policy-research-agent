@@ -75,6 +75,7 @@ class Scripted(Model):
             ids = sorted(set(app.CITE.findall(done[-1]["output"])))[:2]
             return self._r([say("- NYC rule " + " ".join(f"[{k} #{n}]" for k, n in ids))])
         if sys_.startswith("Write a research report"):
+            assert "CHART FACTS" in text and "Peak full year" in text, "the Writer must get the chart facts"
             cites = " ".join(f"[{k} #{n}]" for k, n in app.CITE.findall(text)[:4])
             return self._r([say(f"# Hiring\n**Bottom line.** Stuff {cites} and a fake [AIID #999999].\n## How reporting has changed\nUp.\n[[CHART]]\n")])
         raise AssertionError("unknown agent: " + sys_[:60])
@@ -105,6 +106,9 @@ def main():
     c = rep["citations"]
     assert "AIID #999999" in c["unverified"] and c["verified"] >= 2, c
     assert "| Year | Reported incidents |" in body["answer"] and "[[CHART]]" not in body["answer"]
+    assert body["answer"].split("\n")[2].startswith("*Scope · Incidents: Hiring and employment"), body["answer"][:300]
+    assert "Policies: United States" in body["answer"] and rep["chart"]["facts"]
+    assert {e["agent"] for e in body["tool_calls"]} and all(c["output"] for c in body["tool_calls"]), "every call has output"
     print("chat ok:", len(body["tool_calls"]), "tool calls;", c["verified"], "verified,", c["unverified"], "unverified")
 
     # Clarification, then the answer in the same session
@@ -122,6 +126,13 @@ def main():
     assert kinds[0] == "start" and kinds[-1] == "done" and "tool" in kinds and "brief" in kinds, kinds
     print("run ok:", {k: kinds.count(k) for k in set(kinds)})
     assert client.get("/api/meta").json()["incidents"] == 1784
+    page = client.get("/api/incidents", params={"use_case": "Hiring and employment", "year": 2021}).json()
+    assert page["total"] == 8 and len(page["items"]) == 8, page["total"]
+    big = client.get("/api/incidents", params={"use_case": "Synthetic media and deepfakes", "offset": 25}).json()
+    assert big["total"] == 680 and len(big["items"]) == 25 and big["offset"] == 25
+    csv_text = client.get("/api/incidents.csv", params={"use_case": "Synthetic media and deepfakes"}).text
+    assert csv_text.count("\n") >= 681, csv_text.count("\n")
+    print("drill-down ok")
     print("all ok")
 
 

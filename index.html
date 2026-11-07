@@ -18,6 +18,10 @@
   body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.55; }
   body:not(.trace) { margin-right: 0 !important; }
   body:not(.trace) #context-panel { display: none; }
+  /* The panel takes at most half the window, so the agent cards stay readable beside it */
+  body.trace { margin-right: min(50vw, var(--context-width)) !important; }
+  body.trace #context-panel { width: min(50vw, var(--context-width)); }
+  body.trace .lanes { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
   main { max-width: 1040px; margin: 0 auto; padding: 2.5rem 1rem 5rem; display: flex; flex-direction: column; gap: 1.75rem; }
   button { font: inherit; cursor: pointer; }
   .eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
@@ -132,6 +136,60 @@
   #tip { position: fixed; z-index: 50; max-width: 320px; background: var(--ink); color: var(--paper); font-size: 0.78rem; line-height: 1.4; padding: 0.5rem 0.65rem; border-radius: 4px; pointer-events: none; display: none; }
   #tip small { display: block; color: #c9c2b5; font-family: var(--mono); font-size: 0.68rem; margin-top: 0.2rem; }
   .error { color: var(--warn); }
+
+  /* Active filters, as removable pills */
+  .pills { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.25rem 0 0.9rem; min-height: 1.6rem; }
+  .pills .label { font-size: 0.75rem; color: var(--muted); margin-right: 0.15rem; }
+  .pill { display: inline-flex; align-items: center; gap: 0.35rem; background: var(--ink); color: var(--paper); border-radius: 999px; padding: 0.15rem 0.3rem 0.15rem 0.7rem; font-size: 0.78rem; }
+  .pill button { border: none; background: rgba(255,255,255,0.15); color: inherit; width: 1.15rem; height: 1.15rem; border-radius: 50%; font-size: 0.7rem; line-height: 1; }
+  .pill button:hover { background: rgba(255,255,255,0.35); }
+  .linkish { border: none; background: none; color: var(--rust); font-size: 0.78rem; text-decoration: underline; padding: 0; }
+  .pills .none { font-size: 0.78rem; color: var(--muted); }
+
+  /* Tool results on the agent cards; clickable cards */
+  .lane { cursor: pointer; }
+  .lane:hover { border-color: var(--ink); }
+  .lane li .res { display: block; color: var(--ink); font-family: var(--sans); font-size: 0.72rem; margin-top: 0.1rem; }
+  .lane li .res::before { content: "→ "; color: var(--muted); }
+  .lane .jump { font-size: 0.68rem; color: var(--muted); float: right; font-weight: 400; }
+  .ctx-head.flash { animation: context-flash 1.5s; }
+
+  /* Report scope line */
+  .md p.scope { font-size: 0.82rem; color: var(--muted); background: var(--paper); border-left: 3px solid var(--teal); padding: 0.4rem 0.7rem; }
+  .md p.scope em { font-style: normal; }
+
+  /* Chart / table */
+  .viewbar { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-top: 0.6rem; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .seg button { border: none; background: none; padding: 0.25rem 0.7rem; font-size: 0.78rem; }
+  .seg button.on { background: var(--ink); color: var(--paper); }
+  .viewbar a { font-size: 0.78rem; color: var(--teal); }
+  .facts { list-style: none; padding: 0 !important; margin: 0.5rem 0 0.4rem; display: grid; gap: 0.15rem; font-size: 0.82rem; }
+  .facts li { margin: 0 !important; padding-left: 0.9rem; position: relative; }
+  .facts li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; background: var(--rust); border-radius: 50%; }
+  .pivot { max-height: 360px; overflow: auto; border: 1px solid var(--line); border-radius: 4px; margin: 0.8rem 0 0.4rem; }
+  .pivot table { display: table !important; margin: 0 !important; font-size: 0.78rem !important; }
+  .pivot th { position: sticky; top: 0; background: var(--card); z-index: 1; padding: 0.4rem 0.5rem !important; white-space: normal; min-width: 4.5rem; text-align: right !important; }
+  .pivot th:first-child, .pivot td:first-child { text-align: left !important; position: sticky; left: 0; background: var(--card); }
+  .pivot td { text-align: right; font-family: var(--mono); padding: 0.3rem 0.5rem !important; }
+  .pivot td.hit { cursor: pointer; color: var(--teal); }
+  .pivot td.hit:hover { background: var(--teal-soft); }
+  .pivot td.zero { color: #c9c2b5; }
+  .pivot tr.partial td { font-style: italic; }
+
+  /* Incident drawer */
+  #drawer { position: fixed; z-index: 60; top: 0; right: 0; bottom: 0; width: min(480px, 100vw); background: var(--card); border-left: 1px solid var(--ink); box-shadow: -12px 0 32px rgba(0,0,0,0.12); transform: translateX(105%); transition: transform 0.2s; display: flex; flex-direction: column; }
+  #drawer.on { transform: none; }
+  #drawer header { border: none; padding: 1rem 1.1rem 0.8rem; border-bottom: 1px solid var(--line); display: block; gap: 0; }
+  #drawer h3 { font-family: var(--serif); font-weight: 600; font-size: 1.1rem; line-height: 1.25; margin: 0.15rem 0 0.4rem; padding-right: 2rem; }
+  #drawer .close { position: absolute; right: 0.8rem; top: 0.8rem; border: none; background: none; font-size: 1.3rem; line-height: 1; color: var(--muted); }
+  #drawer .dlist { overflow-y: auto; padding: 0.4rem 1.1rem 1rem; flex: 1; }
+  .inc { border-bottom: 1px solid var(--line); padding: 0.65rem 0; }
+  .inc a { font-weight: 500; color: var(--ink); text-decoration: none; }
+  .inc a:hover { text-decoration: underline; }
+  .inc .meta { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); margin: 0.15rem 0; }
+  .inc p { font-size: 0.8rem; color: #3b3832; }
+  #drawer .more { margin: 0.8rem 0; }
   footer { font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1rem; }
 
   @media (max-width: 760px) {
@@ -173,9 +231,10 @@
     </div>
     <textarea id="question" placeholder="Pick a use case above, or write your own question."></textarea>
     <div class="examples" id="examples"></div>
+    <div class="pills" id="pills"></div>
     <div class="go">
       <button class="primary" id="run">Research</button>
-      <span class="hint">Takes 1–3 minutes. The filters are added to your question.</span>
+      <span class="hint">Takes 1–3 minutes. The filters shown above are added to your question.</span>
     </div>
     <details class="caveats" style="margin-top:1rem"><summary>What this data can and can't tell you</summary><ul id="caveats"></ul></details>
   </section>
@@ -190,7 +249,7 @@
   <section id="work">
     <div class="worktitle">
       <h2>The team at work</h2>
-      <span class="hint" id="status"></span>
+      <span class="go"><span class="hint" id="status"></span><button class="ghost" id="tracebtn">Show agent contexts</button></span>
     </div>
     <div id="brief" class="card"></div>
     <div class="lanes" id="lanes"></div>
@@ -201,7 +260,6 @@
       <span class="badge" id="citebadge"></span>
       <span class="spacer"></span>
       <button class="ghost" id="copy">Copy markdown</button>
-      <button class="ghost" id="tracebtn">Show agent contexts</button>
     </div>
     <div class="md" id="md"></div>
   </section>
@@ -210,6 +268,15 @@
     Use-case labels were assigned by an LLM. API: <code>POST /chat</code> with <code>{"message": "..."}</code>.</footer>
 </main>
 <div id="tip"></div>
+<aside id="drawer" aria-label="Incidents">
+  <header>
+    <div class="eyebrow">Incidents behind the chart</div>
+    <h3 id="dtitle"></h3>
+    <div class="viewbar"><span class="hint" id="dcount"></span><a id="dcsv" href="#">Download CSV</a></div>
+    <button class="close" id="dclose" aria-label="Close">×</button>
+  </header>
+  <div class="dlist" id="dlist"></div>
+</aside>
 
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
@@ -260,31 +327,64 @@ async function loadMeta() {
   $("caveats").innerHTML = meta.caveats.map((c) => `<li>${esc(c)}</li>`).join("");
 }
 
+const TEMPLATE = (uc) => `For ${uc}: what failures have been reported, how have they changed over time, and which policies address them?`;
+
 function setMode(m) {
   mode = m;
   document.querySelectorAll(".modes button").forEach((b) => b.classList.toggle("on", b.dataset.mode === m));
   $("ucpick").style.display = m === "use_case" ? "" : "none";
   $("examples").innerHTML = EXAMPLES[m].map((q) => `<button>${esc(q)}</button>`).join("");
-  if (m === "overview") { useCase = null; document.querySelectorAll("#usecases .chip").forEach((c) => c.classList.remove("on")); }
+  if (m === "overview") setUseCase(null);
+  renderPills();
 }
+
+function setUseCase(uc) {
+  const q = $("question").value.trim();
+  if (useCase && q === TEMPLATE(useCase)) $("question").value = uc ? TEMPLATE(uc) : ""; // our own text: follow the chip
+  else if (uc && !q) $("question").value = TEMPLATE(uc);
+  useCase = uc;
+  document.querySelectorAll("#usecases .chip").forEach((c) => c.classList.toggle("on", c.dataset.uc === uc));
+  renderPills();
+}
+
+// Each active filter: its pill, the text it adds to the question, and how to remove it
+function activeFilters() {
+  const f = [];
+  if (useCase && mode === "use_case") f.push({ pill: `Use case: ${useCase}`, text: `Use case: ${useCase}`, clear: () => setUseCase(null) });
+  if ($("yfrom").value || $("yto").value) {
+    const span = `${$("yfrom").value || "any"}–${$("yto").value || "latest"}`;
+    f.push({ pill: `Incident years: ${span}`, text: `Incident years: ${span}`, clear: () => { $("yfrom").value = ""; $("yto").value = ""; } });
+  }
+  if ($("juris").value) f.push({ pill: `Policies: ${$("juris").value}`, text: `Policy jurisdiction: ${$("juris").value}`, clear: () => ($("juris").value = "") });
+  if (mode === "overview") f.push({ pill: "Scope: whole dataset", text: "Scope: the whole dataset", clear: () => setMode("use_case") });
+  return f;
+}
+
+function renderPills() {
+  const f = activeFilters();
+  $("pills").innerHTML = f.length
+    ? `<span class="label">Added to your question:</span>${f.map((x, i) => `<span class="pill">${esc(x.pill)}<button data-i="${i}" aria-label="Remove ${esc(x.pill)}">✕</button></span>`).join("")}<button class="linkish" id="clearall">Clear filters</button>`
+    : `<span class="none">No filters: only your question is sent.</span>`;
+}
+
+$("pills").addEventListener("click", (e) => {
+  const f = activeFilters();
+  if (e.target.id === "clearall") { f.forEach((x) => x.clear()); renderPills(); return; }
+  const i = e.target.dataset.i;
+  if (i !== undefined) { f[+i].clear(); renderPills(); }
+});
+["yfrom", "yto", "juris"].forEach((id) => $(id).addEventListener("change", renderPills));
 
 document.querySelector(".modes").addEventListener("click", (e) => { if (e.target.dataset.mode) setMode(e.target.dataset.mode); });
 $("usecases").addEventListener("click", (e) => {
   const chip = e.target.closest(".chip"); if (!chip) return;
-  useCase = chip.dataset.uc;
-  document.querySelectorAll("#usecases .chip").forEach((c) => c.classList.toggle("on", c === chip));
-  const q = $("question").value.trim();
-  if (!q || q.startsWith("For ")) $("question").value = `For ${useCase}: what failures have been reported, how have they changed over time, and which policies address them?`;
+  setUseCase(chip.dataset.uc === useCase ? null : chip.dataset.uc); // click again to unselect
 });
 $("examples").addEventListener("click", (e) => { if (e.target.tagName === "BUTTON") { $("question").value = e.target.textContent; $("question").focus(); } });
 
 function composedQuestion() {
-  let q = $("question").value.trim();
-  const extra = [];
-  if (useCase && mode === "use_case" && !q.toLowerCase().includes(useCase.toLowerCase())) extra.push(`Use case: ${useCase}`);
-  if ($("yfrom").value || $("yto").value) extra.push(`Incident years: ${$("yfrom").value || "any"}–${$("yto").value || "latest"}`);
-  if ($("juris").value) extra.push(`Policy jurisdiction: ${$("juris").value}`);
-  if (mode === "overview") extra.push("Scope: the whole dataset");
+  const q = $("question").value.trim();
+  const extra = activeFilters().map((x) => x.text).filter((t) => !(useCase && t === `Use case: ${useCase}` && q.toLowerCase().includes(useCase.toLowerCase())));
   return extra.length ? `${q} (${extra.join(". ")}.)` : q;
 }
 
@@ -304,16 +404,40 @@ function lane(name) {
     const base = LANES.find(([n]) => name.startsWith(n));
     el = document.createElement("div");
     el.className = "lane"; el.id = id;
-    el.innerHTML = `<h4><i></i>${esc(name)}</h4><div class="role">${esc(base ? base[1] : "")}</div><ul></ul>`;
+    el.innerHTML = `<h4><i></i>${esc(name)}${name === "Citation check" ? "" : '<span class="jump">context ↗</span>'}</h4><div class="role">${esc(base ? base[1] : "")}</div><ul></ul>`;
+    if (name !== "Citation check") el.addEventListener("click", () => openTrace(name));
     const writer = document.getElementById("lane-Writer");
     $("lanes").insertBefore(el, name.startsWith("Writer") || name.startsWith("Citation") ? null : writer);
   }
   return el;
 }
 
-function laneNote(name, html, cls = "note") {
+function laneNote(name, html, cls = "note", callId = null) {
   const li = document.createElement("li"); li.className = cls; li.innerHTML = html;
+  if (callId) li.dataset.call = callId;
   lane(name).querySelector("ul").appendChild(li);
+}
+
+function setTrace(on) {
+  document.body.classList.toggle("trace", on);
+  $("tracebtn").textContent = on ? "Hide agent contexts" : "Show agent contexts";
+}
+
+// Open the context panel at one agent's column. An agent that hasn't started yet: jump when it does.
+let pendingTrace = null;
+function openTrace(agent) {
+  setTrace(true);
+  $("work").scrollIntoView({ behavior: "smooth", block: "start" });
+  pendingTrace = agent;
+  jumpToColumn();
+}
+function jumpToColumn() {
+  if (!pendingTrace) return;
+  const head = [...document.querySelectorAll("#context-panel .ctx-head")].find((h) => h.textContent === pendingTrace);
+  if (!head) return;
+  pendingTrace = null;
+  head.scrollIntoView({ inline: "start", block: "nearest", behavior: "smooth" });
+  head.classList.remove("flash"); void head.offsetWidth; head.classList.add("flash");
 }
 
 function argText(args) {
@@ -341,9 +465,13 @@ function start(question) {
   source.onmessage = (msg) => {
     const ev = JSON.parse(msg.data);
     if (ev.type === "start") { runId = ev.run_id; sessionId = ev.session_id; }
-    else if (ev.type === "context") showContext(runId);
+    else if (ev.type === "context") showContext(runId).then(jumpToColumn);
     else if (ev.type === "brief") showBrief(ev.brief);
-    else if (ev.type === "tool") { lane(ev.agent).className = "lane working"; laneNote(ev.agent, `<b>${esc(ev.name)}</b> ${argText(ev.arguments)}`, ""); }
+    else if (ev.type === "tool") { lane(ev.agent).className = "lane working"; laneNote(ev.agent, `<b>${esc(ev.name)}</b> ${argText(ev.arguments)}`, "", ev.call_id); }
+    else if (ev.type === "tool_result") {
+      const li = document.querySelector(`li[data-call="${CSS.escape(ev.call_id)}"]`);
+      if (li && !li.querySelector(".res")) li.insertAdjacentHTML("beforeend", `<span class="res">${esc(ev.summary)}</span>`);
+    }
     else if (ev.type === "activity") {
       const l = lane(ev.agent);
       if (ev.text === "started") l.className = "lane working";
@@ -365,11 +493,10 @@ function finish(text) {
 }
 
 function showBrief(b) {
+  const years = b.year_from || b.year_to ? `${b.year_from || "any"}–${b.year_to || "latest"}` : "all years";
   const parts = [
-    ["Mode", b.mode === "overview" ? "Whole dataset" : "Use case"],
-    ["Use case", (b.use_cases || []).join(", ") || "all"],
-    ["Years", `${b.year_from || "any"}–${b.year_to || "latest"}`],
-    ["Policies", b.jurisdiction || "any jurisdiction"],
+    ["Incidents", `${(b.use_cases || []).join(", ") || "all use cases"} · ${years} · worldwide`],
+    ["Policies", b.jurisdiction || "all jurisdictions (about 92% US)"],
     ["Focus", b.focus],
   ];
   $("brief").innerHTML = parts.map(([k, v]) => `<span><b>${k}</b>${esc(v)}</span>`).join("");
@@ -402,6 +529,9 @@ function showReport(report, plain) {
     .replace(/\[((?:AIID|AGORA) #\d+) ⚠ unverified\]/g, '<span class="unverified" title="Not found in what the tools returned">$1 ⚠</span>');
   $("md").innerHTML = DOMPurify.sanitize(marked.parse(md));
 
+  const scope = [...$("md").querySelectorAll("p")].find((p) => p.textContent.startsWith("Scope ·"));
+  if (scope) scope.className = "scope";
+
   // Citation chips with hover cards; status badges in tables
   $("md").querySelectorAll("a").forEach((a) => {
     const m = a.textContent.match(/^(AIID|AGORA) #(\d+)$/);
@@ -420,27 +550,55 @@ function showReport(report, plain) {
   $("report").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function drawChart(slot, data) {
+// Incidents per year, by category: one shape for the chart, the table and the drawer
+function chartModel(data) {
   const years = data.rows.map((r) => r.year);
   const all = []; for (let y = Math.min(...years); y <= Math.max(...years); y++) all.push(y);
-  const labels = all.map((y) => (y === data.partial_year ? `${y}*` : String(y)));
-  let datasets;
+  const key = data.split_by;
+  let cats = [], cell = () => 0;
   if (data.split && data.split.length) {
-    const key = data.split_by;
     const totals = {};
     data.split.forEach((r) => (totals[r[key]] = (totals[r[key]] || 0) + r.incidents));
-    const cats = Object.keys(totals).sort((a, b) => (a === "Other" || a.startsWith("(")) - (b === "Other" || b.startsWith("(")) || totals[b] - totals[a]);
-    datasets = cats.map((cat, i) => ({
-      label: cat,
-      data: all.map((y) => (data.split.find((r) => r.year === y && r[key] === cat) || { incidents: 0 }).incidents),
-      backgroundColor: all.map((y) => PALETTE[i % PALETTE.length] + (y === data.partial_year ? "70" : "")),
-      borderWidth: 0,
-    }));
-  } else {
-    datasets = [{ label: "Reported incidents", data: all.map((y) => (data.rows.find((r) => r.year === y) || { incidents: 0 }).incidents),
-      backgroundColor: all.map((y) => (y === data.partial_year ? "#b0431d70" : "#b0431d")) }];
+    cats = Object.keys(totals).sort((a, b) => (a === "Other" || a.startsWith("(")) - (b === "Other" || b.startsWith("(")) || totals[b] - totals[a]);
+    const idx = {}; data.split.forEach((r) => (idx[r.year + "|" + r[key]] = r.incidents));
+    cell = (y, c) => idx[y + "|" + c] || 0;
   }
-  slot.innerHTML = `<div class="chartbox"><canvas></canvas></div><div class="chartnote">Reported incidents per year${data.filters && data.filters.use_case ? " · " + esc(data.filters.use_case) : ""}${data.split_by ? ", by " + esc(data.split_by.replace("_", " ")) : ""}. * ${data.partial_year} is partial (lighter bars). Counted from the Trend Analyst's tool output, not written by a model.</div>`;
+  const yearTotal = {}; data.rows.forEach((r) => (yearTotal[r.year] = r.incidents));
+  return { all, cats, cell, key, yearTotal: (y) => yearTotal[y] || 0 };
+}
+
+function drawChart(slot, data) {
+  const m = chartModel(data);
+  const labels = m.all.map((y) => (y === data.partial_year ? `${y}*` : String(y)));
+  const datasets = m.cats.length
+    ? m.cats.map((cat, i) => ({ label: cat, data: m.all.map((y) => m.cell(y, cat)), borderWidth: 0,
+        backgroundColor: m.all.map((y) => PALETTE[i % PALETTE.length] + (y === data.partial_year ? "70" : "")) }))
+    : [{ label: "Reported incidents", data: m.all.map(m.yearTotal), backgroundColor: m.all.map((y) => (y === data.partial_year ? "#b0431d70" : "#b0431d")) }];
+  const scope = (data.filters.use_cases || []).join(", ") || "all use cases";
+  slot.innerHTML = `
+    <div class="viewbar">
+      <span class="seg"><button class="on" data-view="chart">Chart</button><button data-view="table">Table</button></span>
+      <span class="hint">Click a bar or a number to see its incidents.</span>
+      <span class="spacer"></span>
+      <a href="/api/incidents.csv?${scopeParams(data)}" download>Download all ${m.all.reduce((n, y) => n + m.yearTotal(y), 0)} as CSV</a>
+    </div>
+    <div class="chartbox"><canvas></canvas></div>
+    <div class="pivot" hidden>${pivotTable(data, m)}</div>
+    <ul class="facts">${(data.facts || []).map((f) => `<li>${esc(f)}</li>`).join("")}</ul>
+    <div class="chartnote">Reported incidents per year · ${esc(scope)} · worldwide${data.split_by ? " · by " + esc(data.split_by.replace("_", " ")) : ""}. * ${data.partial_year} is partial (lighter bars).
+      Chart and facts are computed in code from the research brief; the report's trend numbers come from these facts.</div>`;
+
+  slot.querySelector(".seg").addEventListener("click", (e) => {
+    const v = e.target.dataset.view; if (!v) return;
+    slot.querySelectorAll(".seg button").forEach((b) => b.classList.toggle("on", b.dataset.view === v));
+    slot.querySelector(".chartbox").hidden = v !== "chart";
+    slot.querySelector(".pivot").hidden = v !== "table";
+  });
+  slot.querySelector(".pivot").addEventListener("click", (e) => {
+    const td = e.target.closest("td.hit"); if (!td) return;
+    drill(data, td.dataset.year ? +td.dataset.year : null, td.dataset.cat || null);
+  });
+
   if (chart) chart.destroy();
   chart = new Chart(slot.querySelector("canvas"), {
     type: "bar",
@@ -449,15 +607,81 @@ function drawChart(slot, data) {
       maintainAspectRatio: false,
       scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, beginAtZero: true, ticks: { precision: 0 }, grid: { color: "#e9e3d8" } } },
       plugins: { legend: { position: "bottom", labels: { boxWidth: 10, font: { size: 11 } } } },
+      onHover: (e, els) => (e.native.target.style.cursor = els.length ? "pointer" : "default"),
+      onClick: (e, els) => {
+        if (!els.length) return;
+        const { datasetIndex, index } = els[0];
+        drill(data, m.all[index], m.cats.length ? m.cats[datasetIndex] : null);
+      },
     },
   });
 }
+
+// Year rows × category columns. Small by construction: at most ~45 years × 8 categories, scrolls inside its box.
+function pivotTable(data, m) {
+  const cats = m.cats;
+  const td = (n, y, c) => n ? `<td class="hit" ${y ? `data-year="${y}"` : ""} ${c ? `data-cat="${esc(c)}"` : ""}>${n}</td>` : `<td class="zero">0</td>`;
+  const head = `<tr><th>Year</th>${cats.map((c) => `<th>${esc(c)}</th>`).join("")}<th>Total</th></tr>`;
+  const body = m.all.slice().reverse().map((y) =>
+    `<tr class="${y === data.partial_year ? "partial" : ""}"><td>${y}${y === data.partial_year ? "*" : ""}</td>${cats.map((c) => td(m.cell(y, c), y, c)).join("")}${td(m.yearTotal(y), y, null)}</tr>`).join("");
+  const colTotal = (c) => m.all.reduce((n, y) => n + m.cell(y, c), 0);
+  const foot = `<tr><td><b>All years</b></td>${cats.map((c) => td(colTotal(c), null, c)).join("")}${td(m.all.reduce((n, y) => n + m.yearTotal(y), 0), null, null)}</tr>`;
+  return `<table><thead>${head}</thead><tbody>${body}${foot}</tbody></table>`;
+}
+
+// --- The incident drawer: fetched 25 at a time, so even 680 incidents never render at once ---
+
+function scopeParams(data, year = null, cat = null) {
+  const p = new URLSearchParams();
+  (data.filters.use_cases || []).forEach((u) => p.append("use_case", u));
+  if (data.filters.year_from) p.set("year_from", data.filters.year_from);
+  if (data.filters.year_to) p.set("year_to", data.filters.year_to);
+  if (year) p.set("year", year);
+  if (cat) {
+    p.set("split_by", data.split_by); p.set("split_value", cat);
+    if (cat === "Other") (data.top || []).forEach((t) => p.append("exclude", t));
+  }
+  return p.toString();
+}
+
+let drawerState = null;
+
+function drill(data, year, cat) {
+  const scope = (data.filters.use_cases || []).join(", ") || "All use cases";
+  $("dtitle").textContent = [year, cat, scope].filter(Boolean).join(" · ");
+  drawerState = { params: scopeParams(data, year, cat), offset: 0 };
+  $("dcsv").href = "/api/incidents.csv?" + drawerState.params;
+  $("dlist").innerHTML = "";
+  $("drawer").classList.add("on");
+  loadMore();
+}
+
+async function loadMore() {
+  const st = drawerState;
+  $("dlist").querySelector(".more")?.remove();
+  const res = await (await fetch(`/api/incidents?${st.params}&offset=${st.offset}&limit=25`)).json();
+  if (st !== drawerState) return; // another bar was clicked meanwhile
+  st.offset += res.items.length;
+  $("dcount").textContent = `${res.total} incident${res.total === 1 ? "" : "s"}, newest first`;
+  $("dlist").insertAdjacentHTML("beforeend", res.items.map((i) => `
+    <div class="inc">
+      <a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a>
+      <div class="meta">AIID #${i.incident_id} · ${esc(i.date)} · ${esc(i.deployer || "deployer unknown")}${i.confidence && i.confidence !== "high" ? ` · use-case label: ${esc(i.confidence)} confidence` : ""}</div>
+      <div class="meta">${esc(i.mit_risk_subdomain)} · ${esc(i.mit_intent)}</div>
+      <p>${esc((i.description || "").slice(0, 220))}${(i.description || "").length > 220 ? "…" : ""}</p>
+    </div>`).join(""));
+  if (st.offset < res.total) $("dlist").insertAdjacentHTML("beforeend", `<button class="ghost more">Show 25 more (${res.total - st.offset} left)</button>`);
+}
+
+$("dlist").addEventListener("click", (e) => { if (e.target.classList.contains("more")) loadMore(); });
+$("dclose").addEventListener("click", () => $("drawer").classList.remove("on"));
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("drawer").classList.remove("on"); });
 
 function drawCoverage(slot, cov) {
   const covClass = { enacted: "enacted", "proposed only": "proposed", "none found": "none" };
   slot.innerHTML = `<table class="coverage"><thead><tr><th>Risk domain</th><th class="n">Incidents</th><th class="n">Enacted</th><th class="n">Proposed</th><th class="n">Defunct</th><th>Coverage</th></tr></thead><tbody>${
     cov.rows.map((r) => `<tr><td>${esc(r.risk_domain)}</td><td class="n">${r.incidents}</td><td class="n">${r.policies_enacted}</td><td class="n">${r.policies_proposed}</td><td class="n">${r.policies_defunct}</td><td><span class="cov ${covClass[r.coverage]}">${esc(r.coverage)}</span></td></tr>`).join("")
-  }</tbody></table><p class="method">${esc(cov.method)}</p>`;
+  }</tbody></table><p class="method">Incidents: worldwide. Policies: ${esc(cov.jurisdiction || "all jurisdictions")}. ${esc(cov.method)}</p>`;
 }
 
 // Hover cards for citations
@@ -473,10 +697,7 @@ $("md").addEventListener("mouseover", (e) => {
 $("md").addEventListener("mouseout", (e) => { if (e.target.closest("a.cite")) $("tip").style.display = "none"; });
 
 $("copy").addEventListener("click", async () => { await navigator.clipboard.writeText(lastMarkdown); $("copy").textContent = "Copied"; setTimeout(() => ($("copy").textContent = "Copy markdown"), 1500); });
-$("tracebtn").addEventListener("click", () => {
-  document.body.classList.toggle("trace");
-  $("tracebtn").textContent = document.body.classList.contains("trace") ? "Hide agent contexts" : "Show agent contexts";
-});
+$("tracebtn").addEventListener("click", () => setTrace(!document.body.classList.contains("trace")));
 
 setMode("use_case");
 loadMeta();

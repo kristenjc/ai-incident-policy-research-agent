@@ -21,7 +21,7 @@ Path: **Deep Research** (`submission.json`).
 
 **Built offline, by us** (`scripts/`):
 - `prep_data.py`: cleans both datasets, keeps the useful columns, and joins AGORA tags onto documents and segments. Writes `MANIFEST.json` with counts and caveats.
-- `classify_use_cases.py`: labels every incident with one of 17 use cases (`use_case_taxonomy.json`) using Gemini Flash-Lite, with a confidence (1,600 high, 146 medium, 30 low). Output: `incident_use_cases.csv`. AIID has no field like this so this was creates to allow users to ask questions specific to an AI use case (eg. autonomous vechiles, hiring, etc).
+- `classify_use_cases.py`: labels every incident with one of 17 use cases (`use_case_taxonomy.json`) using Gemini Flash-Lite, with a confidence (1,600 high, 146 medium, 30 low). Output: `incident_use_cases.csv`. AIID has no field like this. It is what lets you ask "what goes wrong with AI hiring tools".
 - `risk_crosswalk.csv`: a hand-made map from MIT risk domains to AGORA harm and risk-factor tags. It links the two datasets. It is not an official mapping.
 - `use_case_policy_keywords.json`: hand-written search phrases per use case. AGORA's own application tags don't line up with our use cases (it has no "hiring" tag), so policy search is by text.
 
@@ -51,7 +51,13 @@ User question
   there's no use case, the use case is ambiguous, or the question asks for something the data can't give (rates, non-US law).
 - **The tools compute; the models don't.** Every count is a pandas query over unique incident IDs, and the partial year is
   always flagged. Policy text search is BM25 over AGORA segments (`data_tools.py`, no extra dependencies).
-- **The chart and the coverage matrix in the report come straight from tool output**, not from model text.
+- **The chart is computed in code from the research brief's scope**, along with plain-sentence *chart facts* (peak
+  full year, totals for the last two 3-year periods, the largest category in each, the partial year). The Writer must take
+  every trend number from those facts, so the chart and the text can't disagree. The coverage matrix comes straight from tool output.
+- **Every chart bar and table cell opens the incidents behind it** (`GET /api/incidents`, 25 at a time), and the full
+  set downloads as CSV (`GET /api/incidents.csv`).
+- **Scope is explicit.** Incidents are always worldwide (AIID has no reliable location field). Only policies can be limited
+  to a jurisdiction, and the brief card and the report's first line say so.
 - **Coverage matrix:** for each risk domain in a use case, it shows the incident count and how many enacted / proposed /
   defunct policies about that use case carry a matching tag. This is how the report points to risks with incidents but
   no enacted policy.
@@ -75,7 +81,8 @@ User question
  "report": {"brief": {...}, "chart": {...}, "coverage": {...}, "citations": {"cited": 14, "verified": 14, "unverified": []}}}
 ```
 
-`GET /run?question=...` streams the same run as server-sent events for the web page. `GET /context` feeds the
+`GET /run?question=...` streams the same run as server-sent events for the web page, including each tool call and
+a one-line summary of its result. `GET /context` feeds the
 agent-context panel ("Show agent contexts").
 
 ## Sample queries

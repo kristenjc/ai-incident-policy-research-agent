@@ -166,10 +166,10 @@ def _filter_incidents(use_case=None, risk_domain=None, risk_subdomain=None, inte
                       year_to=None, include_secondary=False, keyword=None) -> pd.DataFrame:
     df = INCIDENTS
     if use_case:
-        uc = _match_name(use_case, TAXONOMY.keys(), "use_case")
-        mask = df["use_case"] == uc
+        ucs = [_match_name(u, TAXONOMY.keys(), "use_case") for u in ([use_case] if isinstance(use_case, str) else use_case)]
+        mask = df["use_case"].isin(ucs)
         if include_secondary:
-            mask |= df["secondary_use_case"] == uc
+            mask |= df["secondary_use_case"].isin(ucs)
         df = df[mask]
     if risk_domain:
         df = df[df["mit_risk_domain"] == _match_name(risk_domain, INCIDENTS["mit_risk_domain"].unique(), "risk_domain")]
@@ -535,6 +535,7 @@ def coverage_matrix(use_case: str | None = None, extra_keywords: list[str] | Non
         })
     return {
         "use_case": uc or "all",
+        "jurisdiction": jurisdiction,
         "incidents_matched": int(inc["incident_id"].nunique()),
         "policy_docs_mentioning_use_case": int(len(docs)),
         "policy_docs_by_status": docs["status"].value_counts().to_dict(),
@@ -545,6 +546,86 @@ def coverage_matrix(use_case: str | None = None, extra_keywords: list[str] | Non
                    "carries an AGORA harm or risk-factor tag that the hand-made crosswalk maps to that domain. "
                    "Only annotated AGORA documents have tags. Defunct documents are not in force."),
     }
+
+
+# --- For the report and the page: the chart for a brief, its facts, and the incidents behind it ---
+
+
+def chart_for_scope(use_cases=None, year_from=None, year_to=None, split_by: str = "risk_domain") -> dict:
+    """The report's chart, computed from the brief's scope (not from whichever count an agent made last),
+    with facts in plain sentences that the Writer must use for any trend number."""
+    c = count_incidents("year", split_by=split_by, use_case=use_cases or None, year_from=year_from, year_to=year_to)
+    rows = c["rows"]
+    out = {"group_by": "year", "rows": rows, "split_by": split_by, "split": c.get("split", []),
+           "filters": {"use_cases": use_cases or [], "year_from": year_from, "year_to": year_to},
+           "partial_year": LATEST_YEAR, "latest_date": MANIFEST.get("aiid_latest_incident_date"),
+           "top": []}
+    split_totals: dict[str, int] = {}
+    for r in out["split"]:
+        split_totals[r[split_by]] = split_totals.get(r[split_by], 0) + r["incidents"]
+    out["top"] = [k for k in split_totals if k != "Other"]
+    out["facts"] = chart_facts(rows, out["split"], split_by, c["unique_incidents"])
+    return out
+
+
+def chart_facts(rows: list[dict], split: list[dict], split_by: str, total: int) -> list[str]:
+    by_year = {r["year"]: r["incidents"] for r in rows}
+    if not by_year:
+        return ["No incidents match this scope."]
+    facts = [f"{total} reported incidents in scope, {min(by_year)}–{max(by_year)}."]
+    full = {y: n for y, n in by_year.items() if y < LATEST_YEAR}
+    if full:
+        peak = max(full, key=lambda y: (full[y], y))
+        facts.append(f"Peak full year: {peak}, with {full[peak]} incidents.")
+        last = max(full)
+        recent = list(range(last - 2, last + 1))
+        before = list(range(last - 5, last - 2))
+        n_recent, n_before = sum(full.get(y, 0) for y in recent), sum(full.get(y, 0) for y in before)
+        facts.append(f"{recent[0]}–{recent[-1]}: {n_recent} incidents; {before[0]}–{before[-1]}: {n_before} incidents.")
+        if split:
+            def top_in(years):
+                t: dict[str, int] = {}
+                for r in split:
+                    if r["year"] in years and r[split_by] not in ("Other", UNCLASSIFIED):
+                        t[r[split_by]] = t.get(r[split_by], 0) + r["incidents"]
+                if not t:
+                    return None
+                k = max(t, key=t.get)
+                n = sum(full.get(y, 0) for y in years)
+                return k, t[k], n
+            for years in (recent, before):
+                top = top_in(years)
+                if top and top[2]:
+                    facts.append(f"Largest {split_by.replace('_', ' ')} in {years[0]}–{years[-1]}: {top[0]} "
+                                 f"({top[1]} of {top[2]}, {round(100 * top[1] / top[2])}%).")
+    if LATEST_YEAR in by_year:
+        facts.append(f"{LATEST_YEAR} so far (data ends {MANIFEST.get('aiid_latest_incident_date')}): "
+                     f"{by_year[LATEST_YEAR]} incidents. A partial year: not comparable to full years.")
+    if total < 20:
+        facts.append("Fewer than 20 incidents: too few to call a trend.")
+    return facts
+
+
+def list_incidents(use_cases=None, year_from=None, year_to=None, year=None, split_by=None, split_value=None,
+                   exclude=None, offset: int = 0, limit: int | None = 25) -> dict:
+    """The incidents behind a chart bar or table cell, for the page's drawer (paged) or CSV (all)."""
+    df = _filter_incidents(use_case=use_cases or None, year_from=year_from, year_to=year_to)
+    if year:
+        df = df[df["year"] == int(year)]
+    if split_by in GROUPS and split_value:
+        col = GROUPS[split_by]
+        if split_value == "Other":
+            df = df[~df[col].isin(exclude or [])]
+        else:
+            df = df[df[col] == split_value]
+    df = df.sort_values("date", ascending=False, kind="stable")
+    total = len(df)
+    if limit is not None:
+        df = df.iloc[int(offset): int(offset) + int(limit)]
+    cols = ["incident_id", "date", "title", "deployer", "use_case", "mit_risk_domain", "mit_risk_subdomain",
+            "mit_intent", "report_count", "confidence", "description"]
+    items = [{k: _clean(r[k]) for k in cols} | {"url": AIID_URL.format(id=int(r["incident_id"]))} for _, r in df.iterrows()]
+    return {"total": total, "offset": int(offset), "items": items}
 
 
 if __name__ == "__main__":

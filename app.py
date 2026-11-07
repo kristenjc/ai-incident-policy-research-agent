@@ -5,6 +5,8 @@ Lead -> (Incident Researcher, Trend Analyst, Policy Researcher in parallel) -> W
 """
 
 import asyncio
+import csv
+import io
 import json
 import os
 import re
@@ -17,8 +19,8 @@ import uvicorn
 from agents import Agent, ModelSettings, RunContextWrapper, Runner, function_tool, set_tracing_disabled
 from agents.extensions.models.litellm_model import LitellmModel
 from dotenv import load_dotenv
-from fastapi import FastAPI, Request
-from fastapi.responses import FileResponse, StreamingResponse
+from fastapi import FastAPI, Query, Request
+from fastapi.responses import FileResponse, Response, StreamingResponse
 
 import data_tools as dt
 from context_panel import AgentContexts, PanelHooks, add_context_panel
@@ -72,7 +74,7 @@ class RecordingHooks(PanelHooks):
                 call = {"agent": agent.name, "name": item.name, "arguments": args, "call_id": item.call_id, "output": None}
                 self.calls.append(call)
                 self._by_id[item.call_id] = call
-                self.emit({"type": "tool", "agent": agent.name, "name": item.name, "arguments": args})
+                self.emit({"type": "tool", "agent": agent.name, "name": item.name, "arguments": args, "call_id": item.call_id})
 
     async def on_tool_start(self, context, agent, tool):
         pass  # the "tool" event above already says it, with arguments
@@ -80,11 +82,13 @@ class RecordingHooks(PanelHooks):
     async def on_tool_end(self, context, agent, tool, result):
         call_id = getattr(context, "tool_call_id", None)
         if call_id in self._by_id and not self._by_id[call_id]["output"]:
-            self._by_id[call_id]["output"] = str(result)
+            self.record_output(call_id, str(result))
 
     def record_output(self, call_id: str | None, output: str) -> None:
         if call_id in self._by_id:
-            self._by_id[call_id]["output"] = output
+            call = self._by_id[call_id]
+            call["output"] = output
+            self.emit({"type": "tool_result", "agent": call["agent"], "call_id": call_id, "summary": summarize(call["name"], output)})
 
     def outputs(self, name: str) -> list[dict]:
         """Parsed outputs of every call to a tool, oldest first."""
@@ -96,6 +100,47 @@ class RecordingHooks(PanelHooks):
                 except ValueError:
                     pass
         return out
+
+
+def summarize(name: str, output: str) -> str:
+    """One line about a tool's result, for the agent cards on the page."""
+    try:
+        o = json.loads(output)
+    except ValueError:
+        line = output.strip().splitlines()[0] if output.strip() else "(empty)"
+        return line if len(line) <= 90 else line[:87] + "…"
+    if not isinstance(o, dict):
+        return "done"
+    if "error" in o:
+        return "error: " + str(o["error"])[:80]
+    if name == "describe_data":
+        return f"{o['incidents']['count']} incidents, {o['policies']['count']} policy documents"
+    if name == "set_brief":
+        b = o.get("brief", {})
+        return "scope: " + (", ".join(b.get("use_cases") or []) or "whole dataset")
+    if name in ("search_incidents",):
+        return f"{o['matched']} incidents matched"
+    if name == "count_incidents":
+        return f"{o['unique_incidents']} incidents in {len(o['rows'])} groups"
+    if name == "compare_periods":
+        return f"{o['period_a']}: {o['total_a']} → {o['period_b']}: {o['total_b']} incidents"
+    if name == "search_policies":
+        st = ", ".join(f"{v} {k.lower()}" for k, v in o.get("status_among_matches", {}).items())
+        return f"{o['matched']} documents" + (f" ({st})" if st else "")
+    if name == "search_policy_text":
+        return f"{len(o['documents'])} documents, best section each"
+    if name == "coverage_matrix":
+        gaps = [r["risk_domain"] for r in o["rows"] if r["coverage"] != "enacted"]
+        return f"{o['policy_docs_mentioning_use_case']} policy docs; " + (f"gaps: {', '.join(gaps)}" if gaps else "every risk domain has enacted policy")
+    if name == "get_incident":
+        return str(o.get("title", ""))[:90]
+    if name == "get_policy":
+        return f"{str(o.get('name', ''))[:70]} ({o.get('status')})"
+    if name == "policy_keywords":
+        return f"{len(o.get('keywords', []))} search phrases"
+    if name == "risks_to_policy_tags":
+        return ", ".join(o.get("agora_tags", []))[:90]
+    return "done"
 
 
 def _call(ctx: RunContextWrapper[Research], fn, **kwargs) -> str:
@@ -498,7 +543,10 @@ Structure, with these headings:
 ## What has gone wrong
 One bullet per failure mode: what failed, how often, and example incidents.
 ## How reporting has changed
-Two to four sentences on the trend, then a line with only [[CHART]] on it.
+Two to four sentences on the trend, then a line with only [[CHART]] on it. The chart shows exactly the CHART FACTS
+you're given. Any count over time (totals, peak year, period totals, largest category) must come from CHART FACTS,
+word for word in its numbers. You may add shares from the Trend Analyst (e.g. the share that was intentional) only
+when its filters match the brief. Never describe a rise or fall that CHART FACTS don't show.
 ## Policies that address these risks
 A markdown table: Policy | Authority | Status (date) | What it requires | Addresses. Enacted first.
 Then a line with only [[COVERAGE]] on it, then one or two sentences on where incidents have no enacted policy.
@@ -509,6 +557,8 @@ mostly US, small counts, LLM-assigned use-case labels, hand-made risk crosswalk)
 Rules:
 - Keep every citation tag exactly as written in the findings: [AIID #123] or [AGORA #456]. Every sentence or table
   row that states a fact about an incident or policy ends with one. Never invent a tag or a number.
+- Incidents are worldwide: AIID has no reliable location field. If the brief names a policy jurisdiction, say once
+  that only the policies are limited to it.
 - Keep Enacted, Proposed and Defunct distinct. Never call a proposed or defunct bill law.
 - If the findings don't answer part of the question, say so in that section.
 - Plain, specific sentences. No "pivotal", "landscape", "it is worth noting", "underscores".
@@ -521,13 +571,21 @@ Rules:
 # --- After the Writer: charts, coverage table, citations, all from tool output rather than the model ---
 
 
-def _chart(hooks: RecordingHooks) -> dict | None:
-    years = [o for o in hooks.outputs("count_incidents") if o.get("group_by") == "year" and o.get("rows")]
-    if not years:
+def _chart(brief: dict | None) -> dict | None:
+    """Computed from the brief's scope, so the chart, its facts and the Writer's trend sentences agree."""
+    if not brief:
         return None
-    pick = next((o for o in reversed(years) if o.get("split")), years[-1])
-    return {"group_by": "year", "rows": pick["rows"], "split_by": pick.get("split_by"), "split": pick.get("split", []),
-            "filters": pick.get("filters", {}), "partial_year": dt.LATEST_YEAR, "notes": pick.get("notes", [])}
+    return dt.chart_for_scope(brief.get("use_cases") or None, brief.get("year_from"), brief.get("year_to"))
+
+
+def scope_line(brief: dict | None) -> str:
+    """Says plainly what was searched: incidents are worldwide, policies may be limited to one jurisdiction."""
+    if not brief:
+        return ""
+    cases = ", ".join(brief.get("use_cases") or []) or "all use cases"
+    years = f"{brief.get('year_from') or 'all years'}–{brief.get('year_to') or 'latest'}" if (brief.get("year_from") or brief.get("year_to")) else "all years"
+    pol = brief.get("jurisdiction") or "all jurisdictions (about 92% US)"
+    return f"*Scope · Incidents: {cases}, {years}, worldwide (AIID has no reliable location field) · Policies: {pol}*"
 
 
 def _coverage(hooks: RecordingHooks) -> dict | None:
@@ -537,7 +595,8 @@ def _coverage(hooks: RecordingHooks) -> dict | None:
 
 def _chart_table(chart: dict) -> str:
     rows = [f"| {r['year']}{' (partial)' if r['year'] == chart['partial_year'] else ''} | {r['incidents']} |" for r in chart["rows"]]
-    return "| Year | Reported incidents |\n|---|---|\n" + "\n".join(rows)
+    facts = "\n".join(f"- {x}" for x in chart["facts"])
+    return "| Year | Reported incidents |\n|---|---|\n" + "\n".join(rows) + "\n\n" + facts
 
 
 def _coverage_table(cov: dict) -> str:
@@ -596,11 +655,13 @@ async def deep_research(question: str, history: list[dict], hooks: RecordingHook
         return {"kind": "answer", "markdown": "The research team found nothing to report for this question.", "report": {}}
 
     # 2. Write: one call. The Writer sees the question, the brief and the findings, nothing else.
-    chart, cov = _chart(hooks), _coverage(hooks)
+    chart, cov = _chart(run.brief), _coverage(hooks)
     findings = "\n\n---\n\n".join(f"## {f['agent']} — {f['task']}\n\n{f['text']}" for f in run.findings)
     extra = ""
+    if chart:
+        extra += "\n\nCHART FACTS (computed in code from the chart at [[CHART]]):\n" + "\n".join(f"- {x}" for x in chart["facts"])
     if cov:
-        extra = "\n\nCoverage matrix (rendered at [[COVERAGE]]):\n" + _coverage_table(cov)
+        extra += "\n\nCoverage matrix (rendered at [[COVERAGE]]):\n" + _coverage_table(cov)
     written = await Runner.run(writer, f"Question: {question}\nBrief: {json.dumps(run.brief)}\n\nFindings:\n\n{findings}{extra}", hooks=hooks)
     markdown = str(written.final_output).strip()
 
@@ -611,6 +672,10 @@ async def deep_research(question: str, history: list[dict], hooks: RecordingHook
     for slot in ("[[CHART]]", "[[COVERAGE]]"):
         if slot not in markdown:
             markdown += f"\n\n{slot}"
+    scope = scope_line(run.brief)
+    if scope:  # right under the title
+        lines = markdown.split("\n", 1)
+        markdown = f"{lines[0]}\n\n{scope}\n\n{lines[1] if len(lines) > 1 else ''}" if lines[0].startswith("# ") else f"{scope}\n\n{markdown}"
     plain = markdown.replace("[[CHART]]", _chart_table(chart) if chart else "").replace("[[COVERAGE]]", _coverage_table(cov) if cov else "")
     return {
         "kind": "answer",
@@ -644,6 +709,35 @@ def meta():
             "incidents": d["incidents"]["count"], "policies": d["policies"]["count"],
             "policy_status": d["policies"]["status"], "jurisdictions": d["policies"]["jurisdictions"],
             "caveats": d["caveats"]}
+
+
+def _scope_args(use_case: list[str] | None, year_from: int | None, year_to: int | None) -> dict:
+    return {"use_cases": [u for u in (use_case or []) if u] or None, "year_from": year_from, "year_to": year_to}
+
+
+@app.get("/api/incidents")
+def incidents(use_case: list[str] | None = Query(None), year_from: int | None = None, year_to: int | None = None,
+              year: int | None = None, split_by: str | None = None, split_value: str | None = None,
+              exclude: list[str] | None = Query(None), offset: int = 0, limit: int = 25):
+    """The incidents behind a chart bar or table cell, 25 at a time, for the page's drawer."""
+    return dt.list_incidents(**_scope_args(use_case, year_from, year_to), year=year, split_by=split_by,
+                             split_value=split_value, exclude=exclude, offset=offset, limit=min(limit, 100))
+
+
+@app.get("/api/incidents.csv")
+def incidents_csv(use_case: list[str] | None = Query(None), year_from: int | None = None, year_to: int | None = None,
+                  year: int | None = None, split_by: str | None = None, split_value: str | None = None,
+                  exclude: list[str] | None = Query(None)):
+    """Every incident behind the chart (or one bar), as CSV."""
+    rows = dt.list_incidents(**_scope_args(use_case, year_from, year_to), year=year, split_by=split_by,
+                             split_value=split_value, exclude=exclude, limit=None)["items"]
+    buf = io.StringIO()
+    if rows:
+        w = csv.DictWriter(buf, fieldnames=list(rows[0].keys()))
+        w.writeheader()
+        w.writerows(rows)
+    return Response(buf.getvalue(), media_type="text/csv",
+                    headers={"Content-Disposition": 'attachment; filename="incidents.csv"'})
 
 
 def _start(session_id: str | None):
