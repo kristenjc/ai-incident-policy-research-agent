@@ -1,200 +1,485 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Wikipedia Deep Research</title>
-        <style>
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-            }
-            body {
-                font-family: system-ui, sans-serif;
-                padding: 2rem;
-                color: #111;
-            }
-            main {
-                max-width: 760px;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            section {
-                border: 1px solid #e0e0e0;
-                padding: 1.25rem 1.5rem;
-            }
-            h1 {
-                font-size: 1rem;
-                font-weight: 600;
-            }
-            h2 {
-                font-size: 0.75rem;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-                color: #999;
-                font-weight: 400;
-                margin-bottom: 0.75rem;
-                display: flex;
-                justify-content: space-between;
-                align-items: baseline;
-            }
-            #question,
-            #url {
-                width: 100%;
-                padding: 0.6rem 0;
-                border: none;
-                border-bottom: 1px solid #e0e0e0;
-                font-size: 1rem;
-                outline: none;
-            }
-            #question:focus,
-            #url:focus {
-                border-bottom-color: #000;
-            }
-            #task label {
-                display: block;
-                font-size: 0.75rem;
-                color: #999;
-            }
-            #task label + label {
-                margin-top: 1rem;
-            }
-            #run {
-                margin-top: 1rem;
-            }
-            button {
-                padding: 0.75rem 1.5rem;
-                background: #000;
-                color: #fff;
-                border: none;
-                font-size: 0.75rem;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-                cursor: pointer;
-            }
-            button:disabled {
-                opacity: 0.3;
-            }
-            #activity {
-                list-style: none;
-                font-size: 0.85rem;
-                line-height: 1.7;
-            }
-            #activity .agent {
-                font-weight: 600;
-            }
-            #activity .error {
-                color: #dc2626;
-            }
-            #status {
-                color: #999;
-                text-transform: none;
-                letter-spacing: 0;
-            }
-            #output {
-                font-family: ui-monospace, monospace;
-                font-size: 0.8rem;
-                white-space: pre-wrap;
-                word-break: break-word;
-                line-height: 1.5;
-            }
-            .empty {
-                color: #999;
-            }
-        </style>
-    </head>
-    <body>
-        <main>
-            <h1>Deep research: a lead splits your question, researchers walk Wikipedia in parallel, and a writer turns their findings into a cited report</h1>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Incident × Policy Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #f5f2ec; --card: #fffdf9; --ink: #1c1b18; --muted: #6d675d; --line: #ded7ca;
+    --rust: #b0431d; --rust-soft: #f6e4da; --teal: #1d6b67; --teal-soft: #dcefec;
+    --enacted: #2f7a4d; --proposed: #b07316; --defunct: #8a847a; --warn: #b42318;
+    --serif: "Fraunces", Georgia, serif; --sans: "IBM Plex Sans", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.55; }
+  body:not(.trace) { margin-right: 0 !important; }
+  body:not(.trace) #context-panel { display: none; }
+  main { max-width: 1040px; margin: 0 auto; padding: 2.5rem 1rem 5rem; display: flex; flex-direction: column; gap: 1.75rem; }
+  button { font: inherit; cursor: pointer; }
+  .eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 
-            <section>
-                <h2>Task</h2>
-                <form id="task">
-                    <label>Question
-                        <input id="question" value="How did the Apollo program's computers influence later computing?" placeholder="What do you want to know?" autocomplete="off" />
-                    </label>
-                    <label>Starting article
-                        <input id="url" value="https://en.wikipedia.org/wiki/Apollo_program" placeholder="A Wikipedia URL, e.g. https://en.wikipedia.org/wiki/Apollo_program" autocomplete="off" />
-                    </label>
-                    <button id="run" type="submit">Run</button>
-                </form>
-            </section>
+  /* Masthead */
+  header { display: grid; gap: 0.75rem; border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; }
+  header h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.05; letter-spacing: -0.01em; }
+  header h1 em { font-style: normal; color: var(--rust); }
+  header h1 span { color: var(--teal); }
+  header p.lede { max-width: 46rem; font-size: 1.05rem; color: #3b3832; }
+  .stats { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+  .stats b { color: var(--ink); font-weight: 500; }
 
-            <section>
-                <h2>Activity <span id="status"></span></h2>
-                <ol id="activity"><li class="empty">Each agent's steps appear here.</li></ol>
-            </section>
+  .about { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .about div { border-top: 1px solid var(--line); padding-top: 0.75rem; font-size: 0.9rem; color: #3b3832; }
+  .about h3 { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem; color: var(--ink); }
 
-            <section>
-                <h2>Output</h2>
-                <div id="output" class="empty">The report's markdown appears here.</div>
-            </section>
-        </main>
+  /* Composer */
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem 1.4rem; }
+  .modes { display: inline-flex; border: 1px solid var(--ink); border-radius: 999px; overflow: hidden; margin-bottom: 1.1rem; }
+  .modes button { border: none; background: transparent; padding: 0.45rem 1rem; font-size: 0.85rem; }
+  .modes button.on { background: var(--ink); color: var(--paper); }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.4rem 0 1rem; }
+  .chip { border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 0.3rem 0.7rem; font-size: 0.82rem; color: var(--ink); }
+  .chip small { font-family: var(--mono); color: var(--muted); margin-left: 0.3rem; }
+  .chip:hover { border-color: var(--ink); }
+  .chip.on { background: var(--rust); border-color: var(--rust); color: #fff; }
+  .chip.on small { color: #fde6dc; }
+  .filters { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; align-items: end; }
+  .filters label { display: grid; gap: 0.2rem; font-size: 0.75rem; color: var(--muted); }
+  select, textarea { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 0.4rem 0.5rem; }
+  textarea { width: 100%; min-height: 4.2rem; resize: vertical; font-size: 1rem; background: #fff; }
+  textarea:focus, select:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .examples { display: flex; flex-direction: column; gap: 0.25rem; margin: 0.6rem 0 1rem; }
+  .examples button { text-align: left; border: none; background: none; color: var(--teal); font-size: 0.87rem; padding: 0; }
+  .examples button::before { content: "→ "; color: var(--muted); }
+  .examples button:hover { text-decoration: underline; }
+  .go { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .primary { background: var(--ink); color: var(--paper); border: none; border-radius: 4px; padding: 0.65rem 1.4rem; font-weight: 500; }
+  .primary:disabled { opacity: 0.35; cursor: default; }
+  .ghost { background: none; border: 1px solid var(--line); border-radius: 4px; padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+  .ghost:hover { border-color: var(--ink); }
+  .hint { font-size: 0.8rem; color: var(--muted); }
+  details.caveats { font-size: 0.85rem; color: #3b3832; }
+  details.caveats summary { cursor: pointer; color: var(--muted); font-size: 0.8rem; }
+  details.caveats ul { margin: 0.5rem 0 0 1.1rem; }
 
-        <script src="/context-panel.js"></script>
-        <script>
-            const $ = (id) => document.getElementById(id);
-            let source = null;
-            let runId = null;
+  /* Agents at work */
+  #work { display: none; }
+  #work.on { display: block; }
+  .worktitle { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.75rem; gap: 1rem; flex-wrap: wrap; }
+  .worktitle h2 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; }
+  #brief { display: none; margin-bottom: 0.9rem; font-size: 0.85rem; }
+  #brief.on { display: flex; flex-wrap: wrap; gap: 0.35rem 1.2rem; }
+  #brief span b { font-family: var(--mono); font-weight: 500; font-size: 0.72rem; text-transform: uppercase; color: var(--muted); margin-right: 0.35rem; }
+  .lanes { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.75rem; }
+  .lane { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 0.75rem 0.85rem; min-height: 6rem; border-top: 3px solid var(--line); transition: border-color 0.3s; }
+  .lane.working { border-top-color: var(--rust); }
+  .lane.done { border-top-color: var(--ink); }
+  .lane h4 { font-size: 0.88rem; font-weight: 600; display: flex; align-items: center; gap: 0.45rem; }
+  .lane h4 i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); flex: none; }
+  .lane.working h4 i { background: var(--rust); animation: pulse 1s infinite alternate; }
+  .lane.done h4 i { background: var(--ink); }
+  @keyframes pulse { to { opacity: 0.25; } }
+  .lane .role { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.45rem; }
+  .lane ul { list-style: none; display: flex; flex-direction: column; gap: 0.25rem; }
+  .lane li { font-family: var(--mono); font-size: 0.7rem; line-height: 1.35; background: var(--paper); border-radius: 3px; padding: 0.2rem 0.4rem; overflow-wrap: anywhere; }
+  .lane li b { font-weight: 500; color: var(--teal); }
+  .lane li.note { background: none; color: var(--muted); font-family: var(--sans); padding: 0; }
+  .lane li.err { color: var(--warn); }
 
-            function addActivity(agent, text, cls = "") {
-                const li = document.createElement("li");
-                li.className = cls;
-                if (agent) {
-                    const name = document.createElement("span");
-                    name.className = "agent";
-                    name.textContent = agent + " ";
-                    li.appendChild(name);
-                }
-                li.append(text);
-                $("activity").appendChild(li);
-            }
+  /* Clarification */
+  #clarify { display: none; border-left: 4px solid var(--rust); }
+  #clarify.on { display: block; }
+  #clarify p { font-family: var(--serif); font-size: 1.15rem; margin-bottom: 0.75rem; }
+  #clarify .chips { margin-bottom: 0.5rem; }
 
-            function showOutput(markdown) {
-                $("output").className = "";
-                $("output").textContent = markdown;
-            }
+  /* Report */
+  #report { display: none; padding: 2rem 2.2rem; }
+  #report.on { display: block; }
+  .reportbar { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--line); }
+  .badge { font-family: var(--mono); font-size: 0.72rem; padding: 0.2rem 0.55rem; border-radius: 3px; background: var(--teal-soft); color: var(--teal); }
+  .badge.bad { background: #fde8e6; color: var(--warn); }
+  .spacer { flex: 1; }
+  .md { max-width: 50rem; }
+  .md h1 { font-family: var(--serif); font-weight: 600; font-size: 1.9rem; line-height: 1.15; margin-bottom: 0.9rem; }
+  .md h2 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; margin: 2rem 0 0.6rem; padding-top: 0.9rem; border-top: 1px solid var(--line); }
+  .md h3 { font-size: 1rem; margin: 1.2rem 0 0.4rem; }
+  .md p, .md ul, .md ol { margin-bottom: 0.8rem; }
+  .md ul, .md ol { padding-left: 1.2rem; }
+  .md li { margin-bottom: 0.35rem; }
+  .md strong { font-weight: 600; }
+  .md > p:first-of-type { font-size: 1.05rem; }
+  .md table { border-collapse: collapse; width: 100%; font-size: 0.83rem; margin: 0.6rem 0 1rem; display: block; overflow-x: auto; }
+  .md th { text-align: left; font-family: var(--mono); font-weight: 500; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); border-bottom: 1.5px solid var(--ink); padding: 0.4rem 0.6rem 0.4rem 0; }
+  .md td { border-bottom: 1px solid var(--line); padding: 0.45rem 0.6rem 0.45rem 0; vertical-align: top; }
+  .md a { color: inherit; }
+  a.cite { font-family: var(--mono); font-size: 0.72rem; text-decoration: none; padding: 0.05rem 0.35rem; border-radius: 3px; white-space: nowrap; }
+  a.cite.aiid { background: var(--rust-soft); color: var(--rust); }
+  a.cite.agora { background: var(--teal-soft); color: var(--teal); }
+  a.cite:hover { outline: 1px solid currentColor; }
+  .unverified { font-family: var(--mono); font-size: 0.72rem; color: var(--warn); background: #fde8e6; padding: 0.05rem 0.35rem; border-radius: 3px; }
+  .status { font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.08rem 0.4rem; border-radius: 3px; color: #fff; white-space: nowrap; }
+  .status.enacted { background: var(--enacted); } .status.proposed { background: var(--proposed); } .status.defunct { background: var(--defunct); }
+  .chartbox { margin: 0.8rem 0 0.4rem; position: relative; height: 300px; }
+  .chartnote { font-size: 0.75rem; color: var(--muted); margin-bottom: 1rem; }
+  .coverage td.n { font-family: var(--mono); text-align: right; padding-right: 1rem; }
+  .coverage th.n { text-align: right; padding-right: 1rem; }
+  .cov { font-family: var(--mono); font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 3px; white-space: nowrap; }
+  .cov.enacted { background: #e0f0e6; color: var(--enacted); } .cov.proposed { background: #f8ecd6; color: var(--proposed); } .cov.none { background: #fde8e6; color: var(--warn); }
+  .method { font-size: 0.75rem; color: var(--muted); font-style: italic; }
+  #tip { position: fixed; z-index: 50; max-width: 320px; background: var(--ink); color: var(--paper); font-size: 0.78rem; line-height: 1.4; padding: 0.5rem 0.65rem; border-radius: 4px; pointer-events: none; display: none; }
+  #tip small { display: block; color: #c9c2b5; font-family: var(--mono); font-size: 0.68rem; margin-top: 0.2rem; }
+  .error { color: var(--warn); }
+  footer { font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1rem; }
 
-            function finish(message) {
-                $("status").textContent = message;
-                $("run").disabled = false;
-                source.close();
-            }
+  @media (max-width: 760px) {
+    .about { grid-template-columns: 1fr; }
+    #report { padding: 1.25rem 1rem; }
+    .md h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Deep research over 2 datasets · Lead → 3 researchers → Writer → citation check</div>
+    <h1><em>Incident</em> × <span>Policy</span> Desk</h1>
+    <p class="lede">Ask what has gone wrong with an AI use case, how reports of those failures changed over the years,
+      and which laws and bills address them. Every claim links to the incident report or policy document behind it.</p>
+    <div class="stats" id="stats">Loading data…</div>
+  </header>
 
-            $("task").addEventListener("submit", (e) => {
-                e.preventDefault();
-                if (source) source.close();
-                const params = new URLSearchParams({ question: $("question").value.trim(), url: $("url").value.trim() });
+  <section class="about">
+    <div><h3>What it explores</h3>Reported AI failures from the <a href="https://incidentdatabase.ai" target="_blank">AI Incident Database</a> and AI policy documents from <a href="https://agora.eto.tech" target="_blank">AGORA</a> (laws, bills, rules, and their status).</div>
+    <div><h3>Who it's for</h3>Product teams checking what has gone wrong in their space, governance and policy teams, and researchers tracking incident patterns.</div>
+    <div><h3>How to use it</h3>Pick a use case or ask about the whole dataset. If your question is vague, the Lead asks before researching. Then watch the agents work and read a cited report.</div>
+  </section>
 
-                $("activity").replaceChildren();
-                $("output").className = "empty";
-                $("output").textContent = "The report's markdown appears here.";
-                $("status").textContent = "running";
-                $("run").disabled = true;
-                resetContext();
+  <section class="card" id="composer">
+    <div class="modes" role="tablist">
+      <button class="on" data-mode="use_case">Investigate a use case</button>
+      <button data-mode="overview">Explore the whole dataset</button>
+    </div>
+    <div id="ucpick">
+      <div class="eyebrow">Use case · reported incidents</div>
+      <div class="chips" id="usecases"></div>
+    </div>
+    <div class="filters">
+      <label>Incidents from <select id="yfrom"><option value="">any year</option></select></label>
+      <label>to <select id="yto"><option value="">latest</option></select></label>
+      <label>Policies from <select id="juris"><option value="">any jurisdiction</option></select></label>
+    </div>
+    <textarea id="question" placeholder="Pick a use case above, or write your own question."></textarea>
+    <div class="examples" id="examples"></div>
+    <div class="go">
+      <button class="primary" id="run">Research</button>
+      <span class="hint">Takes 1–3 minutes. The filters are added to your question.</span>
+    </div>
+    <details class="caveats" style="margin-top:1rem"><summary>What this data can and can't tell you</summary><ul id="caveats"></ul></details>
+  </section>
 
-                source = new EventSource("/run?" + params);
-                source.onmessage = (msg) => {
-                    const event = JSON.parse(msg.data);
-                    if (event.type === "start") runId = event.run_id;
-                    else if (event.type === "context") showContext(runId);
-                    else if (event.type === "activity") addActivity(event.agent, event.text);
-                    else if (event.type === "done") {
-                        showOutput(event.markdown);
-                        finish("done");
-                    } else if (event.type === "error") {
-                        addActivity("", event.message, "error");
-                        finish("failed");
-                    }
-                };
-                source.onerror = () => {
-                    addActivity("", "Lost the connection to the server.", "error");
-                    finish("failed");
-                };
-            });
-        </script>
-    </body>
+  <section class="card" id="clarify">
+    <div class="eyebrow">The Lead needs one thing before researching</div>
+    <p id="clarifyq"></p>
+    <div class="chips" id="clarifyopts"></div>
+    <div class="go"><textarea id="clarifyfree" style="min-height:2.4rem" placeholder="Or answer in your own words"></textarea><button class="ghost" id="clarifysend">Send</button></div>
+  </section>
+
+  <section id="work">
+    <div class="worktitle">
+      <h2>The team at work</h2>
+      <span class="hint" id="status"></span>
+    </div>
+    <div id="brief" class="card"></div>
+    <div class="lanes" id="lanes"></div>
+  </section>
+
+  <section class="card" id="report">
+    <div class="reportbar">
+      <span class="badge" id="citebadge"></span>
+      <span class="spacer"></span>
+      <button class="ghost" id="copy">Copy markdown</button>
+      <button class="ghost" id="tracebtn">Show agent contexts</button>
+    </div>
+    <div class="md" id="md"></div>
+  </section>
+
+  <footer>Built for IEOR 4570 (Agentic AI for Data Science). Counts are reported incidents, not incident rates. AGORA is mostly US documents.
+    Use-case labels were assigned by an LLM. API: <code>POST /chat</code> with <code>{"message": "..."}</code>.</footer>
+</main>
+<div id="tip"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+<script src="/context-panel.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+const EXAMPLES = {
+  use_case: [
+    "What failures have been reported for AI hiring tools, and which US policies address them? Which are actually enacted?",
+    "How have reported deepfake incidents changed since 2020, and what share are intentional misuse? What enacted state laws target them?",
+    "What has gone wrong with AI chatbots and companions, and do any enacted policies address harms to minors?",
+  ],
+  overview: [
+    "What are the most commonly reported AI failures from 2020 to 2025, and how has the mix shifted?",
+    "Which kinds of AI failure have the most reported incidents but the fewest enacted policies?",
+    "Are reported AI incidents shifting from unintentional failures toward intentional misuse?",
+  ],
+};
+const LANES = [
+  ["Lead", "Plans, asks if unclear, checks for gaps"],
+  ["Incident Researcher", "What has gone wrong"],
+  ["Trend Analyst", "How reporting changed"],
+  ["Policy Researcher", "Which policies apply"],
+  ["Writer", "Writes the cited report"],
+  ["Citation check", "Code, not a model: checks every tag"],
+];
+const PALETTE = ["#b0431d", "#1d6b67", "#c99a2e", "#5a4e8c", "#3f7d3a", "#9b6a4f", "#8a847a", "#c7bfb2"];
+
+let mode = "use_case", useCase = null, meta = null, sessionId = null, runId = null, source = null, lastMarkdown = "", citeRecords = {}, chart = null;
+
+// --- Composer ---
+
+async function loadMeta() {
+  meta = await (await fetch("/api/meta")).json();
+  $("stats").innerHTML = `<span><b>${meta.incidents.toLocaleString()}</b> reported incidents, ${meta.years[0]}–${meta.years[1]}</span>
+    <span><b>${meta.policies.toLocaleString()}</b> policy documents: ${Object.entries(meta.policy_status).map(([k, v]) => `${v} ${k.toLowerCase()}`).join(", ")}</span>
+    <span>${meta.partial_year} is a partial year</span>`;
+  const uc = Object.entries(meta.use_cases).filter(([k]) => k !== "Other or unclear").sort((a, b) => b[1] - a[1]);
+  $("usecases").innerHTML = uc.map(([k, v]) => `<button class="chip" data-uc="${esc(k)}">${esc(k)}<small>${v}</small></button>`).join("");
+  for (let y = meta.years[1]; y >= 2010; y--) {
+    $("yfrom").insertAdjacentHTML("beforeend", `<option>${y}</option>`);
+    $("yto").insertAdjacentHTML("beforeend", `<option>${y}</option>`);
+  }
+  for (const j of Object.keys(meta.jurisdictions).filter((j) => j !== "Unknown")) $("juris").insertAdjacentHTML("beforeend", `<option>${esc(j)}</option>`);
+  $("caveats").innerHTML = meta.caveats.map((c) => `<li>${esc(c)}</li>`).join("");
+}
+
+function setMode(m) {
+  mode = m;
+  document.querySelectorAll(".modes button").forEach((b) => b.classList.toggle("on", b.dataset.mode === m));
+  $("ucpick").style.display = m === "use_case" ? "" : "none";
+  $("examples").innerHTML = EXAMPLES[m].map((q) => `<button>${esc(q)}</button>`).join("");
+  if (m === "overview") { useCase = null; document.querySelectorAll("#usecases .chip").forEach((c) => c.classList.remove("on")); }
+}
+
+document.querySelector(".modes").addEventListener("click", (e) => { if (e.target.dataset.mode) setMode(e.target.dataset.mode); });
+$("usecases").addEventListener("click", (e) => {
+  const chip = e.target.closest(".chip"); if (!chip) return;
+  useCase = chip.dataset.uc;
+  document.querySelectorAll("#usecases .chip").forEach((c) => c.classList.toggle("on", c === chip));
+  const q = $("question").value.trim();
+  if (!q || q.startsWith("For ")) $("question").value = `For ${useCase}: what failures have been reported, how have they changed over time, and which policies address them?`;
+});
+$("examples").addEventListener("click", (e) => { if (e.target.tagName === "BUTTON") { $("question").value = e.target.textContent; $("question").focus(); } });
+
+function composedQuestion() {
+  let q = $("question").value.trim();
+  const extra = [];
+  if (useCase && mode === "use_case" && !q.toLowerCase().includes(useCase.toLowerCase())) extra.push(`Use case: ${useCase}`);
+  if ($("yfrom").value || $("yto").value) extra.push(`Incident years: ${$("yfrom").value || "any"}–${$("yto").value || "latest"}`);
+  if ($("juris").value) extra.push(`Policy jurisdiction: ${$("juris").value}`);
+  if (mode === "overview") extra.push("Scope: the whole dataset");
+  return extra.length ? `${q} (${extra.join(". ")}.)` : q;
+}
+
+$("run").addEventListener("click", () => {
+  const q = composedQuestion();
+  if (!$("question").value.trim()) { $("question").focus(); return; }
+  sessionId = null; // a fresh question starts a fresh conversation
+  start(q);
+});
+
+// --- A run ---
+
+function lane(name) {
+  const id = "lane-" + name.replace(/\W+/g, "-");
+  let el = document.getElementById(id);
+  if (!el) {
+    const base = LANES.find(([n]) => name.startsWith(n));
+    el = document.createElement("div");
+    el.className = "lane"; el.id = id;
+    el.innerHTML = `<h4><i></i>${esc(name)}</h4><div class="role">${esc(base ? base[1] : "")}</div><ul></ul>`;
+    const writer = document.getElementById("lane-Writer");
+    $("lanes").insertBefore(el, name.startsWith("Writer") || name.startsWith("Citation") ? null : writer);
+  }
+  return el;
+}
+
+function laneNote(name, html, cls = "note") {
+  const li = document.createElement("li"); li.className = cls; li.innerHTML = html;
+  lane(name).querySelector("ul").appendChild(li);
+}
+
+function argText(args) {
+  if (!args || typeof args !== "object") return esc(args);
+  return Object.entries(args).filter(([, v]) => v !== null && v !== "" && v !== false)
+    .map(([k, v]) => `${esc(k)}=${esc(typeof v === "string" ? (v.length > 60 ? v.slice(0, 57) + "…" : v) : JSON.stringify(v))}`).join(" · ");
+}
+
+function start(question) {
+  if (source) source.close();
+  $("work").classList.add("on");
+  $("clarify").classList.remove("on");
+  $("report").classList.remove("on");
+  $("brief").classList.remove("on");
+  $("lanes").innerHTML = "";
+  LANES.forEach(([n]) => lane(n));
+  $("status").textContent = "researching…";
+  $("run").disabled = true;
+  resetContext();
+  $("work").scrollIntoView({ behavior: "smooth", block: "start" });
+
+  const params = new URLSearchParams({ question });
+  if (sessionId) params.set("session_id", sessionId);
+  source = new EventSource("/run?" + params);
+  source.onmessage = (msg) => {
+    const ev = JSON.parse(msg.data);
+    if (ev.type === "start") { runId = ev.run_id; sessionId = ev.session_id; }
+    else if (ev.type === "context") showContext(runId);
+    else if (ev.type === "brief") showBrief(ev.brief);
+    else if (ev.type === "tool") { lane(ev.agent).className = "lane working"; laneNote(ev.agent, `<b>${esc(ev.name)}</b> ${argText(ev.arguments)}`, ""); }
+    else if (ev.type === "activity") {
+      const l = lane(ev.agent);
+      if (ev.text === "started") l.className = "lane working";
+      else if (ev.text.startsWith("finished")) l.className = "lane done";
+      else if (ev.agent === "Citation check") { l.className = "lane done"; laneNote(ev.agent, esc(ev.text)); }
+      else laneNote(ev.agent, esc(ev.text));
+    }
+    else if (ev.type === "done") { finish("done"); ev.kind === "clarification" ? showClarification(ev) : showReport(ev.report, ev.markdown); }
+    else if (ev.type === "error") { laneNote("Lead", esc(ev.message), "err"); finish("failed"); }
+  };
+  source.onerror = () => { laneNote("Lead", "Lost the connection to the server.", "err"); finish("failed"); };
+}
+
+function finish(text) {
+  $("status").textContent = text;
+  $("run").disabled = false;
+  if (source) source.close();
+  document.querySelectorAll(".lane.working").forEach((l) => (l.className = "lane done"));
+}
+
+function showBrief(b) {
+  const parts = [
+    ["Mode", b.mode === "overview" ? "Whole dataset" : "Use case"],
+    ["Use case", (b.use_cases || []).join(", ") || "all"],
+    ["Years", `${b.year_from || "any"}–${b.year_to || "latest"}`],
+    ["Policies", b.jurisdiction || "any jurisdiction"],
+    ["Focus", b.focus],
+  ];
+  $("brief").innerHTML = parts.map(([k, v]) => `<span><b>${k}</b>${esc(v)}</span>`).join("");
+  $("brief").classList.add("on");
+}
+
+function showClarification(ev) {
+  $("work").classList.remove("on");
+  $("clarifyq").textContent = ev.question || ev.markdown;
+  $("clarifyopts").innerHTML = (ev.options || []).map((o) => `<button class="chip">${esc(o)}</button>`).join("");
+  $("clarify").classList.add("on");
+  $("clarify").scrollIntoView({ behavior: "smooth", block: "center" });
+}
+$("clarifyopts").addEventListener("click", (e) => { const c = e.target.closest(".chip"); if (c) start(c.textContent); });
+$("clarifysend").addEventListener("click", () => { const t = $("clarifyfree").value.trim(); if (t) { $("clarifyfree").value = ""; start(t); } });
+
+// --- The report ---
+
+function showReport(report, plain) {
+  lastMarkdown = plain;
+  if (!report || !report.markdown) { $("md").innerHTML = DOMPurify.sanitize(marked.parse(plain || "")); $("report").classList.add("on"); return; }
+  const c = report.citations || { cited: 0, verified: 0, unverified: [] };
+  citeRecords = c.records || {};
+  $("citebadge").textContent = `${c.verified}/${c.cited} citations verified against the data`;
+  $("citebadge").className = "badge" + (c.unverified.length ? " bad" : "");
+
+  let md = report.markdown
+    .replace("[[CHART]]", '\n\n<div data-slot="chart"></div>\n\n')
+    .replace("[[COVERAGE]]", '\n\n<div data-slot="coverage"></div>\n\n')
+    .replace(/\[((?:AIID|AGORA) #\d+) ⚠ unverified\]/g, '<span class="unverified" title="Not found in what the tools returned">$1 ⚠</span>');
+  $("md").innerHTML = DOMPurify.sanitize(marked.parse(md));
+
+  // Citation chips with hover cards; status badges in tables
+  $("md").querySelectorAll("a").forEach((a) => {
+    const m = a.textContent.match(/^(AIID|AGORA) #(\d+)$/);
+    if (m) { a.className = "cite " + m[1].toLowerCase(); a.dataset.key = a.textContent; }
+    a.target = "_blank"; a.rel = "noopener";
+  });
+  $("md").querySelectorAll("td").forEach((td) => {
+    td.innerHTML = td.innerHTML.replace(/\b(Enacted|Proposed|Defunct)\b/, (s) => `<span class="status ${s.toLowerCase()}">${s}</span>`);
+  });
+
+  const cs = $("md").querySelector('[data-slot="chart"]');
+  if (cs) report.chart ? drawChart(cs, report.chart) : cs.remove();
+  const cv = $("md").querySelector('[data-slot="coverage"]');
+  if (cv) report.coverage ? drawCoverage(cv, report.coverage) : cv.remove();
+  $("report").classList.add("on");
+  $("report").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function drawChart(slot, data) {
+  const years = data.rows.map((r) => r.year);
+  const all = []; for (let y = Math.min(...years); y <= Math.max(...years); y++) all.push(y);
+  const labels = all.map((y) => (y === data.partial_year ? `${y}*` : String(y)));
+  let datasets;
+  if (data.split && data.split.length) {
+    const key = data.split_by;
+    const totals = {};
+    data.split.forEach((r) => (totals[r[key]] = (totals[r[key]] || 0) + r.incidents));
+    const cats = Object.keys(totals).sort((a, b) => (a === "Other" || a.startsWith("(")) - (b === "Other" || b.startsWith("(")) || totals[b] - totals[a]);
+    datasets = cats.map((cat, i) => ({
+      label: cat,
+      data: all.map((y) => (data.split.find((r) => r.year === y && r[key] === cat) || { incidents: 0 }).incidents),
+      backgroundColor: all.map((y) => PALETTE[i % PALETTE.length] + (y === data.partial_year ? "70" : "")),
+      borderWidth: 0,
+    }));
+  } else {
+    datasets = [{ label: "Reported incidents", data: all.map((y) => (data.rows.find((r) => r.year === y) || { incidents: 0 }).incidents),
+      backgroundColor: all.map((y) => (y === data.partial_year ? "#b0431d70" : "#b0431d")) }];
+  }
+  slot.innerHTML = `<div class="chartbox"><canvas></canvas></div><div class="chartnote">Reported incidents per year${data.filters && data.filters.use_case ? " · " + esc(data.filters.use_case) : ""}${data.split_by ? ", by " + esc(data.split_by.replace("_", " ")) : ""}. * ${data.partial_year} is partial (lighter bars). Counted from the Trend Analyst's tool output, not written by a model.</div>`;
+  if (chart) chart.destroy();
+  chart = new Chart(slot.querySelector("canvas"), {
+    type: "bar",
+    data: { labels, datasets },
+    options: {
+      maintainAspectRatio: false,
+      scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, beginAtZero: true, ticks: { precision: 0 }, grid: { color: "#e9e3d8" } } },
+      plugins: { legend: { position: "bottom", labels: { boxWidth: 10, font: { size: 11 } } } },
+    },
+  });
+}
+
+function drawCoverage(slot, cov) {
+  const covClass = { enacted: "enacted", "proposed only": "proposed", "none found": "none" };
+  slot.innerHTML = `<table class="coverage"><thead><tr><th>Risk domain</th><th class="n">Incidents</th><th class="n">Enacted</th><th class="n">Proposed</th><th class="n">Defunct</th><th>Coverage</th></tr></thead><tbody>${
+    cov.rows.map((r) => `<tr><td>${esc(r.risk_domain)}</td><td class="n">${r.incidents}</td><td class="n">${r.policies_enacted}</td><td class="n">${r.policies_proposed}</td><td class="n">${r.policies_defunct}</td><td><span class="cov ${covClass[r.coverage]}">${esc(r.coverage)}</span></td></tr>`).join("")
+  }</tbody></table><p class="method">${esc(cov.method)}</p>`;
+}
+
+// Hover cards for citations
+$("md").addEventListener("mouseover", (e) => {
+  const a = e.target.closest("a.cite"); const rec = a && citeRecords[a.dataset.key];
+  if (!rec) return;
+  $("tip").innerHTML = `${esc(rec.title)}<small>${esc(a.dataset.key)} · ${rec.status ? esc(rec.status) + " · " : ""}${esc(rec.date || "")}</small>`;
+  const r = a.getBoundingClientRect();
+  $("tip").style.display = "block";
+  $("tip").style.left = Math.min(r.left, window.innerWidth - 340) + "px";
+  $("tip").style.top = r.bottom + 6 + "px";
+});
+$("md").addEventListener("mouseout", (e) => { if (e.target.closest("a.cite")) $("tip").style.display = "none"; });
+
+$("copy").addEventListener("click", async () => { await navigator.clipboard.writeText(lastMarkdown); $("copy").textContent = "Copied"; setTimeout(() => ($("copy").textContent = "Copy markdown"), 1500); });
+$("tracebtn").addEventListener("click", () => {
+  document.body.classList.toggle("trace");
+  $("tracebtn").textContent = document.body.classList.contains("trace") ? "Hide agent contexts" : "Show agent contexts";
+});
+
+setMode("use_case");
+loadMeta();
+</script>
+</body>
 </html>

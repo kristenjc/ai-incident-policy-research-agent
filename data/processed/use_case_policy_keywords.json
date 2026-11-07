@@ -1,0 +1,20 @@
+{
+  "_about": "Hand-written by the project authors. For each use case, phrases that signal an AGORA document is about that use case. Matched case-insensitively against a document's name, summaries and segment text. Judgment calls, not an official mapping.",
+  "Hiring and employment": ["employment decision", "hiring", "job applicant", "applicants for employment", "recruit", "resume", "employee monitoring", "workplace surveillance", "worker surveillance", "algorithmic management", "employment"],
+  "Chatbots and AI assistants": ["chatbot", "companion chatbot", "conversational ai", "large language model", "generative artificial intelligence", "virtual assistant", "ai companion"],
+  "Synthetic media and deepfakes": ["deepfake", "deep fake", "synthetic media", "digitally altered", "digital replica", "digital forgery", "materially deceptive", "voice clone", "synthetic content", "watermark", "content provenance", "intimate image"],
+  "Content recommendation and moderation": ["recommendation system", "recommender", "algorithmic feed", "content moderation", "social media platform", "personalized feed", "addictive feed", "ranking algorithm"],
+  "Facial recognition and biometrics": ["facial recognition", "face recognition", "biometric", "facial analysis", "emotion recognition", "remote biometric identification"],
+  "Law enforcement and criminal justice": ["law enforcement", "predictive policing", "police", "criminal justice", "pretrial", "risk assessment instrument", "sentencing", "parole", "immigration enforcement"],
+  "Autonomous vehicles and driver assistance": ["autonomous vehicle", "self-driving", "automated driving", "driver assistance", "highly automated vehicle", "autonomous driving", "unmanned aircraft", "drone"],
+  "Healthcare and medicine": ["health care", "healthcare", "medical device", "clinical", "patient", "diagnos", "health insurance", "prior authorization", "mental health"],
+  "Education": ["student", "school", "education", "proctor", "academic", "teacher", "higher education"],
+  "Finance, insurance and credit": ["credit", "lending", "loan", "insurance", "underwriting", "financial institution", "fraud detection", "trading", "consumer financial"],
+  "Government services and public administration": ["public benefits", "benefit eligibility", "state agency", "government agency use", "public assistance", "unemployment insurance", "automated decision system", "procurement of artificial intelligence"],
+  "Military and defense": ["department of defense", "armed forces", "autonomous weapon", "weapon system", "military", "warfighter", "national security"],
+  "Robotics and industrial automation": ["robot", "robotic", "industrial automation", "manufacturing", "warehouse", "industrial control"],
+  "Software development and AI agents": ["ai agent", "autonomous agent", "agentic", "software development", "source code", "frontier model", "foundation model", "cybersecurity"],
+  "Customer service, retail and advertising": ["consumer", "advertising", "pricing", "customer service", "retail", "e-commerce", "dark pattern", "unfair or deceptive"],
+  "Consumer devices and smart home": ["connected device", "smart home", "internet of things", "voice assistant", "toy", "wearable", "consumer product"],
+  "Other or unclear": []
+}

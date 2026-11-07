@@ -1,7 +1,7 @@
 [project]
-name = "wikipedia-deep-research"
+name = "incident-policy-desk"
 version = "0.1.0"
-description = "Deep research over Wikipedia: a lead fans out researchers that walk Wikipedia's links, then a writer turns their findings into a cited report"
+description = "Deep research over the AI Incident Database and AGORA: a lead fans out incident, trend and policy researchers, then a writer turns their findings into a cited report"
 requires-python = ">=3.10"
 dependencies = [
     "fastapi>=0.109.0",
@@ -10,4 +10,8 @@ dependencies = [
     "google-cloud-aiplatform>=1.40.0",
     "httpx>=0.27",
     "python-dotenv>=1.0",
+    "pandas>=2.2",
 ]
+
+[dependency-groups]
+dev = ["openpyxl>=3.1"]
