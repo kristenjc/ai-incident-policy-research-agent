@@ -28,17 +28,16 @@
   .eyebrow { font-family: var(--sans); font-size: 0.82rem; font-weight: 600; color: var(--ink); }
 
   /* Masthead */
-  header { display: grid; gap: 0.75rem; border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; }
-  header h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.05; letter-spacing: -0.01em; }
+  header { display: grid; gap: 0.75rem; }
+  header h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.8rem, 4vw, 2.3rem); line-height: 1.05; letter-spacing: -0.01em; }
   header h1 em { font-style: normal; color: var(--inc); }
   header h1 span { color: var(--pol); }
   header p.lede { max-width: 46rem; font-size: 1.05rem; color: var(--text2); }
-  .stats { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-family: var(--serif); font-size: 0.9rem; color: var(--text2); }
-  .stats b { color: var(--ink); font-weight: 500; }
 
   .about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .about div { border-top: 1px solid var(--line); padding-top: 0.75rem; font-size: 0.9rem; color: var(--text2); }
   .about h3 { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem; color: var(--ink); }
+  #dsnums { display: block; }
 
   /* Composer */
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 0; padding: 1.25rem 1.4rem; }
@@ -179,7 +178,7 @@
   #composer { --field: #9aa2a0; }
   .qhead { display: block; margin-bottom: 0.3rem; }
   .askbar { display: flex; align-items: stretch; }
-  .askbar textarea { flex: 1; min-width: 0; resize: none; font: inherit; font-size: 0.95rem; line-height: 1.45; color: var(--ink); background: #fff; border: 1px solid var(--field); border-right: none; border-radius: 0; padding: 0.5rem 0.7rem; }
+  .askbar textarea { flex: 1; min-width: 0; resize: none; font: inherit; font-size: 0.95rem; line-height: 1.45; color: var(--ink); background: #fff; border: 1px solid var(--field); border-right: none; border-radius: 0; padding: 0.45rem 0.7rem; min-height: 0; overflow-y: auto; }
   .askbar textarea:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
   .askbar .primary { padding: 0 1.4rem; font-weight: 600; }
   .filters { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 1.1rem; margin-top: 0.6rem; font-size: 0.88rem; color: var(--text2); }
@@ -212,17 +211,18 @@
 <main>
   <header>
     <h1>AI Incident & Policy Research Agent</h1>
+    <div>Explore reported AI incidents and policies that address related risks.</div>
   </header>
 
   <section class="about">
-    <div><h3>Dataset Used</h3>Reported AI failures from the <a href="https://incidentdatabase.ai" target="_blank">AI Incident Database</a> and AI policy documents from <a href="https://agora.eto.tech" target="_blank">AGORA</a>. Data retrieved on November 2, 2026.</div>
-    <div><h3>How to use it</h3>Pick a use case or ask about the whole dataset. If your question is vague, the Lead asks before researching. Then watch the agents work and read a cited report.</div>
+    <div><h3>Dataset Used</h3><a href="https://incidentdatabase.ai" target="_blank">AI Incident Database</a> and <a href="https://agora.eto.tech" target="_blank">AGORA</a>, retrieved Nov 2, 2026.<span id="dsnums"></span></div>
+    <div><h3>Generated Output</h3>A cited report with incident examples, trend analysis, and relevant policy passages.</div>
   </section>
 
   <section class="card" id="composer">
     <label for="question" class="eyebrow qhead">Question</label>
     <div class="askbar">
-      <textarea id="question" rows="2" autocomplete="off" placeholder="Ask in your own words, or pick a sample below"></textarea>
+      <textarea id="question" rows="1" autocomplete="off" placeholder="What do you want to explore about AI incidents and policies?"></textarea>
       <button class="primary" id="run">Run</button>
     </div>
     <div class="filters">
@@ -312,9 +312,8 @@ let meta = null, sessionId = null, runId = null, source = null, lastMarkdown = "
 
 async function loadMeta() {
   meta = await (await fetch("/api/meta")).json();
-  $("stats").innerHTML = `<span><b>${meta.incidents.toLocaleString()}</b> reported incidents, ${meta.years[0]}–${meta.years[1]}</span>
-    <span><b>${meta.policies.toLocaleString()}</b> policy documents: ${Object.entries(meta.policy_status).map(([k, v]) => `${v} ${k.toLowerCase()}`).join(", ")}</span>
-    <span>${meta.partial_year} is a partial year</span>`;
+  const enacted = meta.policy_status.Enacted || 0;
+  $("dsnums").textContent = `${meta.incidents.toLocaleString()} incidents and ${meta.policies.toLocaleString()} policy documents (${enacted.toLocaleString()} enacted).`;
   $("uc").options[0].textContent = `All use cases (${meta.incidents.toLocaleString()})`;
   const uc = Object.entries(meta.use_cases).filter(([k]) => k !== "Other or unclear").sort((a, b) => b[1] - a[1]);
   $("uc").insertAdjacentHTML("beforeend", uc.map(([k, v]) => `<option value="${esc(k)}">${esc(k)} (${v})</option>`).join(""));
@@ -364,10 +363,20 @@ $("resetf").addEventListener("click", () => {
 $("samples").addEventListener("click", (e) => {
   const b = e.target.closest("button"); if (!b) return;
   $("question").value = b.textContent.trim();
+  fitQuestion();
   $("uc").value = b.dataset.uc;
   filtersChanged();
   $("question").focus();
 });
+
+// The question box grows with its text, from one line up to about four
+function fitQuestion() {
+  const t = $("question");
+  t.style.height = "auto";
+  t.style.height = Math.min(t.scrollHeight + 2, 120) + "px";
+}
+$("question").addEventListener("input", fitQuestion);
+window.addEventListener("resize", fitQuestion);
 
 function ask() {
   if (!$("question").value.trim()) { $("question").focus(); return; }
