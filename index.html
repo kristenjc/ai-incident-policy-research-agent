@@ -33,10 +33,10 @@
   header h1 em { font-style: normal; color: var(--inc); }
   header h1 span { color: var(--pol); }
   header p.lede { max-width: 46rem; font-size: 1.05rem; color: var(--text2); }
-  .stats { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+  .stats { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-family: var(--serif); font-size: 0.9rem; color: var(--text2); }
   .stats b { color: var(--ink); font-weight: 500; }
 
-  .about { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .about div { border-top: 1px solid var(--line); padding-top: 0.75rem; font-size: 0.9rem; color: var(--text2); }
   .about h3 { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem; color: var(--ink); }
 
@@ -212,14 +212,10 @@
 <main>
   <header>
     <h1>AI Incident & Policy Research Agent</h1>
-    <p class="lede">Ask what has gone wrong with an AI use case, how reports of those failures changed over the years,
-      and which laws and bills address them. Every claim links to the incident report or policy document behind it.</p>
-    <div class="stats" id="stats">Loading data…</div>
   </header>
 
   <section class="about">
-    <div><h3>What it explores</h3>Reported AI failures from the <a href="https://incidentdatabase.ai" target="_blank">AI Incident Database</a> and AI policy documents from <a href="https://agora.eto.tech" target="_blank">AGORA</a> (laws, bills, rules, and their status). Data retrieved on November 2, 2026.</div>
-    <div><h3>Who it's for</h3>Product teams checking what has gone wrong in their space, governance and policy teams, and researchers tracking incident patterns.</div>
+    <div><h3>Dataset Used</h3>Reported AI failures from the <a href="https://incidentdatabase.ai" target="_blank">AI Incident Database</a> and AI policy documents from <a href="https://agora.eto.tech" target="_blank">AGORA</a>. Data retrieved on November 2, 2026.</div>
     <div><h3>How to use it</h3>Pick a use case or ask about the whole dataset. If your question is vague, the Lead asks before researching. Then watch the agents work and read a cited report.</div>
   </section>
 
@@ -227,10 +223,10 @@
     <label for="question" class="eyebrow qhead">Question</label>
     <div class="askbar">
       <textarea id="question" rows="2" autocomplete="off" placeholder="Ask in your own words, or pick a sample below"></textarea>
-      <button class="primary" id="run">Research</button>
+      <button class="primary" id="run">Run</button>
     </div>
     <div class="filters">
-      <span class="fgrp"><b>Incidents</b> about <select id="uc" aria-label="Use case"><option value="">All use cases</option></select>
+      <span class="fgrp"><b>Reported AI Incidents</b> about <select id="uc" aria-label="Use case"><option value="">All use cases</option></select>
         from <select id="yfrom" aria-label="Incidents from year"><option value="">any year</option></select>
         to <select id="yto" aria-label="Incidents to year"><option value="">latest</option></select>
         <span class="fnote">worldwide</span> <span class="count-inc" id="inccount"></span></span>
@@ -240,7 +236,7 @@
     </div>
     <div class="samples" id="samples"></div>
     <div class="clarify" id="clarify" aria-live="polite">
-      <p><span class="eyebrow">The desk needs one detail</span><span id="clarifyq"></span></p>
+      <p><span class="eyebrow">Lead Agent Requires Clarification</span><span id="clarifyq"></span></p>
       <div class="clarify-row">
         <div class="clarify-opts" id="clarifyopts"></div>
         <label for="clarifyfree" class="sr">Or type an answer</label>
@@ -254,8 +250,8 @@
 
   <section id="work">
     <div class="worktitle">
-      <h2>The team at work</h2>
-      <span class="go"><span class="hint" id="status"></span><button class="ghost" id="tracebtn">Show agent contexts</button></span>
+      <h2>Behind the Scenes</h2>
+      <span class="go"><span class="hint" id="status"></span><button class="ghost" id="tracebtn">Show agent context</button></span>
     </div>
     <div id="brief" class="card"></div>
     <div class="lanes" id="lanes"></div>
@@ -294,10 +290,9 @@ const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<
 
 // The sample questions. A use-case sample also sets the use-case filter; a whole-dataset sample clears it.
 const SAMPLES = [
-  { uc: "Hiring and employment", q: "What failures have been reported for AI hiring tools, and which US policies address them? Which are actually enacted?" },
-  { uc: "Synthetic media and deepfakes", q: "How have reported deepfake incidents changed since 2020, and what share are intentional misuse? What enacted state laws target them?" },
+  { uc: "Autonomous vehicles and driver assistance", q: "For autonomous vehicles and driver assistance: what failures have been reported, how have they changed over time, and which policies address them?" },
+  { uc: "Synthetic media and deepfakes", q: "How have reported deepfake incidents changed over time, and what share are intentional misuse? What enacted state laws target them?" },
   { uc: "Chatbots and AI assistants", q: "What has gone wrong with AI chatbots and companions, and do any enacted policies address harms to minors?" },
-  { uc: "", q: "What are the most commonly reported AI failures from 2020 to 2025, and how has the mix shifted?" },
   { uc: "", q: "Which kinds of AI failure have the most reported incidents but the fewest enacted policies?" },
   { uc: "", q: "Are reported AI incidents shifting from unintentional failures toward intentional misuse?" },
 ];
