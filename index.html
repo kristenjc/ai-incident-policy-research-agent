@@ -176,20 +176,22 @@
 
   /* Question area: same labels, inputs, links and buttons as the rest of the page */
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  .scope-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.4rem; }
-  .scope-head .linkish { font-size: 0.82rem; color: var(--pol); }
-  .scope { display: grid; grid-template-columns: 12rem minmax(0, 1fr) auto; gap: 0.3rem 0.9rem; align-items: center; }
-  .scope-note { font-weight: 400; color: var(--muted); }
-  .scope-line { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.8rem; font-size: 0.9rem; color: var(--ink); }
-  .scope-line .grp { white-space: nowrap; }
-  .scope-line select { font-size: 0.9rem; line-height: 1.3; padding: 0.15rem 0.35rem; margin-left: 0.2rem; }
-  .scope-line select.awaiting { outline: 2px dashed var(--ink); outline-offset: 2px; }
-  .scope-count { font-size: 0.82rem; color: var(--muted); text-align: right; white-space: nowrap; }
-  .askbar { display: flex; align-items: stretch; gap: 0.5rem; margin-top: 0.75rem; }
-  .askbar input { flex: 1; min-width: 0; font: inherit; font-size: 0.95rem; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 0; padding: 0 0.7rem; min-height: 2.5rem; }
-  .askbar input:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
-  .askbar .primary { padding: 0 1.2rem; }
-  .samples { display: flex; flex-direction: column; margin: 0.5rem 0 0.3rem; }
+  #composer { --field: #9aa2a0; }
+  .qhead { display: block; margin-bottom: 0.3rem; }
+  .askbar { display: flex; align-items: stretch; }
+  .askbar textarea { flex: 1; min-width: 0; resize: none; font: inherit; font-size: 0.95rem; line-height: 1.45; color: var(--ink); background: #fff; border: 1px solid var(--field); border-right: none; border-radius: 0; padding: 0.5rem 0.7rem; }
+  .askbar textarea:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .askbar .primary { padding: 0 1.4rem; font-weight: 600; }
+  .filters { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 1.1rem; margin-top: 0.6rem; font-size: 0.88rem; color: var(--text2); }
+  .fgrp { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.3rem; max-width: 100%; }
+  .fgrp b { font-weight: 600; color: var(--ink); }
+  .filters select { font-size: 0.85rem; line-height: 1.3; padding: 0.12rem 0.35rem; background: #fff; border-color: var(--field); max-width: 100%; }
+  .filters select.awaiting { outline: 2px dashed var(--ink); outline-offset: 2px; }
+  .fnote { color: var(--muted); }
+  .count-inc { color: var(--inc); font-weight: 500; white-space: nowrap; }
+  .count-pol { color: var(--pol); font-weight: 500; white-space: nowrap; }
+  .filters .linkish { margin-left: auto; font-size: 0.82rem; color: var(--muted); }
+  .samples { display: flex; flex-direction: column; margin: 0.6rem 0 0.3rem; border-top: 1px solid var(--line); padding-top: 0.45rem; }
   .samples button { text-align: left; border: none; background: none; color: var(--pol); font-size: 0.87rem; line-height: 1.4; padding: 0.12rem 0; }
   .samples button::before { content: "→ "; color: var(--muted); }
   .samples button:hover { text-decoration: underline; }
@@ -203,12 +205,7 @@
   .clarify-opts button { background: #fff; border: 1px solid var(--line); border-radius: 0; padding: 0.3rem 0.7rem; font-size: 0.85rem; color: var(--ink); }
   .clarify-opts button:hover { border-color: var(--ink); }
   .clarify-row input { flex: 1 1 12rem; font: inherit; font-size: 0.85rem; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 0; padding: 0 0.6rem; min-height: 2rem; }
-  @media (max-width: 760px) {
-    .scope { grid-template-columns: minmax(0, 1fr); gap: 0.3rem; }
-    .scope-line .grp { white-space: normal; display: inline-block; max-width: 100%; }
-    .scope-line select { max-width: 100%; margin-left: 0; }
-    .scope-count { text-align: left; margin-bottom: 0.4rem; }
-  }
+  @media (max-width: 760px) { .filters .linkish { margin-left: 0; } }
 </style>
 </head>
 <body>
@@ -227,28 +224,19 @@
   </section>
 
   <section class="card" id="composer">
-    <div class="scope-head">
-      <span class="eyebrow">Filters</span>
-      <button class="linkish" id="resetf" type="button">Reset all filters</button>
-    </div>
-    <div class="scope">
-      <div class="eyebrow">Incidents <span class="scope-note">(always worldwide)</span></div>
-      <div class="scope-line">
-        <span class="grp">about <select id="uc" aria-label="Use case"><option value="">All use cases</option></select></span>
-        <span class="grp">from <select id="yfrom" aria-label="Incidents from year"><option value="">any year</option></select>
-        to <select id="yto" aria-label="Incidents to year"><option value="">latest</option></select></span>
-      </div>
-      <div class="scope-count" id="inccount"></div>
-      <div class="eyebrow">Policies</div>
-      <div class="scope-line">
-        <span class="grp">from <select id="juris" aria-label="Policy jurisdiction"><option value="">all jurisdictions</option></select></span>
-      </div>
-      <div class="scope-count" id="polcount"></div>
-    </div>
+    <label for="question" class="eyebrow qhead">Question</label>
     <div class="askbar">
-      <label for="question" class="sr">Your question</label>
-      <input id="question" type="text" autocomplete="off" placeholder="Ask in your own words, or pick a sample below" />
+      <textarea id="question" rows="2" autocomplete="off" placeholder="Ask in your own words, or pick a sample below"></textarea>
       <button class="primary" id="run">Research</button>
+    </div>
+    <div class="filters">
+      <span class="fgrp"><b>Incidents</b> about <select id="uc" aria-label="Use case"><option value="">All use cases</option></select>
+        from <select id="yfrom" aria-label="Incidents from year"><option value="">any year</option></select>
+        to <select id="yto" aria-label="Incidents to year"><option value="">latest</option></select>
+        <span class="fnote">worldwide</span> <span class="count-inc" id="inccount"></span></span>
+      <span class="fgrp"><b>Policies</b> from <select id="juris" aria-label="Policy jurisdiction"><option value="">all jurisdictions</option></select>
+        <span class="count-pol" id="polcount"></span></span>
+      <button class="linkish" id="resetf" type="button">Reset filters</button>
     </div>
     <div class="samples" id="samples"></div>
     <div class="clarify" id="clarify" aria-live="polite">
@@ -259,9 +247,9 @@
         <input id="clarifyfree" type="text" placeholder="or type an answer" />
         <button class="ghost" id="clarifysend">Send</button>
       </div>
-      <div class="hint">Your answer sets the filters above when it names a use case, then the research starts.</div>
+      <div class="hint">Your answer sets the use case filter when it names one, then the research starts.</div>
     </div>
-    <div class="hint" style="margin-top:0.4rem">Takes 1–3 minutes. The filters above are added to your question. <details class="caveats" style="display:inline"><summary>What this data can and can't tell you</summary><ul id="caveats"></ul></details></div>
+    <div class="hint" style="margin-top:0.4rem">Takes 1–3 minutes. The filters are added to your question. <details class="caveats" style="display:inline"><summary>What this data can and can't tell you</summary><ul id="caveats"></ul></details></div>
   </section>
 
   <section id="work">
@@ -373,24 +361,14 @@ async function updateCounts() {
 function filtersChanged() { $("uc").classList.remove("awaiting"); updateCounts(); }
 ["uc", "yfrom", "yto", "juris"].forEach((id) => $(id).addEventListener("change", filtersChanged));
 
-// Choosing a use case writes a starter question, unless the box holds the user's own words
-const TEMPLATE = (uc) => `For ${uc}: what failures have been reported, how have they changed over time, and which policies address them?`;
-let lastTemplate = "";
-$("uc").addEventListener("change", () => {
-  const q = $("question").value.trim();
-  if (q && q !== lastTemplate) return;
-  lastTemplate = $("uc").value ? TEMPLATE($("uc").value) : "";
-  $("question").value = lastTemplate;
-});
 $("resetf").addEventListener("click", () => {
   ["uc", "yfrom", "yto", "juris"].forEach((id) => ($(id).value = ""));
-  if ($("question").value.trim() === lastTemplate) { $("question").value = ""; lastTemplate = ""; }
   filtersChanged();
 });
 
 $("samples").addEventListener("click", (e) => {
   const b = e.target.closest("button"); if (!b) return;
-  $("question").value = b.textContent;
+  $("question").value = b.textContent.trim();
   $("uc").value = b.dataset.uc;
   filtersChanged();
   $("question").focus();
@@ -402,7 +380,7 @@ function ask() {
   start(composedQuestion());
 }
 $("run").addEventListener("click", ask);
-$("question").addEventListener("keydown", (e) => { if (e.key === "Enter") ask(); });
+$("question").addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); ask(); } });
 
 // --- A run ---
 
