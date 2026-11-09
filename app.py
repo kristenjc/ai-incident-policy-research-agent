@@ -715,6 +715,19 @@ def _scope_args(use_case: list[str] | None, year_from: int | None, year_to: int 
     return {"use_cases": [u for u in (use_case or []) if u] or None, "year_from": year_from, "year_to": year_to}
 
 
+@app.get("/api/counts")
+def counts(use_case: str | None = None, year_from: int | None = None, year_to: int | None = None,
+           jurisdiction: str | None = None):
+    """Live counts for the question area: incidents in scope, and policy documents for a jurisdiction."""
+    try:
+        inc = dt._filter_incidents(use_case=use_case or None, year_from=year_from, year_to=year_to)
+    except ValueError:
+        inc = dt.INCIDENTS.iloc[0:0]
+    docs = dt.DOCS if not jurisdiction else dt.DOCS[dt.DOCS["jurisdiction"] == jurisdiction]
+    return {"incidents": int(inc["incident_id"].nunique()), "policies": int(len(docs)),
+            "enacted": int((docs["status"] == "Enacted").sum())}
+
+
 @app.get("/api/incidents")
 def incidents(use_case: list[str] | None = Query(None), year_from: int | None = None, year_to: int | None = None,
               year: int | None = None, split_by: str | None = None, split_value: str | None = None,

@@ -133,6 +133,11 @@ def main():
     csv_text = client.get("/api/incidents.csv", params={"use_case": "Synthetic media and deepfakes"}).text
     assert csv_text.count("\n") >= 681, csv_text.count("\n")
     print("drill-down ok")
+    c = client.get("/api/counts", params={"use_case": "Hiring and employment", "jurisdiction": "United States"}).json()
+    assert c["incidents"] == 37 and c["policies"] == 1155, c
+    assert client.get("/api/counts").json()["incidents"] == 1784
+    assert client.get("/api/counts", params={"use_case": "Synthetic media and deepfakes", "year_from": 2020, "year_to": 2022}).json()["incidents"] == 43
+    print("counts ok")
     print("all ok")
 
 

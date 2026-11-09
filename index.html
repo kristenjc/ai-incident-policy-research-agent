@@ -25,7 +25,7 @@
   body.trace .lanes { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
   main { max-width: 1040px; margin: 0 auto; padding: 2.5rem 1rem 5rem; display: flex; flex-direction: column; gap: 1.75rem; }
   button { font: inherit; cursor: pointer; }
-  .eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .eyebrow { font-family: var(--sans); font-size: 0.82rem; font-weight: 600; color: var(--ink); }
 
   /* Masthead */
   header { display: grid; gap: 0.75rem; border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; }
@@ -42,24 +42,9 @@
 
   /* Composer */
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 0; padding: 1.25rem 1.4rem; }
-  .modes { display: inline-flex; border: 1px solid var(--ink); border-radius: 0; overflow: hidden; margin-bottom: 1.1rem; }
-  .modes button { border: none; background: transparent; padding: 0.45rem 1rem; font-size: 0.85rem; }
-  .modes button.on { background: var(--ink); color: var(--paper); }
-  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.4rem 0 1rem; }
-  .chip { border: 1px solid var(--line); background: var(--paper); border-radius: 0; padding: 0.3rem 0.7rem; font-size: 0.82rem; color: var(--ink); }
-  .chip small { font-family: var(--mono); color: var(--muted); margin-left: 0.3rem; }
-  .chip:hover { border-color: var(--ink); }
-  .chip.on { background: var(--ink); border-color: var(--ink); color: #fff; }
-  .chip.on small { color: #d6dadb; }
-  .filters { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; align-items: end; }
-  .filters label { display: grid; gap: 0.2rem; font-size: 0.75rem; color: var(--muted); }
   select, textarea { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 0; padding: 0.4rem 0.5rem; }
   textarea { width: 100%; min-height: 4.2rem; resize: vertical; font-size: 1rem; background: #fff; }
   textarea:focus, select:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
-  .examples { display: flex; flex-direction: column; gap: 0.25rem; margin: 0.6rem 0 1rem; }
-  .examples button { text-align: left; border: none; background: none; color: var(--pol); font-size: 0.87rem; padding: 0; }
-  .examples button::before { content: "→ "; color: var(--muted); }
-  .examples button:hover { text-decoration: underline; }
   .go { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
   .primary { background: var(--btn); color: #fff; border: none; border-radius: 0; padding: 0.65rem 1.4rem; font-weight: 500; }
   .primary:disabled { opacity: 0.35; cursor: default; }
@@ -77,7 +62,7 @@
   .worktitle h2 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; }
   #brief { display: none; margin-bottom: 0.9rem; font-size: 0.85rem; }
   #brief.on { display: flex; flex-wrap: wrap; gap: 0.35rem 1.2rem; }
-  #brief span b { font-family: var(--mono); font-weight: 500; font-size: 0.72rem; text-transform: uppercase; color: var(--muted); margin-right: 0.35rem; }
+  #brief span b { font-family: var(--sans); font-weight: 600; font-size: 0.82rem; color: var(--ink); margin-right: 0.35rem; }
   .lanes { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.75rem; }
   .lane { background: var(--card); border: 1px solid var(--line); border-radius: 0; padding: 0.75rem 0.85rem; min-height: 6rem; border-top: 3px solid var(--line); transition: border-color 0.3s; }
   .lane.working { border-top-color: var(--inc); }
@@ -95,10 +80,6 @@
   .lane li.err { color: var(--warn); }
 
   /* Clarification */
-  #clarify { display: none; border-left: 4px solid var(--inc); }
-  #clarify.on { display: block; }
-  #clarify p { font-family: var(--serif); font-size: 1.15rem; margin-bottom: 0.75rem; }
-  #clarify .chips { margin-bottom: 0.5rem; }
 
   /* Report */
   #report { display: none; padding: 2rem 2.2rem; }
@@ -139,13 +120,7 @@
   .error { color: var(--warn); }
 
   /* Active filters, as removable pills */
-  .pills { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.25rem 0 0.9rem; min-height: 1.6rem; }
-  .pills .label { font-size: 0.75rem; color: var(--muted); margin-right: 0.15rem; }
-  .pill { display: inline-flex; align-items: center; gap: 0.35rem; background: var(--ink); color: var(--paper); border-radius: 0; padding: 0.15rem 0.3rem 0.15rem 0.7rem; font-size: 0.78rem; }
-  .pill button { border: none; background: rgba(255,255,255,0.15); color: inherit; width: 1.15rem; height: 1.15rem; border-radius: 0; font-size: 0.7rem; line-height: 1; }
-  .pill button:hover { background: rgba(255,255,255,0.35); }
   .linkish { border: none; background: none; color: var(--inc); font-size: 0.78rem; text-decoration: underline; padding: 0; }
-  .pills .none { font-size: 0.78rem; color: var(--muted); }
 
   /* Tool results on the agent cards; clickable cards */
   .lane { cursor: pointer; }
@@ -198,6 +173,42 @@
     #report { padding: 1.25rem 1rem; }
     .md h1 { font-size: 1.5rem; }
   }
+
+  /* Question area: same labels, inputs, links and buttons as the rest of the page */
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .scope-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.4rem; }
+  .scope-head .linkish { font-size: 0.82rem; color: var(--pol); }
+  .scope { display: grid; grid-template-columns: 12rem minmax(0, 1fr) auto; gap: 0.3rem 0.9rem; align-items: center; }
+  .scope-note { font-weight: 400; color: var(--muted); }
+  .scope-line { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.8rem; font-size: 0.9rem; color: var(--ink); }
+  .scope-line .grp { white-space: nowrap; }
+  .scope-line select { font-size: 0.9rem; line-height: 1.3; padding: 0.15rem 0.35rem; margin-left: 0.2rem; }
+  .scope-line select.awaiting { outline: 2px dashed var(--ink); outline-offset: 2px; }
+  .scope-count { font-size: 0.82rem; color: var(--muted); text-align: right; white-space: nowrap; }
+  .askbar { display: flex; align-items: stretch; gap: 0.5rem; margin-top: 0.75rem; }
+  .askbar input { flex: 1; min-width: 0; font: inherit; font-size: 0.95rem; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 0; padding: 0 0.7rem; min-height: 2.5rem; }
+  .askbar input:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .askbar .primary { padding: 0 1.2rem; }
+  .samples { display: flex; flex-direction: column; margin: 0.5rem 0 0.3rem; }
+  .samples button { text-align: left; border: none; background: none; color: var(--pol); font-size: 0.87rem; line-height: 1.4; padding: 0.12rem 0; }
+  .samples button::before { content: "→ "; color: var(--muted); }
+  .samples button:hover { text-decoration: underline; }
+  .samples.off { display: none; }
+  .clarify { display: none; margin: 0.5rem 0 0.3rem; background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--ink); padding: 0.6rem 0.8rem; }
+  .clarify.on { display: block; }
+  .clarify p { font-size: 0.92rem; margin-bottom: 0.45rem; }
+  .clarify .eyebrow { display: block; margin-bottom: 0.1rem; }
+  .clarify-row { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: stretch; margin-bottom: 0.3rem; }
+  .clarify-opts { display: contents; }
+  .clarify-opts button { background: #fff; border: 1px solid var(--line); border-radius: 0; padding: 0.3rem 0.7rem; font-size: 0.85rem; color: var(--ink); }
+  .clarify-opts button:hover { border-color: var(--ink); }
+  .clarify-row input { flex: 1 1 12rem; font: inherit; font-size: 0.85rem; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 0; padding: 0 0.6rem; min-height: 2rem; }
+  @media (max-width: 760px) {
+    .scope { grid-template-columns: minmax(0, 1fr); gap: 0.3rem; }
+    .scope-line .grp { white-space: normal; display: inline-block; max-width: 100%; }
+    .scope-line select { max-width: 100%; margin-left: 0; }
+    .scope-count { text-align: left; margin-bottom: 0.4rem; }
+  }
 </style>
 </head>
 <body>
@@ -216,34 +227,41 @@
   </section>
 
   <section class="card" id="composer">
-    <div class="modes" role="tablist">
-      <button class="on" data-mode="use_case">Investigate a use case</button>
-      <button data-mode="overview">Explore the whole dataset</button>
+    <div class="scope-head">
+      <span class="eyebrow">Filters</span>
+      <button class="linkish" id="resetf" type="button">Reset all filters</button>
     </div>
-    <div id="ucpick">
-      <div class="eyebrow">Use case · reported incidents</div>
-      <div class="chips" id="usecases"></div>
+    <div class="scope">
+      <div class="eyebrow">Incidents <span class="scope-note">(always worldwide)</span></div>
+      <div class="scope-line">
+        <span class="grp">about <select id="uc" aria-label="Use case"><option value="">All use cases</option></select></span>
+        <span class="grp">from <select id="yfrom" aria-label="Incidents from year"><option value="">any year</option></select>
+        to <select id="yto" aria-label="Incidents to year"><option value="">latest</option></select></span>
+      </div>
+      <div class="scope-count" id="inccount"></div>
+      <div class="eyebrow">Policies</div>
+      <div class="scope-line">
+        <span class="grp">from <select id="juris" aria-label="Policy jurisdiction"><option value="">all jurisdictions</option></select></span>
+      </div>
+      <div class="scope-count" id="polcount"></div>
     </div>
-    <div class="filters">
-      <label>Incidents from <select id="yfrom"><option value="">any year</option></select></label>
-      <label>to <select id="yto"><option value="">latest</option></select></label>
-      <label>Policies from <select id="juris"><option value="">any jurisdiction</option></select></label>
-    </div>
-    <textarea id="question" placeholder="Pick a use case above, or write your own question."></textarea>
-    <div class="examples" id="examples"></div>
-    <div class="pills" id="pills"></div>
-    <div class="go">
+    <div class="askbar">
+      <label for="question" class="sr">Your question</label>
+      <input id="question" type="text" autocomplete="off" placeholder="Ask in your own words, or pick a sample below" />
       <button class="primary" id="run">Research</button>
-      <span class="hint">Takes 1–3 minutes. The filters shown above are added to your question.</span>
     </div>
-    <details class="caveats" style="margin-top:1rem"><summary>What this data can and can't tell you</summary><ul id="caveats"></ul></details>
-  </section>
-
-  <section class="card" id="clarify">
-    <div class="eyebrow">The Lead needs one thing before researching</div>
-    <p id="clarifyq"></p>
-    <div class="chips" id="clarifyopts"></div>
-    <div class="go"><textarea id="clarifyfree" style="min-height:2.4rem" placeholder="Or answer in your own words"></textarea><button class="ghost" id="clarifysend">Send</button></div>
+    <div class="samples" id="samples"></div>
+    <div class="clarify" id="clarify" aria-live="polite">
+      <p><span class="eyebrow">The desk needs one detail</span><span id="clarifyq"></span></p>
+      <div class="clarify-row">
+        <div class="clarify-opts" id="clarifyopts"></div>
+        <label for="clarifyfree" class="sr">Or type an answer</label>
+        <input id="clarifyfree" type="text" placeholder="or type an answer" />
+        <button class="ghost" id="clarifysend">Send</button>
+      </div>
+      <div class="hint">Your answer sets the filters above when it names a use case, then the research starts.</div>
+    </div>
+    <div class="hint" style="margin-top:0.4rem">Takes 1–3 minutes. The filters above are added to your question. <details class="caveats" style="display:inline"><summary>What this data can and can't tell you</summary><ul id="caveats"></ul></details></div>
   </section>
 
   <section id="work">
@@ -286,18 +304,15 @@
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
-const EXAMPLES = {
-  use_case: [
-    "What failures have been reported for AI hiring tools, and which US policies address them? Which are actually enacted?",
-    "How have reported deepfake incidents changed since 2020, and what share are intentional misuse? What enacted state laws target them?",
-    "What has gone wrong with AI chatbots and companions, and do any enacted policies address harms to minors?",
-  ],
-  overview: [
-    "What are the most commonly reported AI failures from 2020 to 2025, and how has the mix shifted?",
-    "Which kinds of AI failure have the most reported incidents but the fewest enacted policies?",
-    "Are reported AI incidents shifting from unintentional failures toward intentional misuse?",
-  ],
-};
+// The sample questions. A use-case sample also sets the use-case filter; a whole-dataset sample clears it.
+const SAMPLES = [
+  { uc: "Hiring and employment", q: "What failures have been reported for AI hiring tools, and which US policies address them? Which are actually enacted?" },
+  { uc: "Synthetic media and deepfakes", q: "How have reported deepfake incidents changed since 2020, and what share are intentional misuse? What enacted state laws target them?" },
+  { uc: "Chatbots and AI assistants", q: "What has gone wrong with AI chatbots and companions, and do any enacted policies address harms to minors?" },
+  { uc: "", q: "What are the most commonly reported AI failures from 2020 to 2025, and how has the mix shifted?" },
+  { uc: "", q: "Which kinds of AI failure have the most reported incidents but the fewest enacted policies?" },
+  { uc: "", q: "Are reported AI incidents shifting from unintentional failures toward intentional misuse?" },
+];
 const LANES = [
   ["Lead", "Plans, asks if unclear, checks for gaps"],
   ["Incident Researcher", "What has gone wrong"],
@@ -308,7 +323,7 @@ const LANES = [
 ];
 const PALETTE = ["#b9975a", "#33566b", "#8aa3ae", "#7d8f7a", "#5d6f7a", "#c9b48a", "#a6ada5", "#d1d4d1"]; // Calcite
 
-let mode = "use_case", useCase = null, meta = null, sessionId = null, runId = null, source = null, lastMarkdown = "", citeRecords = {}, chart = null;
+let meta = null, sessionId = null, runId = null, source = null, lastMarkdown = "", citeRecords = {}, chart = null;
 
 // --- Composer ---
 
@@ -317,83 +332,77 @@ async function loadMeta() {
   $("stats").innerHTML = `<span><b>${meta.incidents.toLocaleString()}</b> reported incidents, ${meta.years[0]}–${meta.years[1]}</span>
     <span><b>${meta.policies.toLocaleString()}</b> policy documents: ${Object.entries(meta.policy_status).map(([k, v]) => `${v} ${k.toLowerCase()}`).join(", ")}</span>
     <span>${meta.partial_year} is a partial year</span>`;
+  $("uc").options[0].textContent = `All use cases (${meta.incidents.toLocaleString()})`;
   const uc = Object.entries(meta.use_cases).filter(([k]) => k !== "Other or unclear").sort((a, b) => b[1] - a[1]);
-  $("usecases").innerHTML = uc.map(([k, v]) => `<button class="chip" data-uc="${esc(k)}">${esc(k)}<small>${v}</small></button>`).join("");
+  $("uc").insertAdjacentHTML("beforeend", uc.map(([k, v]) => `<option value="${esc(k)}">${esc(k)} (${v})</option>`).join(""));
   for (let y = meta.years[1]; y >= 2010; y--) {
     $("yfrom").insertAdjacentHTML("beforeend", `<option>${y}</option>`);
     $("yto").insertAdjacentHTML("beforeend", `<option>${y}</option>`);
   }
   for (const j of Object.keys(meta.jurisdictions).filter((j) => j !== "Unknown")) $("juris").insertAdjacentHTML("beforeend", `<option>${esc(j)}</option>`);
   $("caveats").innerHTML = meta.caveats.map((c) => `<li>${esc(c)}</li>`).join("");
+  renderSamples();
+  filtersChanged();
 }
 
-const TEMPLATE = (uc) => `For ${uc}: what failures have been reported, how have they changed over time, and which policies address them?`;
-
-function setMode(m) {
-  mode = m;
-  document.querySelectorAll(".modes button").forEach((b) => b.classList.toggle("on", b.dataset.mode === m));
-  $("ucpick").style.display = m === "use_case" ? "" : "none";
-  $("examples").innerHTML = EXAMPLES[m].map((q) => `<button>${esc(q)}</button>`).join("");
-  if (m === "overview") setUseCase(null);
-  renderPills();
-}
-
-function setUseCase(uc) {
-  const q = $("question").value.trim();
-  if (useCase && q === TEMPLATE(useCase)) $("question").value = uc ? TEMPLATE(uc) : ""; // our own text: follow the chip
-  else if (uc && !q) $("question").value = TEMPLATE(uc);
-  useCase = uc;
-  document.querySelectorAll("#usecases .chip").forEach((c) => c.classList.toggle("on", c.dataset.uc === uc));
-  renderPills();
-}
-
-// Each active filter: its pill, the text it adds to the question, and how to remove it
-function activeFilters() {
-  const f = [];
-  if (useCase && mode === "use_case") f.push({ pill: `Use case: ${useCase}`, text: `Use case: ${useCase}`, clear: () => setUseCase(null) });
-  if ($("yfrom").value || $("yto").value) {
-    const span = `${$("yfrom").value || "any"}–${$("yto").value || "latest"}`;
-    f.push({ pill: `Incident years: ${span}`, text: `Incident years: ${span}`, clear: () => { $("yfrom").value = ""; $("yto").value = ""; } });
-  }
-  if ($("juris").value) f.push({ pill: `Policies: ${$("juris").value}`, text: `Policy jurisdiction: ${$("juris").value}`, clear: () => ($("juris").value = "") });
-  if (mode === "overview") f.push({ pill: "Scope: whole dataset", text: "Scope: the whole dataset", clear: () => setMode("use_case") });
-  return f;
-}
-
-function renderPills() {
-  const f = activeFilters();
-  $("pills").innerHTML = f.length
-    ? `<span class="label">Added to your question:</span>${f.map((x, i) => `<span class="pill">${esc(x.pill)}<button data-i="${i}" aria-label="Remove ${esc(x.pill)}">✕</button></span>`).join("")}<button class="linkish" id="clearall">Clear filters</button>`
-    : `<span class="none">No filters: only your question is sent.</span>`;
-}
-
-$("pills").addEventListener("click", (e) => {
-  const f = activeFilters();
-  if (e.target.id === "clearall") { f.forEach((x) => x.clear()); renderPills(); return; }
-  const i = e.target.dataset.i;
-  if (i !== undefined) { f[+i].clear(); renderPills(); }
-});
-["yfrom", "yto", "juris"].forEach((id) => $(id).addEventListener("change", renderPills));
-
-document.querySelector(".modes").addEventListener("click", (e) => { if (e.target.dataset.mode) setMode(e.target.dataset.mode); });
-$("usecases").addEventListener("click", (e) => {
-  const chip = e.target.closest(".chip"); if (!chip) return;
-  setUseCase(chip.dataset.uc === useCase ? null : chip.dataset.uc); // click again to unselect
-});
-$("examples").addEventListener("click", (e) => { if (e.target.tagName === "BUTTON") { $("question").value = e.target.textContent; $("question").focus(); } });
-
+// The scope the filters describe, sent along with the question
 function composedQuestion() {
   const q = $("question").value.trim();
-  const extra = activeFilters().map((x) => x.text).filter((t) => !(useCase && t === `Use case: ${useCase}` && q.toLowerCase().includes(useCase.toLowerCase())));
+  const uc = $("uc").value, extra = [];
+  if (uc && !q.toLowerCase().includes(uc.toLowerCase())) extra.push(`Use case: ${uc}`);
+  if ($("yfrom").value || $("yto").value) extra.push(`Incident years: ${$("yfrom").value || "any"}–${$("yto").value || "latest"}`);
+  if ($("juris").value) extra.push(`Policy jurisdiction: ${$("juris").value}`);
   return extra.length ? `${q} (${extra.join(". ")}.)` : q;
 }
 
-$("run").addEventListener("click", () => {
-  const q = composedQuestion();
+function renderSamples() {
+  $("samples").innerHTML = SAMPLES.map((r) => `<button type="button" data-uc="${esc(r.uc)}">${esc(r.q)}</button>`).join("");
+}
+
+let countsReq = 0;
+async function updateCounts() {
+  const p = new URLSearchParams();
+  for (const [k, id] of [["use_case", "uc"], ["year_from", "yfrom"], ["year_to", "yto"], ["jurisdiction", "juris"]]) if ($(id).value) p.set(k, $(id).value);
+  const n = ++countsReq;
+  const c = await (await fetch("/api/counts?" + p)).json();
+  if (n !== countsReq) return; // a newer change is on its way
+  $("inccount").textContent = `→ ${c.incidents.toLocaleString()} incident${c.incidents === 1 ? "" : "s"}`;
+  $("polcount").textContent = `→ ${c.policies.toLocaleString()} documents`;
+}
+
+function filtersChanged() { $("uc").classList.remove("awaiting"); updateCounts(); }
+["uc", "yfrom", "yto", "juris"].forEach((id) => $(id).addEventListener("change", filtersChanged));
+
+// Choosing a use case writes a starter question, unless the box holds the user's own words
+const TEMPLATE = (uc) => `For ${uc}: what failures have been reported, how have they changed over time, and which policies address them?`;
+let lastTemplate = "";
+$("uc").addEventListener("change", () => {
+  const q = $("question").value.trim();
+  if (q && q !== lastTemplate) return;
+  lastTemplate = $("uc").value ? TEMPLATE($("uc").value) : "";
+  $("question").value = lastTemplate;
+});
+$("resetf").addEventListener("click", () => {
+  ["uc", "yfrom", "yto", "juris"].forEach((id) => ($(id).value = ""));
+  if ($("question").value.trim() === lastTemplate) { $("question").value = ""; lastTemplate = ""; }
+  filtersChanged();
+});
+
+$("samples").addEventListener("click", (e) => {
+  const b = e.target.closest("button"); if (!b) return;
+  $("question").value = b.textContent;
+  $("uc").value = b.dataset.uc;
+  filtersChanged();
+  $("question").focus();
+});
+
+function ask() {
   if (!$("question").value.trim()) { $("question").focus(); return; }
   sessionId = null; // a fresh question starts a fresh conversation
-  start(q);
-});
+  start(composedQuestion());
+}
+$("run").addEventListener("click", ask);
+$("question").addEventListener("keydown", (e) => { if (e.key === "Enter") ask(); });
 
 // --- A run ---
 
@@ -450,6 +459,8 @@ function start(question) {
   if (source) source.close();
   $("work").classList.add("on");
   $("clarify").classList.remove("on");
+  $("samples").classList.remove("off");
+  $("uc").classList.remove("awaiting");
   $("report").classList.remove("on");
   $("brief").classList.remove("on");
   $("lanes").innerHTML = "";
@@ -503,15 +514,27 @@ function showBrief(b) {
   $("brief").classList.add("on");
 }
 
+// The clarifying question takes the samples' place, right under the question
 function showClarification(ev) {
   $("work").classList.remove("on");
   $("clarifyq").textContent = ev.question || ev.markdown;
-  $("clarifyopts").innerHTML = (ev.options || []).map((o) => `<button class="chip">${esc(o)}</button>`).join("");
+  $("clarifyopts").innerHTML = (ev.options || []).map((o) => `<button type="button">${esc(o)}</button>`).join("");
+  $("samples").classList.add("off");
   $("clarify").classList.add("on");
-  $("clarify").scrollIntoView({ behavior: "smooth", block: "center" });
+  // When the options are use cases, the answer will land in the use-case filter: show where
+  const names = [...$("uc").options].map((o) => o.value).filter(Boolean);
+  if ((ev.options || []).some((o) => names.some((n) => o.startsWith(n)))) $("uc").classList.add("awaiting");
+  $("composer").scrollIntoView({ behavior: "smooth", block: "start" });
 }
-$("clarifyopts").addEventListener("click", (e) => { const c = e.target.closest(".chip"); if (c) start(c.textContent); });
-$("clarifysend").addEventListener("click", () => { const t = $("clarifyfree").value.trim(); if (t) { $("clarifyfree").value = ""; start(t); } });
+
+function answer(text) {
+  const match = [...$("uc").options].map((o) => o.value).find((n) => n && text.startsWith(n));
+  if (match) { $("uc").value = match; filtersChanged(); }
+  start(text); // same session: the Lead sees its question and this answer
+}
+$("clarifyopts").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) answer(b.textContent); });
+$("clarifysend").addEventListener("click", () => { const t = $("clarifyfree").value.trim(); if (t) { $("clarifyfree").value = ""; answer(t); } });
+$("clarifyfree").addEventListener("keydown", (e) => { if (e.key === "Enter") $("clarifysend").click(); });
 
 // --- The report ---
 
@@ -701,7 +724,6 @@ $("md").addEventListener("mouseout", (e) => { if (e.target.closest("a.cite")) $(
 $("copy").addEventListener("click", async () => { await navigator.clipboard.writeText(lastMarkdown); $("copy").textContent = "Copied"; setTimeout(() => ($("copy").textContent = "Copy markdown"), 1500); });
 $("tracebtn").addEventListener("click", () => setTrace(!document.body.classList.contains("trace")));
 
-setMode("use_case");
 loadMeta();
 </script>
 </body>
