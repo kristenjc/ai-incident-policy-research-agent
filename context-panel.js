@@ -17,17 +17,18 @@ contextStyle.textContent = `
         width: var(--context-width);
         overflow-y: auto;
         padding: 1.5rem;
-        background: #fafafa;
-        border-left: 1px solid #e0e0e0;
-        font-family: ui-monospace, monospace;
+        background: #f7f8f7;
+        border-left: 1px solid #24292b;
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        color: #2b3133;
         font-size: 0.75rem;
     }
     #context-panel h2, .ctx-head {
-        font-family: system-ui, sans-serif;
-        font-size: 0.75rem;
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 0.7rem;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: #999;
+        letter-spacing: 0.06em;
+        color: #5b6366;
     }
     #context-panel h2 { margin-bottom: 1rem; }
     /* Several agents: a timeline grid, one column per agent */
@@ -36,32 +37,32 @@ contextStyle.textContent = `
     .ctx-grid { display: grid; grid-template-columns: repeat(var(--ctx-cols, 1), minmax(16rem, 1fr)); column-gap: 1rem; }
     .ctx-head {
         position: sticky; top: 0; z-index: 1;
-        background: #fafafa;
+        background: #f7f8f7;
         padding: 1rem 0 0.6rem;
         border-top: 3px solid transparent;
         margin-bottom: 0.5rem;
     }
-    .ctx-head.active { color: #000; border-top-color: #000; }
-    .ctx-wait { border-left: 2px dashed #ccc; margin-left: 1px; }
-    .ctx-note { font-family: system-ui, sans-serif; color: #999; padding: 0.2rem 0.75rem; margin-bottom: 0.5rem; }
-    .ctx-note.divider { border-top: 1px solid #ccc; padding-top: 0.5rem; }
+    .ctx-head.active { color: #24292b; border-top-color: #24292b; }
+    .ctx-wait { border-left: 2px dashed #b5bcbe; margin-left: 1px; }
+    .ctx-note { font-family: Inter, system-ui, sans-serif; color: #5b6366; padding: 0.2rem 0.75rem; margin-bottom: 0.5rem; }
+    .ctx-note.divider { border-top: 1px solid #b5bcbe; padding-top: 0.5rem; }
     .context-msg {
-        border-left: 3px solid #999;
+        border-left: 3px solid #8a9295;
         padding: 0.4rem 0.75rem;
         margin-bottom: 0.5rem;
         white-space: pre-wrap;
         word-break: break-word;
     }
     .context-msg .role { font-weight: bold; }
-    .context-msg.system { border-color: #dc2626; }
-    .context-msg.user { border-color: #16a34a; }
-    .context-msg.assistant { border-color: #2563eb; }
-    .context-msg.tool { border-color: #f59e0b; }
+    .context-msg.system { border-color: #8a9295; }
+    .context-msg.user { border-color: #2e6b4a; }
+    .context-msg.assistant { border-color: #33566b; }
+    .context-msg.tool { border-color: #b9975a; }
     .context-msg.new { animation: context-flash 1.5s; }
-    .context-msg.thinking { border-color: #ccc; color: #aaa; }
-    .context-msg summary { cursor: pointer; color: #666; }
+    .context-msg.thinking { border-color: #d1d4d1; color: #8a9295; }
+    .context-msg summary { cursor: pointer; color: #5b6366; }
     .context-msg.copied { opacity: 0.55; }
-    @keyframes context-flash { from { background: #fef3c7; } }
+    @keyframes context-flash { from { background: #efe8da; } }
     @media (max-width: 800px) {
         body { margin-right: 0; height: auto !important; flex-direction: column; }
         #context-panel { position: static; width: 100%; border-left: none; }
