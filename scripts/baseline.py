@@ -16,15 +16,15 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 QUERIES = [
-    "What failures have been reported for AI hiring tools, and which US policies address them? Which are actually enacted?",
-    "How did reported deepfake incidents change from 2020-2022 to 2023-2025, and what share were intentional misuse? Which enacted US state laws target deepfakes?",
-    "For content recommendation and moderation systems, which kinds of reported AI failure have no enacted US policy addressing them?",
+    "For autonomous vehicles and driver assistance: what failures have been reported, how have they changed over time, and which policies address them?",
+    "How have reported deepfake incidents changed fro 2020-2022 to 2023-2025, and what share are intentional misuse? What enacted state laws target them?",
+    "What has gone wrong with AI chatbots and companions, and do any enacted policies address harms to minors?",
 ]
 MODEL = "vertex_ai/gemini-3.5-flash"
 
 
 async def bare(q: str) -> str:
-    r = await litellm.acompletion(model=MODEL, messages=[{"role": "user", "content": q}], vertex_location="global")
+    r = await litellm.acompletion(model=MODEL, messages=[{"role": "user", "content": q}], vertex_location="global", num_retries=5)
     return r.choices[0].message.content
 
 
@@ -45,6 +45,7 @@ async def main():
         if with_agent:
             out.append(f"### Agent\n\n{await agent(q)}\n")
         print(f"query {i} done")
+        await asyncio.sleep(10)
     (ROOT / "baselines.md").write_text("\n".join(out))
     print("wrote baselines.md")
 

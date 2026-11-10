@@ -1,35 +1,56 @@
-# Incident × Policy Desk
+# AI Incident and Policy Research Agent 
 
-A deep research agent that investigates **reported AI failures** and **the policies that address them**. Ask about an
-AI use case (hiring tools, chatbots, deepfakes, facial recognition…) or about the dataset as a whole. A team of agents
-works out what has gone wrong, how reports changed over the years, and which laws and bills apply, and whether they
-are actually enacted. Every claim in the report links to the incident or policy document behind it.
+---
+Each agent should come with a README.md that:
 
-**Who it's for**
-- **Product teams** shipping AI features who want to know how similar systems have failed, and what rules they may face.
-- **Governance and policy teams** looking for risks that have incidents but no enacted policy.
-- **Researchers and students** tracking patterns in reported AI incidents.
+Describes the project and who the target user is
+Where your data came from and how someone could load it (it’s not strictly necessary that the grader can load it, just that they understand where it came from).
+Lists three sample queries for the grader to test with. For each, give the answer you expect and the file, table or API endpoint it comes from.
+For each sample query, include the answer from the same model with no tools and no system prompt, next to your agent's answer. This will help us measure the effectiveness of how your agent uses the information even if the model already knows the domain.
+---
 
-Path: **Deep Research** (`submission.json`).
+## What is it?
+A data exploratory agent that investigates **reported AI failures** and **the policies that address them**, and generates a report that summarizes findings.  
+
+
+Ask about reported incidents related to a specific AI use case (ie. Ai hiring, deepfakes, autonomous driving, etc) and relevant AI policies targeting these use cases. The data exploratory agent will find relevant reported incidents, how reported incidents have changed over the years, and what laws and bills apply. 
+
+
+## Who is it for?
+- **Product Teams and Builders** shipping AI features who want to know how similar systems have failed, and what policies they may need to be aware of.
+- **Governance and policy teams** looking for gaps in current policies pertaining to different AI use cases.
+- **Researchers and Students** interested in tracking patterns in reported AI incidents.
+
+## How to get started?
+
+```bash
+gcloud auth application-default login
+uv run app.py                       # http://localhost:8000
+uv run data_tools.py                # self-check of the data tools (no model needed)
+uv run python tests/test_flow.py    # end-to-end check of the agent wiring with a scripted model (no credentials needed)
+uv run python scripts/baseline.py   # generate baseline outputs to compare answers from the same model with no tools and no system prompt vs. my agent's answer.
+```
+
+Models default to `vertex_ai/gemini-3.5-flash` (Lead, Writer) and `vertex_ai/gemini-3.5-flash-lite` (researchers).
+
 
 ## Data
 
 | Source | What we use | Where it came from | Files |
 |---|---|---|---|
 | [AI Incident Database](https://incidentdatabase.ai) (AIID) | 1,784 reported incidents, 1983 to 2026-10-30, with MIT risk taxonomy (84% coverage), CSETv1 (11%) and GMF (1.5%) classifications | Excel export from the AIID site, downloaded 2026-11-02 (`data/raw/AIID_Excel_Export-20261102.xlsx`) | `data/processed/incidents.csv` |
-| [AGORA](https://agora.eto.tech) (Emerging Technology Observatory) | 1,255 AI law, bill, rule and policy documents with status (546 enacted, 287 proposed, 422 defunct), tags, summaries, and 10,215 text segments | Bulk download from AGORA (`documents.csv`, `segments.csv`, `authorities.csv`) | `data/processed/agora_documents.csv`, `agora_segments.csv` |
+| [AGORA](https://agora.eto.tech) | 1,255 AI law, bill, rule and policy documents with status (546 enacted, 287 proposed, 422 defunct), tags, summaries, and 10,215 text segments | Bulk download from AGORA (`data/raw/documents.csv`, `data/raw/segments.csv`, `data/raw/authorities.csv`) | `data/processed/agora_documents.csv`, `data/processed/agora_segments.csv` |
 
-**Built offline, by us** (`scripts/`):
-- `prep_data.py`: cleans both datasets, keeps the useful columns, and joins AGORA tags onto documents and segments. Writes `MANIFEST.json` with counts and caveats.
-- `classify_use_cases.py`: labels every incident with one of 17 use cases (`use_case_taxonomy.json`) using Gemini Flash-Lite, with a confidence (1,600 high, 146 medium, 30 low). Output: `incident_use_cases.csv`. AIID has no field like this. It is what lets you ask "what goes wrong with AI hiring tools".
-- `risk_crosswalk.csv`: a hand-made map from MIT risk domains to AGORA harm and risk-factor tags. It links the two datasets. It is not an official mapping.
-- `use_case_policy_keywords.json`: hand-written search phrases per use case. AGORA's own application tags don't line up with our use cases (it has no "hiring" tag), so policy search is by text.
+Some processing was done on the raw data to make it more usable for this proejct. See files in (`scripts/`):
+- `prep_data.py`: cleans both datasets, keeps useful columns, and joins AGORA tags onto documents and segments. Writes `MANIFEST.json` with counts and caveats.
+- `classify_use_cases.py`: labels every reported incident with one of 17 use cases (`data/processed/use_case_taxonomy.json`) using Gemini Flash-Lite, with a confidence (1,600 high, 146 medium, 30 low). Output: `data/processed/incident_use_cases.csv`. AIID has no field like this, so this was done so we can get all reported incidents for a specific use case. 
+- `data/processed/risk_crosswalk.csv`: a hand-made map from MIT risk domains to AGORA harm and risk-factor tags. This links the AI Incident and AGORA Policy dataset. This is not an official mapping.
+- `data/processed/use_case_policy_keywords.json`: hand-written search phrases per use case. AGORA's own application tags don't line up with our AI use cases, so policy search is by text.
 
-**What the data can't answer** (the agent says so when it applies):
-- AIID counts are *reported* incidents, shaped by news coverage and editor curation. They are not incident rates.
+**Limitations of the Data** 
+- AIID counts are *reported* incidents, drawn from news coverage. They are not true incident rates.
 - 2026 is a partial year.
-- AGORA is about 92% US documents, and not a complete record of AI law. Many documents are proposed or defunct bills.
-- "What technically failed" is only classified for about 1.5% of incidents (GMF).
+- AGORA mostly consists of US documents, and not a complete record of all AI law. Many documents are proposed or defunct bills, and not enacted bills. 
 
 ## How it works
 
@@ -46,46 +67,21 @@ User question
 ```
 
 - **Three researcher shapes with different jobs and tools**, each started in a fresh context and run in parallel.
-  The Lead writes a **research brief** (use cases, years, jurisdiction, focus), so all three researchers work within the same scope.
-- **Vague questions get a clarifying question first**, with clickable options drawn from the data. This happens when
-  there's no use case, the use case is ambiguous, or the question asks for something the data can't give (rates, non-US law).
-- **The tools compute; the models don't.** Every count is a pandas query over unique incident IDs, and the partial year is
-  always flagged. Policy text search is BM25 over AGORA segments (`data_tools.py`, no extra dependencies).
-- **The chart is computed in code from the research brief's scope**, along with plain-sentence *chart facts* (peak
-  full year, totals for the last two 3-year periods, the largest category in each, the partial year). The Writer must take
-  every trend number from those facts, so the chart and the text can't disagree. The coverage matrix comes straight from tool output.
-- **Every chart bar and table cell opens the incidents behind it** (`GET /api/incidents`, 25 at a time), and the full
-  set downloads as CSV (`GET /api/incidents.csv`).
-- **Scope is explicit.** Incidents are always worldwide (AIID has no reliable location field). Only policies can be limited
-  to a jurisdiction, and the brief card and the report's first line say so.
-- **Coverage matrix:** for each risk domain in a use case, it shows the incident count and how many enacted / proposed /
-  defunct policies about that use case carry a matching tag. This is how the report points to risks with incidents but
-  no enacted policy.
-- **Citations are checked by code.** A tag the tools never returned is marked `⚠ unverified` in the report, and the page
-  shows "N/M citations verified".
-- Time budget: the Lead gets 200 s, then the Writer works with whatever was found, so an answer returns within the
-  graders' 5 minutes.
+  The Lead writes a research brief (use cases, years, jurisdiction, focus), so all three researchers work within the same scope.
+    - **Incident Researcher Agent:** Identify relevant reported incidents related to user query.
+    - **Trend Analyst Agent:** Analyze how reported incidents have changed over the years, uses reported incidents relevant to user query.
+    - **Policy Researcher Agent:** Identify relevant policies related to user query.
+- **Vague user queries are prompted with a clarification** clickable options are generated from the data to help user narrow down query scope. Clarification is rquired when the user doesn't specify a use case, the use case is ambiguous, or the query asks for something the data cannot provide.
 
-### API
+## Sample Queries
 
-`POST /chat` keeps Project 1's shape:
+1. For autonomous vehicles and driver assistance: what failures have been reported, how have they changed over time, and which policies address them?
 
-```json
-// request
-{"message": "What failures have been reported for AI hiring tools?", "session_id": "optional, to answer a clarifying question"}
-// response
-{"answer": "<markdown report, or the clarifying question>",
- "session_id": "...",
- "tool_calls": [{"agent": "Policy Researcher", "name": "search_policy_text", "arguments": {...}, "output": "..."}],
- "needs_clarification": false, "options": [],
- "report": {"brief": {...}, "chart": {...}, "coverage": {...}, "citations": {"cited": 14, "verified": 14, "unverified": []}}}
-```
 
-`GET /run?question=...` streams the same run as server-sent events for the web page, including each tool call and
-a one-line summary of its result. `GET /context` feeds the
-agent-context panel ("Show agent contexts").
+2. How have reported deepfake incidents changed fro 2020-2022 to 2023-2025, and what share are intentional misuse? What enacted state laws target them?
 
-## Sample queries
+
+3. What has gone wrong with AI chatbots and companions, and do any enacted policies address harms to minors?
 
 Expected answers below come from the processed files, computed with `data_tools.py`.
 Model-alone answers come from `scripts/baseline.py` (same model, no tools, no system prompt): see `baselines.md`.
@@ -115,25 +111,3 @@ Model-alone answers come from `scripts/baseline.py` (same model, no tools, no sy
 - Source: `coverage_matrix` over `incidents.csv`, `incident_use_cases.csv`, `agora_documents.csv`, `risk_crosswalk.csv`, `use_case_policy_keywords.json`.
 - Model alone: *(paste)* · Agent: *(paste)*
 
-**Something it should push back on:** "How often do AI healthcare systems fail in the EU?" The Lead should ask for
-clarification or say what the data can't do: AIID has reported incidents, not rates; only 38 incidents are healthcare;
-and AGORA has few EU documents (for example the EU AI Act, AGORA #757).
-
-## Run it
-
-```bash
-gcloud auth application-default login
-uv run app.py                       # http://localhost:8000
-uv run data_tools.py                # self-check of the data tools (no model needed)
-uv run python tests/test_flow.py    # end-to-end check of the agent wiring with a scripted model (no credentials needed)
-uv run python scripts/baseline.py   # no-tools baselines for this README
-```
-
-Models default to `vertex_ai/gemini-3.5-flash` (Lead, Writer) and `vertex_ai/gemini-3.5-flash-lite` (researchers).
-Override them with `LEAD_MODEL` / `RESEARCHER_MODEL`.
-
-## Deploy
-
-Cloud Run with continuous deploy from GitHub, following the course guide. The data (`data/processed`, about 24 MB) is
-committed and ships with the image. `app.py` listens on `0.0.0.0:$PORT`. Set the request timeout to 600 s
-(`gcloud run services update <service> --timeout=600`). The agent caps itself at about 4 minutes.

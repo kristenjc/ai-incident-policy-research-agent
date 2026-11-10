@@ -156,7 +156,7 @@ def _call(ctx: RunContextWrapper[Research], fn, **kwargs) -> str:
     return text
 
 
-# --- Tools: incidents ---
+# --- Tools: reported incidents ---
 
 
 @function_tool
@@ -539,7 +539,7 @@ Write a research report in markdown that answers the user's question, using only
 
 Structure, with these headings:
 # <a specific title>
-**Bottom line.** 3 or 4 sentences that answer the question directly.
+**Summary.** 3 or 4 sentences that answer the question directly.
 ## What has gone wrong
 One bullet per failure mode: what failed, how often, and example incidents.
 ## How reporting has changed
@@ -584,7 +584,7 @@ def scope_line(brief: dict | None) -> str:
         return ""
     cases = ", ".join(brief.get("use_cases") or []) or "all use cases"
     years = f"{brief.get('year_from') or 'all years'}–{brief.get('year_to') or 'latest'}" if (brief.get("year_from") or brief.get("year_to")) else "all years"
-    pol = brief.get("jurisdiction") or "all jurisdictions (about 92% US)"
+    pol = brief.get("jurisdiction") or "all jurisdictions"
     return f"*Scope · Incidents: {cases}, {years}, worldwide (AIID has no reliable location field) · Policies: {pol}*"
 
 
