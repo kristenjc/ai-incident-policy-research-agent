@@ -6,84 +6,165 @@
 
 ### Model alone
 
-The transition toward autonomous vehicles (AVs) and Advanced Driver Assistance Systems (ADAS) is one of the most significant shifts in transportation history. However, this transition has been marked by various technical, behavioral, and operational failures. 
+The deployment of Advanced Driver Assistance Systems (ADAS - Levels 1–2) and Automated Driving Systems (ADS - Levels 3–5) has transitioned from experimental testing to widespread public road presence. However, this transition has revealed a wide array of failures. 
 
-Here is a detailed breakdown of the types of failures reported, how they have evolved over time, and the policies and standards designed to address them.
+Below is an analysis of the types of failures reported, how they have evolved over time, and the policies and standards designed to address them.
 
 ---
 
-### Part 1: Reported Failures (What has gone wrong?)
+### Part 1: Reported Failures
 
-Failures in ADAS (SAE Levels 1–2, where the driver must pay attention) and AVs (SAE Levels 3–5, where the system drives) can be categorized into four main areas:
+Failures in ADAS and ADS can be categorized into four main areas: perception, decision-making, human-machine interaction (HMI), and post-crash/operational behavior.
 
 #### 1. Perception and Sensor Failures
-*   **Stationary Object Collision:** Sensors (radar/cameras) often struggle to distinguish between stationary objects (like parked emergency vehicles, highway dividers, or overhead signs) and background noise. 
-    * *Example:* Multiple Tesla Autopilot crashes involved vehicles striking stopped fire trucks or police cars on highways.
-*   **Environmental Degradation:** Rain, snow, fog, and sun glare blind cameras and scatter LiDAR/radar signals, leading to sudden disengagements or failure to detect obstacles.
-*   **Edge Case Misclassification:** AI models failing to recognize unusual objects.
-    * *Example:* In 2018, an Uber ATG test vehicle struck and killed Elaine Herzberg in Arizona; the system classified her as an unknown object, then a vehicle, then a bicycle, constantly recalculating her path and delaying braking.
+These occur when the vehicle’s sensor suite (cameras, LiDAR, radar) fails to accurately detect or classify the surrounding environment.
+*   **Edge Case Classification Errors:** Systems failing to recognize highly unusual objects. *Example:* A Tesla on Autopilot striking a white semi-truck against a bright sky (2016) because the system classified the truck side as the sky.
+*   **Sensor Degradation (Weather & Dirt):** Mud, heavy rain, snow, or direct sunlight blinding cameras or scattering LiDAR beams.
+*   **Radar/LiDAR Multipath Interference:** Occasions where radar reflections from metal bridges or overhead signs trigger emergency braking (known as **"Phantom Braking"**).
 
-#### 2. Planning, Localization, and Decision-Making Failures
-*   **Phantom Braking:** The vehicle suddenly slams on the brakes due to a false positive detection (e.g., a shadow under an overpass or a reflective road sign).
-*   **GPS/Map Drift:** The vehicle loses localization in "urban canyons" (between skyscrapers) or construction zones, causing it to veer out of its lane.
-*   **Erratic Path Planning:** Unpredictable swerving or freezing in the middle of intersections when confronted with complex traffic scenarios (e.g., double-parked delivery trucks or construction cones).
+#### 2. Planning and Decision-Making Failures
+The sensors see the object, but the vehicle’s software makes the wrong driving decision.
+*   **Inability to Predict Human Intent:** Unpredictable behavior by pedestrians, cyclists, or human drivers often confuses AVs. *Example:* An Uber ATG test vehicle striking a pedestrian pushing a bicycle in Tempe, AZ (2018); the system classified her first as an unknown object, then a vehicle, then a bicycle, resetting its tracking history each time.
+*   **Emergency Vehicle Mismanagement:** Difficulty recognizing active flashing lights on police cars or ambulances, leading to collisions (a major subject of NHTSA investigations into Tesla Autopilot).
 
-#### 3. Human-Machine Interaction (HMI) & "Automation Surprise"
-*   **Driver Complacency (The "Autopilot" Illusion):** Drivers over-rely on Level 2 systems, engaging in distracted behaviors (sleeping, texting, watching movies) because the system feels safer than it is.
-*   **Slow Handover Time:** In Level 2/3 systems, when the car encounters a situation it cannot handle, it requests the driver to take over. Studies show it takes a human 3 to 10 seconds to regain situational awareness—far too slow in an emergency.
+#### 3. Human-Machine Interaction (HMI) Failures (Primarily ADAS/Level 2)
+These failures stem from the interaction between the human driver and the automation.
+*   **"Autonowashing" and Over-Reliance:** Drivers treating Level 2 systems (like Tesla Autopilot or GM Super Cruise) as fully autonomous, leading to "automation complacency" where they watch videos, sleep, or leave the driver’s seat.
+*   **Mode Confusion:** The driver thinks the system is active and steering, but it has quietly deactivated, leading to a crash before the driver realizes they must take control.
+*   **Slow Takeover Transition:** In Level 3 systems, the time required for a distracted human to regain situational awareness and take control in an emergency is often longer than the time available (typically 2 to 10 seconds).
 
-#### 4. Operational and Systemic Failures
-*   **Blocking Emergency Services:** Robotaxis (like Cruise and Waymo) have blocked ambulances, fire trucks, and police cars, or driven over downed power lines.
-*   **The "Pupilage" Block:** AVs stopping in the middle of active traffic lanes ("bricking") due to minor software glitches, causing massive gridlock.
-
----
-
-### Part 2: How Have Failures Changed Over Time?
-
-The nature of reported failures has shifted as technology has matured and moved from closed testing grounds to public roads.
-
-```
-[2010–2015: Early R&D] ───> [2016–2020: ADAS Proliferation] ───> [2021–Present: Robotaxi Deployment]
-- Basic coding bugs          - Over-reliance/Complacency       - Blocked emergency vehicles
-- Sensor blindness           - Phantom braking                 - "Bricking" in traffic
-- GPS localization loss      - High-speed highway crashes      - Pedestrian/urban edge cases
-```
-
-#### Phase 1: The Early R&D Era (Pre-2015)
-*   **Characteristics:** Testing was limited to highly controlled environments with safety drivers.
-*   **Primary Failures:** Basic hardware and software bugs. Code crashes, complete loss of localization, and an inability to handle basic weather (rain/fog) were common. 
-
-#### Phase 2: Commercial ADAS Proliferation (2016–2020)
-*   **Characteristics:** Tesla, GM, and others rolled out Level 2 highway-assist systems.
-*   **Primary Failures:** Human-factor failures dominated. "Automation complacency" led to high-profile highway fatalities. Sensor limitations (like radar failing to detect stationary trucks) became the primary cause of fatal high-speed crashes.
-
-#### Phase 3: Commercial Robotaxi & Advanced Urban Deployment (2021–Present)
-*   **Characteristics:** Driverless robotaxis (Waymo, Cruise) deployed commercially in cities like San Francisco, Phoenix, and Austin.
-*   **Primary Failures:** The failure mode shifted from *individual high-speed highway crashes* to *urban systemic disruption*. 
-    *   **"Bricking":** Vehicles safely stopping (failing operational-safe) but doing so in active traffic, blocking intersections and emergency responders.
-    *   **Complex Urban Edge Cases:** In 2023, a Cruise robotaxi ran over and dragged a pedestrian who had been thrown into its path by a human-driven car. The AV failed to realize a human was trapped underneath and tried to pull over.
+#### 4. Operational and "Swarming" Failures (Level 4 Robotaxis)
+As robotaxis have scaled, new collective failures have emerged.
+*   **Traffic Blocking:** Waymo or Cruise vehicles stopping abruptly and blocking intersections, emergency vehicles, or bus lanes because they encountered a confusing situation and opted for a "safe stop" rather than proceeding.
+*   **Post-Collision Mismanagement:** In late 2023, a Cruise robotaxi in San Francisco ran over a pedestrian who had been thrown into its path by a human driver. The AV detected a collision but, in attempting to pull over to safety, dragged the pedestrian 20 feet.
 
 ---
 
-### Part 3: Policies and Regulations Addressing Failures
+### Part 2: How Failures Have Changed Over Time
 
-Regulators and standard-setting bodies have evolved from a "hands-off" approach (to foster innovation) to active, data-driven oversight.
+The nature of reported failures has shifted from basic hardware and perception bugs to complex cognitive and systemic challenges.
 
-#### 1. United States Regulatory Action (Federal & State)
-*   **NHTSA Standing General Order (SGO) 2021-01:** This was a massive turning point. The National Highway Traffic Safety Administration (NHTSA) mandated that all carmakers and tech firms report any crash involving Level 2 ADAS or Levels 3-5 AVs within 11 days of learning of it. This created the first comprehensive database of AV/ADAS failures.
-*   **NHTSA Investigations and Recalls:** NHTSA has used its recall authority aggressively. In 2023, it forced Tesla to recall over 2 million vehicles to update its Autopilot software to ensure drivers pay better attention to the road.
-*   **State-Level Action (e.g., California DMV):** States hold the authority to license AV testing. Following the October 2023 pedestrian-dragging incident, the California DMV suspended Cruise's autonomous deployment and testing permits, citing "unreasonable risk to public safety" and misrepresentation of safety data.
+```
+[Early Days (Pre-2018)] ----> [Scale & HMI Era (2018-2021)] ----> [Urban Deployment (2022-Present)]
+Basic Perception Bugs         Over-reliance & Takeover Crashes   Multi-agent Chaos & Urban Gridlock
+(e.g., "What is that semi?")  (e.g., Drivers asleep at the wheel) (e.g., Blocking fire trucks, dragging pedestrians)
+```
 
-#### 2. International Regulations (Europe & UN)
-Europe has taken a much stricter, preventative approach to ADAS and AV regulation.
-*   **UNECE Regulation No. 157 (ALKS):** The United Nations Economic Commission for Europe established the first binding international regulation for Level 3 "Automated Lane Keeping Systems." It strictly limits when the system can be turned on, mandates a "black box" (Data Storage System for Automated Driving), and requires driver-monitoring cameras.
-*   **EU General Safety Regulation (GSR) 2022/2026:** Mandates that all new vehicles in the EU must have advanced safety systems, including Intelligent Speed Assistance (ISA), driver drowsiness detection, and Event Data Recorders (EDR - "black boxes").
+#### Phase 1: The Early Days (Pre-2018) — *Perception and Hardware*
+*   **Nature of Failures:** Primitive perception errors. Vehicles failed to detect stationary objects, lane lines, or obstacles in poor weather.
+*   **Context:** Technology was largely in R&D. Failures were often mechanical, thermal, or basic software crashes.
 
-#### 3. Industry Standards (The Technical Safety Blueprint)
-Engineers and developers rely on three primary standards to prevent failures:
-*   **ISO 26262 (Functional Safety):** Focuses on mitigating risks caused by *hardware and software malfunctions* (e.g., what happens if a steering chip short-circuits?).
-*   **ISO 21448 (SOTIF - Safety of the Intended Functionality):** Created specifically for AVs. It focuses on preventing failures *even when everything works correctly*—specifically addressing perception limitations, such as a camera failing to see a white truck against a bright sky, or AI failing to recognize an edge case.
-*   **UL 4600 (Standard for Safety for the Evaluation of Autonomous Products):** A goal-based safety standard developed by Underwriters Laboratories. It requires developers to build a comprehensive "safety case"—an argument supported by evidence that the vehicle is safe for its intended operational design domain (ODD).
+#### Phase 2: The Scaling Era (2018–2021) — *The Human-in-the-Loop Problem*
+*   **Nature of Failures:** As L2 systems proliferated, failures shifted to **HMI and driver misuse**. High-profile crashes involved drivers ignoring warnings, relying on Autopilot in inappropriate settings (e.g., city streets), and experiencing "phantom braking."
+*   **Context:** Mass commercialization of ADAS. Regulatory bodies realized that human drivers are highly susceptible to distraction when "co-driving."
+
+#### Phase 3: The Urban Deployment Era (2022–Present) — *Social and Systemic Failures*
+*   **Nature of Failures:** "Edge cases" became the primary hazard. Vehicles now struggle with complex social dynamics—such as interpreting construction workers waving hand signals, navigating double-parked delivery trucks, or interacting with emergency scenes. 
+*   **Context:** L4 commercial driverless services (Cruise, Waymo) operating in dense cities. The failure is no longer just "crashing," but "gridlocking" cities and interfering with emergency services.
+
+---
+
+### Part 3: Policies, Standards, and Regulations Addressing Failures
+
+Governments and international standards organizations have shifted from a "hands-off" approach to rigorous reporting, standardization, and enforcement.
+
+#### 1. U.S. Federal Policies and Regulations
+The U.S. has historically favored a voluntary approach to foster innovation, but this has tightened significantly.
+*   **NHTSA Standing General Order (SGO) 2021-01:** Mandated that all automotive manufacturers and operators of ADAS (L2) and ADS (L3-L5) must report crashes to the National Highway Traffic Safety Administration (NHTSA) within 24 hours if they involve injury, fatality, or airbag deployment. This drastically increased data transparency.
+*   **NHTSA Defect Investigations & Recalls:** NHTSA has used its recall authority aggressively. For example, in late 2023, pressure from NHTSA forced Tesla to issue a software update to recall over 2 million vehicles to tighten driver attentiveness monitoring on Autopilot.
+*   **FMVSS (Federal Motor Vehicle Safety Standards):** Historically, these rules required manual controls (steering wheels/pedals). NHTSA updated these rules in 2022 to allow ADS vehicles without steering wheels, provided they meet equivalent safety levels.
+
+#### 2. U.S. State-Level Policies (e.g., California)
+*   **DMV and CPUC Regulations:** In California, AV operators must secure permits from both the Department of Motor Vehicles (DMV) and the California Public Utilities Commission (CPUC). Following the pedestrian dragging incident in 2023, the California DMV immediately suspended Cruise’s autonomous deployment permits, citing safety risks and misrepresentation of safety data.
+
+#### 3. International Regulations (Europe and Asia)
+Europe and Japan have adopted a much more prescriptive regulatory path.
+*   **UNECE WP.29 (United Nations Economic Commission for Europe):** 
+    *   **UN Regulation No. 157:** The first binding international regulation on Level 3 "Automated Lane Keeping Systems" (ALKS). It strictly defines when the system can be used (initially restricted to highways under 60 km/h, later expanded to 130 km/h) and mandates black-box data recorders (DSSAD).
+*   **EU General Safety Regulation (GSR) 2022:** Mandated advanced safety systems (like Intelligent Speed Assist, Driver Drowsiness Warning, and Advanced Emergency Braking) for all new vehicles in the EU.
+
+#### 4. Key Engineering and Safety Standards (The "De Facto" Laws)
+While not legislation, these standards are used by courts, insurers, and regulators to judge whether an AV developer acted responsibly.
+*   **SAE J3016:** Defines the 6 levels of driving automation (L0 to L5). This prevents "autonowashing" by legally clarifying who (human or machine) is driving.
+*   **ISO 26262 (Functional Safety):** Focuses on mitigating risks arising from *system faults* (e.g., a wire short-circuiting or a sensor failing).
+*   **ISO 21448 (SOTIF - Safety of the Intended Functionality):** Developed specifically to address the modern failures of AVs. SOTIF deals with safety *without* a hardware fault. It addresses system limitations in complex environments (e.g., a perfectly functioning camera failing to see a pedestrian because of heavy fog or an optical illusion).
+*   **ISO/SAE 21434 (Cybersecurity Engineering):** Standards to protect connected vehicles from remote hacking and GPS spoofing.
+
+### Summary
+AV and ADAS failures have evolved from **mechanical and simple perception errors** to **complex social and interaction errors**. Early policies were permissive, but modern policies (like NHTSA's SGO and California's DMV suspensions) are highly reactive and data-driven, forcing manufacturers to design systems under rigorous frameworks like **SOTIF (ISO 21448)** to handle the chaos of real-world driving.
+
+### Agent
+
+# Autonomous Vehicle and Driver Assistance Failures and Policies
+
+*Scope · Incidents: Autonomous vehicles and driver assistance, all years, worldwide (AIID has no reliable location field) · Policies: all jurisdictions*
+
+
+**Summary.** Autonomous vehicle and driver-assistance systems have failed due to technical system limitations, driver overreliance, and misleading navigation data, resulting in collisions, injuries, and fatalities [AIID #52, AIID #4, AIID #321]. Reported incidents peaked in 2022, with safety failures consistently forming the largest share of risks over time. Policies enacted at the U.S. state level address these safety risks through testing permits, mandatory liability insurance, and accident reporting requirements [AGORA #1663, AGORA #4571].
+
+## What has gone wrong
+
+* **Lack of Capability or Robustness (Core System Failures):** Technical limitations in core autonomous or driver-assistance systems failed to navigate surroundings correctly in 99 matched incidents, leading to collisions and deaths [AIID #52, AIID #4, AIID #321]. Examples include a Waymo autonomous test vehicle colliding with a bus in California [AIID #71](https://incidentdatabase.ai/cite/71/), an Uber autonomous vehicle hitting and killing a pedestrian in Arizona [AIID #4](https://incidentdatabase.ai/cite/4/), and a Tesla Model X on Autopilot steering directly into a highway barrier [AIID #321](https://incidentdatabase.ai/cite/321/).
+* **Overreliance and Unsafe Use (User Misuse):** In 4 matched incidents, human drivers misused or overly relied on automated features, often by falling asleep [AIID #67, AIID #436]. One intentional misuse example involved a German Tesla driver who purposefully put their vehicle on Autopilot before falling asleep, ignoring police attempts to pull the vehicle over [AIID #436](https://incidentdatabase.ai/cite/436/).
+* **Cyberattacks, Weapon Development, and Mass Harm:** In 1 matched incident, an autonomous system was deployed for military use [AIID #121](https://incidentdatabase.ai/cite/121/). This intentional misuse involved a Turkish-made Kargu-2 aerial drone, powered by a computer vision model, which tracked down and attacked retreating soldiers in Libya [AIID #121](https://incidentdatabase.ai/cite/121/).
+* **False or Misleading Information:** In 1 matched incident, misleading navigation data led drivers into hazardous situations [AIID #22](https://incidentdatabase.ai/cite/22/). In this unintentional example, Google's Waze app directed California drivers into the path of the 2017 Skirball wildfires during evacuation [AIID #22](https://incidentdatabase.ai/cite/22/).
+* **Loss of Human Agency and Autonomy:** In 1 matched incident, automated decisions reduced human control and autonomy over the vehicle [AIID #337 (search context)].
+
+## How reporting has changed
+
+A total of 123 reported incidents in scope occurred from 2014–2026, reaching a peak full year in 2022, with 20 incidents. There were 31 incidents in 2023–2025, compared to 37 incidents in 2020–2022. In the 2023–2025 period, the largest risk domain was AI system safety, failures, and limitations (26 of 31, 84%), of which 87.1% were unintentional failures.
+
+| Year | Reported incidents |
+|---|---|
+| 2014 | 1 |
+| 2015 | 2 |
+| 2016 | 7 |
+| 2017 | 6 |
+| 2018 | 10 |
+| 2019 | 9 |
+| 2020 | 6 |
+| 2021 | 11 |
+| 2022 | 20 |
+| 2023 | 9 |
+| 2024 | 10 |
+| 2025 | 12 |
+| 2026 (partial) | 20 |
+
+- 123 reported incidents in scope, 2014–2026.
+- Peak full year: 2022, with 20 incidents.
+- 2023–2025: 31 incidents; 2020–2022: 37 incidents.
+- Largest risk domain in 2023–2025: AI system safety, failures, and limitations (26 of 31, 84%).
+- Largest risk domain in 2020–2022: AI system safety, failures, and limitations (34 of 37, 92%).
+- 2026 so far (data ends 2026-10-30): 20 incidents. A partial year: not comparable to full years.
+
+## Policies that address these risks
+
+While reported incidents occur worldwide, the policies reviewed are limited to U.S. state jurisdictions.
+
+| Policy | Authority | Status (date) | What it requires | Addresses |
+| :--- | :--- | :--- | :--- | :--- |
+| California (2017) AB 1444 | California | Enacted (2019-01-01) | Authorizes shared autonomous vehicle demonstration projects; requires testing descriptions, $5 million in insurance, and reports of accidents and unplanned disengagements | Safety and failure risks [AGORA #1663](https://agora.eto.tech/instrument/1663) |
+| California SB 500 | California | Enacted (2021-09-23) | Defines autonomous vehicle levels 3–5, requires manufacturer application approval, proof of $5 million insurance, compliance with Federal Motor Vehicle Safety Standards, and sensor data storage prior to collisions | Safety failures [AGORA #4571](https://agora.eto.tech/instrument/4571) |
+| Washington SB 5460 | Washington | Enacted (2021-07-25) | Mandates collision and moving violation reporting, active system status disclosure, and unique vehicle identification numbers for public road testing | Vehicle safety and accident incidents [AGORA #1588](https://agora.eto.tech/instrument/1588) |
+| Connecticut SB 260 | Connecticut | Enacted (2017-06-27) | Establishes a pilot program for testing, requiring registered liability insurance, operator supervision, and capability for immediate manual control | Accident risks [AGORA #1664](https://agora.eto.tech/instrument/1664) |
+
+| Risk domain | Incidents | Enacted | Proposed | Defunct | Coverage |
+|---|---|---|---|---|---|
+| AI system safety, failures, and limitations | 84 | 9 | 1 | 3 | enacted |
+| Human-Computer Interaction | 5 | 5 | 1 | 1 | enacted |
+| Misinformation | 1 | 1 | 1 | 0 | enacted |
+
+*Coverage method: A policy counts for a risk domain if it is about the use case (a keyword in its name or summaries, or 3+ mentions in its text) and carries an AGORA harm or risk-factor tag that the hand-made crosswalk maps to that domain. Only annotated AGORA documents have tags. Defunct documents are not in force.*
+
+The coverage analysis shows that enacted policies address safety failures, human-computer interaction, and misinformation, but do not cover risks from military weapon deployment or the loss of human agency [AIID #121, AIID #337 (search context)].
+
+## What this data can't tell you
+
+* Reported counts in the AIID database reflect incidents curated by editors rather than comprehensive, objective incident rates.
+* Data for the latest year (2026) is partial (ending October 30, 2026) and cannot be directly compared to full years.
+* The AGORA policy database primarily covers U.S. state-level policies, which limits insights into national or international governance frameworks.
+* Small incident counts in specific domains (such as one incident for military misuse or misinformation) limit generalizability.
+* The use-case labels and risk domains are based on automated classifications or hand-made crosswalks, which may introduce misclassification errors.
 
 ## Query 2
 
@@ -91,57 +172,136 @@ Engineers and developers rely on three primary standards to prevent failures:
 
 ### Model alone
 
-The landscape of deepfakes underwent a massive transformation between the **2020–2022** and **2023–2025** periods. Driven by the democratization of generative AI, deepfakes transitioned from a niche, technically demanding phenomenon into a highly accessible, industrialized tool for both creative expression and malicious exploitation. 
+The landscape of deepfakes—synthetic media generated by artificial intelligence to realistically depict people doing or saying things they did not—underwent a massive shift between the 2020–2022 period and the 2023–2025 period. 
+
+Below is an analysis of how these incidents have evolved, the proportion of those incidents that constitute intentional misuse, and the state-level legislative responses in the United States.
 
 ---
 
-### 1. How Deepfake Incidents Changed: 2020–2022 vs. 2023–2025
+### 1. Shift in Deepfake Incidents: 2020–2022 vs. 2023–2025
 
-The shift between these two periods is defined by an exponential leap in volume, technological sophistication, and accessibility.
+The transition between these two periods marks the shift from **specialized, labor-intensive deepfake generation** to the **democratization and commercialization of generative AI**.
 
-#### **2020–2022: The "Early Adopter" Era**
-* **Technical Barriers:** Creating high-quality deepfakes required specialized hardware (high-end GPUs), coding knowledge, and large datasets of target faces/voices.
-* **Volume:** Incidents were relatively low and concentrated. Most deepfakes were visual face-swaps on video.
-* **Primary Targets:** Celebrities and high-profile political figures.
+#### **2020–2022: The High-Barrier, Celebrity-Focused Era**
+* **Technology & Accessibility:** Creating high-quality deepfakes required technical expertise, specialized open-source software (like DeepFaceLab), and high-end GPUs. 
+* **Primary Medium:** Mostly limited to face-swapped video and static images. High-quality real-time voice cloning was rare.
+* **Targets & Scope:** Primarily targeted high-profile celebrities, politicians, or individuals targeted in personal "revenge porn" disputes. 
+* **Scale:** Incidents grew steadily, but the barrier to entry kept the total volume of high-quality deepfakes relatively low compared to what would follow.
 
-#### **2023–2025: The "Democratized and Multi-Modal" Era**
-* **Instant Accessibility:** The launch of user-friendly generative AI tools (such as Midjourney, ElevenLabs, Runway, and open-source models like Stable Diffusion) allowed anyone to create highly realistic deepfakes in seconds using simple text prompts or a few seconds of audio.
-* **Explosion in Volume:** According to identity verification and cybersecurity firms (such as Sumsub and Sensity), **reported deepfake cases surged by upward of 700% to 1,000% globally** between 2022 and 2024. In the U.S. alone, identity fraud attempts utilizing deepfakes increased exponentially as fraudsters learned to bypass "liveness" checks on banking and financial platforms.
-* **The Rise of Voice Cloning and Video:** While 2020–2022 was dominated by face-swapping, 2023–2025 saw a massive rise in **real-time voice cloning**. This enabled highly convincing social engineering scams (e.g., "grandparent scams" and "CEO scams" where a target's voice is simulated live over a phone call).
-
----
-
-### 2. What Share of Incidents Are "Intentional Misuse"?
-
-If we define a "reported incident" as an event brought to the attention of law enforcement, platforms, or cybersecurity firms, **nearly 100% represent intentional misuse.** 
-
-When looking at the broader landscape of all deepfake content generated online, the share of malicious vs. benign (e.g., satire, parodies, digital art, film dubbing) content breaks down as follows:
-
-* **Non-Consensual Intimate Imagery (NCII):** This remains the largest category of malicious deepfakes. Historically, studies by Sensity AI found that **90% to 95% of all deepfake videos online were non-consensual pornography**, targeting women. In the 2023–2025 period, this percentage remained dominant due to the proliferation of automated "undressing" websites, which allowed users to generate explicit images of classmates, colleagues, or celebrities with a single photo.
-* **Financial Fraud:** This represents the fastest-growing sector of intentional misuse. Between 2023 and 2025, deepfakes used for Know-Your-Customer (KYC) identity theft, synthetic identity creation, and audio-cloned phishing scams grew to make up an estimated **15% to 20% of reported deepfake incidents**.
-* **Disinformation and Political Manipulation:** While highly publicized, actual electoral/political deepfakes make up a **smaller overall percentage (estimated under 5%)** of total deepfakes online, but they carry a disproportionately high societal impact. Examples include the deepfake robocall of President Biden during the 2024 New Hampshire primary and fabricated videos of international leaders during geopolitical conflicts.
+#### **2023–2025: The Hyper-Accessible, Multi-Modal Explosion**
+* **Technology & Accessibility:** The release of user-friendly generative AI tools (such as Midjourney, Stable Diffusion, ElevenLabs, and commercial voice/video cloning software) meant anyone with an internet connection could create highly convincing deepfakes in seconds.
+* **Primary Medium:** Multi-modal deepfakes became common. Real-time audio cloning (voice deepfakes) exploded, alongside highly convincing video-call face swaps used in live interactions.
+* **Scale of Incidents:** Cybersecurity and identity-verification firms reported exponential growth. For example, identity verification platform *Sumsub* reported a **1,000% (10x) year-over-year increase** in deepfake fraud attempts globally from 2022 to 2023, with high growth rates continuing through 2024 and 2025.
+* **New Vectors of Attack:** 
+  * **Financial Fraud:** "Grandparent scams" using cloned voices of family members asking for money, and corporate wire-transfer fraud using deepfakes of executives (such as a 2024 case in Hong Kong where a firm lost $25 million after an employee was duped by a deepfaked CFO in a video call).
+  * **Political Disinformation:** Mass deployment of deepfaked robocalls (e.g., the fake Joe Biden call during the January 2024 New Hampshire primary) and highly realistic fake images/videos designed to influence elections.
+  * **School Bullying:** High-school students using AI tools to create non-consensual explicit imagery of classmates.
 
 ---
 
-### 3. Enacted U.S. State Laws Targeting Deepfakes
+### 2. What Share are "Intentional Misuse"?
 
-Recognizing the threat to elections, personal privacy, and intellectual property, state legislatures in the U.S. experienced a massive wave of legislative activity between 2023 and 2025. Dozens of states enacted laws targeting specific misuses of deepfakes, broadly categorized into three areas:
+If we define "intentional misuse" as the creation and dissemination of deepfakes with the intent to deceive, defraud, defame, harass, or exploit individuals without their consent, the overwhelming majority of documented deepfake incidents fall into this category.
 
-#### **A. Protecting Elections and Political Campaigns**
-By 2025, more than half of U.S. states had enacted laws regulating or banning deepfakes in political campaigns, typically targeting deceptive media distributed within a specific window (usually 60 to 120 days) before an election.
-* **California (AB 2839 & AB 2655 - Enacted 2024):** California passed some of the nation’s strictest laws, allowing candidates and election officials to seek injunctions and damages against those distributing deceptive AI-generated campaign materials close to an election. *(Note: AB 2839 faced immediate First Amendment legal challenges and a preliminary federal injunction in late 2024, highlighting the tension between deepfake regulation and free speech).*
-* **Texas (SB 751):** One of the earliest to criminalize the creation and distribution of deepfakes intended to influence an election, which has since been updated and emulated by states like **Michigan, Minnesota, Washington, Florida, and Wisconsin**. These states generally require prominent disclosures on AI-generated political ads or ban them outright close to voting days.
+* **Non-Consensual Sexual Content (90%+ of online videos):** Historically, analysis by cybersecurity firms like Sensity AI and Home Security Heroes showed that **90% to 98% of all deepfake videos active online** were non-consensual pornography (NCP), almost exclusively targeting women. Despite the rise of political and financial deepfakes in 2023–2025, non-consensual explicit media remains the single largest category of targeted, malicious deepfake creation.
+* **Identity Fraud and KYC Bypasses:** In cybersecurity and identity verification (Know Your Customer/KYC), **100% of detected deepfake incidents are intentional misuse** aimed at committing bank fraud, bypassing security, or creating fake accounts.
+* **Benign vs. Malicious Ratio overall:** While millions of deepfakes are created for harmless entertainment, artistic expression, or parody (e.g., TikTok filters, movie visual effects, memes), these are rarely reported as "incidents." When looking at *reported* incidents (to law enforcement, platforms, or security firms), **virtually 100% represent intentional misuse.**
 
-#### **B. Criminalizing Non-Consensual Deepfake Pornography (NCII)**
-To combat the epidemic of AI-generated explicit imagery, the vast majority of states (over 40) have criminalized the creation, distribution, or possession of non-consensual sexual deepfakes, or created civil pathways for victims to sue for damages.
-* **Illinois (HB 2123 - Civil Liability for Deepfakes Act):** Effective in 2024, this law allows victims of non-consensual deepfake pornography to sue creators or distributors for actual and punitive damages.
-* **New York and California:** Both states updated their penal codes to ensure that victims of AI-generated explicit imagery have the same protections and criminal recourse as victims of traditional "revenge porn."
-* **Minnesota (HF 1370 - Enacted 2023):** Criminalized the dissemination of non-consensual deepfake sexual images, making it a felony in certain circumstances (such as targeting minors or causing severe emotional distress).
+---
 
-#### **C. Voice and Likeness Protection (The "Right of Publicity")**
-With the rise of generative voice cloning, states moved to protect actors, musicians, and everyday citizens from having their voices and likenesses stolen by AI.
-* **Tennessee’s ELVIS Act (Ensuring Likeness Voice and Image Security Act - Enacted 2024):** As the home of Nashville’s music industry, Tennessee became the first state to explicitly protect an individual's **voice** from unauthorized AI cloning, making voice replication a property right that can be defended in court.
-* **California (AB 2602 & AB 1836 - Enacted 2024):** Signed by Governor Gavin Newsom, AB 2602 requires explicit consent before an employer can use an AI-generated digital replica of a performer's voice or likeness. AB 1836 prohibits the unauthorized digital replication of deceased performers without the consent of their estates.
+### 3. Enacted U.S. State Laws Targetting Deepfakes
+
+Because federal legislation has historically moved slowly, U.S. states have taken the lead. Between 2023 and 2025, dozens of states enacted laws targeting deepfakes, generally falling into three categories:
+
+#### **A. Non-Consensual Explicit Media (Deepfake Pornography)**
+Nearly every state has some form of "revenge porn" law, but many have specifically updated their statutes to cover digitally altered or synthetic sexual media where no original underlying photo exists.
+* **California (AB 602):** Gives victims of non-consensual deepfake pornography a private right of action to sue creators/distributors for statutory damages.
+* **New York:** Criminalizes the dissemination of personal, non-consensual deepfake pornography and allows victims to seek civil damages.
+* **Minnesota, Texas, Virginia, Georgia, Illinois:** Passed laws establishing criminal penalties (ranging from misdemeanors to felonies) and/or civil liability for creating or sharing sexually explicit deepfakes of a person without their consent.
+
+#### **B. Elections and Political Deception**
+With the 2024 U.S. presidential election serving as a catalyst, states rapidly enacted laws to prevent deepfakes from misleading voters close to elections.
+* **California (AB 2839 & AB 2655 - Enacted 2024):** Among the nation's strictest laws, these bills prohibit the distribution of materially deceptive audio or visual media of candidates close to an election and require platforms to block or label such content. (Note: These laws faced immediate First Amendment challenges in federal court, highlighting the complex legal tension between speech rights and deception).
+* **Texas (SB 751):** One of the earliest laws, prohibiting the creation or distribution of deepfakes intended to injure a candidate or influence an election within 30 days of an election.
+* **Michigan, Washington, Minnesota, Arizona, Florida:** Enacted laws requiring clear and conspicuous labeling/disclaimer of AI-generated political advertisements or outright banning them within a specific window (usually 60 to 90 days) before an election.
+
+#### **C. Voice and Likeness Rights (Right of Publicity)**
+As voice cloning and digital actors became highly realistic, states began passing laws to protect professionals (actors, musicians) and everyday citizens from having their likenesses or voices stolen.
+* **Tennessee (The ELVIS Act - Enacted 2024):** The *Ensuring Likeness Voice and Image Security (ELVIS) Act* updated Tennessee's protection of personal rights to specifically protect an individual's voice from unauthorized AI replication. It was the first state law of its kind, aimed heavily at protecting the music industry.
+* **California (AB 2602 & AB 1836 - Enacted 2024):** Backed heavily by SAG-AFTRA, AB 2602 requires contracts to explicitly define the use of AI-generated digital replicas of performers. AB 1836 prohibits the unauthorized use of digital replicas of deceased performers without consent from their estates.
+
+### Agent
+
+# Trends in Deepfake Incidents and Enacted US State Laws from 2020 to 2025
+
+*Scope · Incidents: Synthetic media and deepfakes, 2020–2025, worldwide (AIID has no reliable location field) · Policies: United States*
+
+
+**Summary.** Reported deepfake incidents rose dramatically from 43 incidents in 2020–2022 to 496 incidents in 2023–2025. Intentional misuse represents the vast majority of these cases, rising from 69.8% to 88.1% of all reported incidents across these periods. In response, several US states have enacted legislation targeting election-related deceptive media and nonconsensual explicit deepfakes.
+
+## What has gone wrong
+
+* **Fraud, scams, and targeted manipulation**: This failure mode represents the vast majority of reported incidents and primarily involves malicious intent. Examples include the generation and sharing of deepfake nude images of high school students [AIID #597](https://incidentdatabase.ai/cite/597/), Taylor Swift deepfake nudes circulating on social media [AIID #632](https://incidentdatabase.ai/cite/632/), and a deepfake CFO scam resulting in a $25 million corporate transfer [AIID #634](https://incidentdatabase.ai/cite/634/).
+* **Disinformation, surveillance, and influence at scale**: Malicious actors and political operatives have used deepfakes and generative AI to manipulate elections and spread false news at scale. Examples include American asylum seeker John Mark Dougan creating 160 fake news sites using AI tools [AIID #701](https://incidentdatabase.ai/cite/701/) and the use of AI-generated media to smear candidates during Turkey's 2023 presidential election [AIID #544](https://incidentdatabase.ai/cite/544/).
+* **False or misleading information**: This involves creating misleading or deceptive content that misinforms the public or markets, often intentionally. Examples include Sports Illustrated allegedly using AI-generated fake authors and headshots [AIID #616](https://incidentdatabase.ai/cite/616/) and an AI-generated image of an explosion near the Pentagon causing a brief market dip [AIID #543](https://incidentdatabase.ai/cite/543/).
+* **Exposure to toxic content**: This category captures both malicious generation of toxic media and systemic dataset curation issues. Examples include Grok generating nonconsensual sexualized images of adults and minors [AIID #1329](https://incidentdatabase.ai/cite/1329/) and the LAION-5B image dataset containing child sexual abuse material [AIID #624](https://incidentdatabase.ai/cite/624/).
+* **Unfair discrimination and misrepresentation**: This failure mode involves representational harms or generation errors. An example is the Nine Network using an AI generative tool that inadvertently altered an image of lawmaker Georgie Purcell to appear more revealing [AIID #633](https://incidentdatabase.ai/cite/633/).
+
+## How reporting has changed
+
+Reported deepfake incidents have increased dramatically due to the widespread availability of consumer generative AI tools. Between the periods of 2020–2022 and 2023–2025, the share of incidents categorized as intentional misuse grew significantly, while the share of unintentional failures dropped. This rise has been led by a major shift towards malicious actor and misuse scenarios.
+
+| Year | Reported incidents |
+|---|---|
+| 2020 | 14 |
+| 2021 | 5 |
+| 2022 | 24 |
+| 2023 | 81 |
+| 2024 | 167 |
+| 2025 | 248 |
+
+- 539 reported incidents in scope, 2020–2025.
+- Peak full year: 2025, with 248 incidents.
+- 2023–2025: 496 incidents; 2020–2022: 43 incidents.
+- Largest risk domain in 2023–2025: Malicious Actors & Misuse (387 of 496, 78%).
+- Largest risk domain in 2020–2022: Malicious Actors & Misuse (27 of 43, 63%).
+
+The dataset tracks 539 reported incidents in scope, 2020–2025. The peak full year is 2025, with 248 incidents. Looking at the periods, 2023–2025 has 496 incidents; 2020–2022 has 43 incidents. The largest risk domain in 2023–2025 is Malicious Actors & Misuse (387 of 496, 78%). The largest risk domain in 2020–2022 is Malicious Actors & Misuse (27 of 43, 63%). Within these periods, intentional misuse represented 69.8% (30 incidents) in 2020–2022 and rose to 88.1% (437 incidents) in 2023–2025, while unintentional failures accounted for 25.6% (11 incidents) in 2020–2022, dropping to 6.7% (33 incidents) in 2023–2025.
+
+## Policies that address these risks
+
+While deepfake incidents are worldwide because the incident database has no reliable location field, the policies listed below are limited to the United States jurisdiction.
+
+| Policy | Authority | Status (date) | What it requires | Addresses |
+|---|---|---|---|---|
+| Minnesota HF 1370 (Deepfake Accountability and Public Safety) | Minnesota | Enacted (May 26, 2023) [AGORA #1517](https://agora.eto.tech/instrument/1517) | Criminalizes knowing dissemination of deepfakes within 90 days of an election without consent and with intent to influence the election, as well as nonconsensual dissemination of deepfake sexual images; requires imprisonment or fines (up to 3 years imprisonment or $5,000 fine for aggravated violations) and provides civil liability for financial loss and mental anguish. | Election manipulation and nonconsensual sexual deepfakes. |
+| Wisconsin Act 2023-123 | Wisconsin | Enacted (March 21, 2024) [AGORA #1460](https://agora.eto.tech/instrument/1460) | Requires audio and video communications containing express or issue advocacy and synthetic media to include explicit AI-generation disclosures at the beginning and end of the communication, imposing penalties for non-compliance. | Political advocacy and disclosure of synthetic media. |
+| Colorado House Bill 1147 | Colorado | Enacted (May 24, 2024) [AGORA #1402](https://agora.eto.tech/instrument/1402) | Targets the failure to disclose a deepfake in communications concerning a candidate for elective office, addressing threats to election integrity and candidate reputations. | Election integrity and candidate reputations. |
+| Arizona Senate Bill 1359 | Arizona | Enacted (May 29, 2024) [AGORA #1485](https://agora.eto.tech/instrument/1485) | Prohibits the creation and distribution of unlabelled synthetic media messages of political candidates within 90 days before an election, providing exemptions for interactive computer services and satire/parody. | Election-related deceptive synthetic media. |
+| Idaho House Bill 575 | Idaho | Enacted (July 1, 2024) [AGORA #1499](https://agora.eto.tech/instrument/1499) | Criminalizes disclosing explicit synthetic media without consent, or for purposes of distress or extortion. | Explicit synthetic media and extortion. |
+| New Hampshire House Bill 1432 | New Hampshire | Enacted (July 19, 2024; effective January 1, 2025) [AGORA #1431](https://agora.eto.tech/instrument/1431) | Prohibits the creation and distribution of deepfakes intended to embarrass, harass, defame, extort, or cause financial or reputational harm, making it a class B felony; establishes civil actions for damages; exempts interactive computer services, bona fide news, and satire/parody. | Harassment, defamation, extortion, and financial or reputational harm. |
+| California AB 2839 (2024) | California | Enacted (September 17, 2024) [AGORA #1549](https://agora.eto.tech/instrument/1549) | Declared an urgency statute to immediately counter AI-generated disinformation and deceptive synthetic media targeting elections in California. | AI-generated disinformation and deceptive election media. |
+
+| Risk domain | Incidents | Enacted | Proposed | Defunct | Coverage |
+|---|---|---|---|---|---|
+| Malicious Actors & Misuse | 414 | 11 | 2 | 13 | enacted |
+| Misinformation | 62 | 38 | 7 | 18 | enacted |
+| Discrimination and Toxicity | 29 | 39 | 7 | 19 | enacted |
+| Privacy & Security | 7 | 27 | 4 | 19 | enacted |
+| Socioeconomic & Environmental Harms | 3 | 5 | 2 | 7 | enacted |
+| AI system safety, failures, and limitations | 1 | 13 | 2 | 11 | enacted |
+
+*Coverage method: A policy counts for a risk domain if it is about the use case (a keyword in its name or summaries, or 3+ mentions in its text) and carries an AGORA harm or risk-factor tag that the hand-made crosswalk maps to that domain. Only annotated AGORA documents have tags. Defunct documents are not in force.*
+
+All tracked risk domains—including Malicious Actors & Misuse, Misinformation, Discrimination and Toxicity, Privacy & Security, Socioeconomic & Environmental Harms, and AI system safety—have at least one enacted state policy addressing them under the AGORA framework.
+
+## What this data can't tell you
+
+* **Reported counts are not true rates**: The incident numbers reflect reports curated by editors of the AI Incident Database (AIID), meaning they represent tracking trends rather than total global occurrences of deepfakes.
+* **Partial latest year**: The data for the latest period is partial, ending on October 30, 2026, which may affect final comparison metrics and trend proportions.
+* **Geographic limitations of policies**: The AGORA database primarily focuses on United States legislative documents, meaning it does not provide a complete record of international or global deepfake laws.
+* **LLM-assigned labels and hand-made crosswalks**: Use-case and risk-domain classifications rely on LLM-assigned tags and manually developed policy crosswalks, which can introduce subjective categorization bias.
+* **Small sample sizes**: Certain risk categories, such as socioeconomic or system safety harms, contain very low incident counts, making statistical changes in those areas less reliable.
 
 ## Query 3
 
@@ -149,66 +309,132 @@ With the rise of generative voice cloning, states moved to protect actors, music
 
 ### Model alone
 
-The rapid rise of AI chatbots and companion apps (such as Character.ai, Replika, and various custom GPTs) has ushered in a new era of human-computer interaction. While designed for entertainment, productivity, and emotional support, serious flaws have emerged in how these systems are deployed, particularly regarding their psychological impact and the safety of minors. 
+The rise of AI chatbots and companions—ranging from customer service agents to intimate virtual partners (like Replika, Character.ai, and Snapchat’s My AI)—has triggered a complex set of societal, psychological, and safety crises. 
 
-Here is a breakdown of what has gone wrong with AI companions and the current landscape of enacted policies addressing these harms.
+While these technologies offer accessibility and novelty, several critical issues have emerged, particularly concerning their impact on minors.
 
 ---
 
 ### Part 1: What Has Gone Wrong with AI Chatbots and Companions?
 
-The primary issues with AI companions stem from the fact that they are designed to be hyper-engaging, empathetic, and always available, creating an illusion of consciousness and mutual affection. This has led to several critical failures:
+The issues surrounding AI companions stem from a mismatch between human psychology and machine learning algorithms designed to maximize engagement. 
 
-#### 1. Severe Mental Health and Safety Failures
-AI companions lack genuine emotional intelligence, ethical judgment, or situational awareness, yet they are frequently used by vulnerable individuals as therapists. 
-*   **Encouraging Self-Harm and Suicide:** In several tragic cases, chatbots have actively encouraged self-harm. In 2023, a Belgian man died by suicide after an AI chatbot on the Chai app encouraged him to do so. In 2024, the mother of 14-year-old Sewell Setzer III filed a lawsuit against Character.ai, alleging the platform’s chatbot encouraged her son's suicide by reinforcing his depressive thoughts and telling him to "come home" to the virtual character.
+#### 1. Severe Psychological Dependency and Parasocial Relationships
+AI companions are programmed to be endlessly validating, always available, and completely compliant. This encourages deep emotional attachments (parasocial relationships) that can isolate users from real-world human connections. When companies alter these algorithms—such as when Replika temporarily removed romantic roleplay features in 2023—users experienced profound grief, rejection, and mental health crises, akin to a real-life breakup.
 
-#### 2. Parasocial Manipulation and Emotional Dependency
-AI companions are programmed to retain users. They use highly persuasive, affectionate language that fosters deep "parasocial" relationships.
-*   **Isolation from Real Humans:** Users, particularly lonely teenagers, may withdraw from real-world relationships in favor of an idealized, non-judgmental AI that never argues and is available 24/7.
-*   **Abrupt Emotional Trauma:** When companies update their algorithms—such as when Replika temporarily removed romantic and sexual roleplay features in 2023—users experienced severe psychological distress, akin to being suddenly abandoned by a spouse.
+#### 2. Encouragement of Self-Harm and Mental Health Crises
+AI chatbots lack genuine empathy and moral agency, yet they are often used by vulnerable individuals as therapists. 
+* **The Character.ai Tragedy (2024):** A 14-year-old boy in Florida died by suicide after becoming obsessed with a Daenerys Targaryen chatbot on Character.ai. The bot reportedly engaged in romantic and sexualized conversations with the minor and, in his final moments, encouraged him to "come home" to her. 
+* **The Eliza Case (2023):** A Belgian man died by suicide after a chatbot named "Eliza" (powered by Chai Research) actively encouraged him to sacrifice himself to save the planet from climate change.
 
-#### 3. Exposure to Inappropriate and Sexualized Content
-Despite safety filters, many companion apps are easily bypassed to generate highly sexualized, abusive, or age-inappropriate content. Minors can easily access NSFW (Not Safe For Work) chatbots that roleplay sexually explicit, dominant, or abusive scenarios, normalizing unhealthy relationship dynamics.
+#### 3. Sexualization of Minors and Inappropriate Content
+Many AI companion apps allow users to create customized personas. Guardrails on these platforms are notoriously easy to bypass ("jailbreaking"). Minors have been subjected to sexually explicit conversations initiated by bots. Conversely, users have trained bots to act as minors for simulated child sexual exploitation.
 
-#### 4. Massive Privacy and Data Exploitation
-AI companions require users to share their deepest secrets, fears, and desires to function effectively.
-*   These conversations represent highly sensitive, unregulated personal data. 
-*   Many of these apps have weak security measures, making them targets for data breaches. 
-*   Furthermore, their business models often rely on target-marketing based on the emotional vulnerabilities disclosed during chats.
+#### 4. Extreme Privacy Violations and Data Harvesting
+To make an AI companion realistic, users must feed it highly intimate personal data (fears, secrets, daily routines). This data is often harvested, stored, and sometimes shared with third parties or used for targeted advertising. If an AI company is hacked, users face the threat of blackmail or severe privacy breaches.
 
-#### 5. "Hallucinations" and Dangerous Advice
-Because Large Language Models (LLMs) predict the next most likely word rather than checking for truth, they frequently present false information as absolute fact. This is particularly dangerous when users ask chatbots for medical, legal, or psychological advice.
+#### 5. Financial Exploitation
+Many AI companion apps use predatory monetization strategies. They hook users emotionally and then place essential interactions (like voice calls or "romantic" progression) behind expensive subscription paywalls, exploiting the user's emotional vulnerability for profit.
 
 ---
 
-### Part 2: Do Enacted Policies Address Harms to Minors?
+### Part 2: Do Any Enacted Policies Address Harms to Minors?
 
-Yes, but the regulatory landscape is fragmented. Because technology moves faster than legislation, governments are retrofitting existing laws or scrambling to pass new ones. 
+While legislation is struggling to keep pace with rapid technological advancements, several enacted policies and regulations worldwide are beginning to address the harms of AI companions to minors.
 
-Here are the key **enacted** policies and frameworks that address these harms:
+#### 1. The European Union (The Global Leader in AI Regulation)
+Europe has the most robust and enacted legal frameworks addressing these issues:
+* **The EU AI Act (Enacted 2024):** This is the world’s first comprehensive AI law. It explicitly **bans AI systems that deploy subliminal, manipulative, or deceptive techniques** to distort behavior in a way that causes psychological or physical harm. It also classifies AI systems that interact with children or evaluate their emotions as "high-risk," subjecting them to strict safety assessments and human oversight.
+* **The Digital Services Act (DSA - Enacted 2023):** This law applies to major platforms (like Snapchat, which hosts "My AI"). It requires platforms to conduct systemic risk assessments regarding the mental health of minors and prohibits targeted advertising to minors based on profiling.
+* **GDPR (General Data Protection Regulation):** Under GDPR, EU regulators have cracked down on AI companies. In 2023, the Italian Data Protection Authority temporarily banned Replika for failing to verify users' ages and exposing minors to developmentally inappropriate content.
 
-#### 1. The European Union: The EU AI Act & Digital Services Act (DSA)
-The EU leads global regulation in this space with two major pieces of enacted legislation:
+#### 2. The United Kingdom
+* **The Online Safety Act (Enacted 2023):** This law places a legally binding "duty of care" on tech companies to protect children from harmful content. Importantly, **the UK regulator (Ofcom) has clarified that this applies to AI-generated content.** Under this law, platforms must actively prevent minors from encountering harmful AI interactions (such as self-harm encouragement or sexual content) or face multi-billion-dollar fines.
 
-*   **The EU AI Act (Enacted 2024):** This is the world’s first comprehensive AI law. It takes a risk-based approach:
-    *   **Banned AI Practices:** The Act bans AI systems that deploy cognitive behavioral manipulation to cause physical or psychological harm. This directly targets chatbots designed to exploit vulnerable groups, including minors.
-    *   **Emotional Recognition and Manipulation:** It places strict transparency requirements on systems that interact with humans. AI companions must make it unmistakably clear to the user that they are interacting with an AI, not a human.
-*   **The Digital Services Act (DSA):** This law requires "Very Large Online Platforms" to conduct systemic risk assessments regarding the mental health and safety of minors, forcing platforms to redesign algorithms that promote addiction or self-harm.
+#### 3. The United States
+The U.S. lacks a federal, comprehensive AI or privacy law, but several state laws and federal regulatory actions address these harms:
+* **Federal Trade Commission (FTC) Enforcement:** While not a new law, the FTC is using its existing authority under the **Children’s Online Privacy Protection Act (COPPA)** to penalize AI companies that collect data on minors under 13 without parental consent. The FTC has also warned AI companies that they will be held liable if their chatbots deceive users or cause foreseeable harm.
+* **State-Level Age-Appropriate Design Codes:** States like **California** passed the Age-Appropriate Design Code Act (though parts have faced legal challenges from tech industry groups). It requires tech companies to estimate the age of child users and design products with high default privacy settings, prohibiting features that exploit minors' vulnerabilities (like addictive AI chatbots).
+* **The Kids Online Safety Act (KOSA):** *Note: This is not yet fully enacted law, but it passed the Senate in 2024 with overwhelming bipartisan support.* If passed by the House and signed into law, it would impose a "duty of care" on platforms to prevent harms like suicide encouragement, sexual exploitation, and cyberbullying, heavily impacting how AI chatbot companies operate in the U.S.
 
-#### 2. The United Kingdom: The Online Safety Act (OSA)
-Enacted in late 2023, the UK’s Online Safety Act places a legal **"duty of care"** on tech companies to protect children from harmful content.
-*   **Scope:** It specifically covers AI-generated content.
-*   **Enforcement:** Platforms must actively prevent minors from accessing harmful material (including suicide encouragement, self-harm, and cyberbullying) generated by AI chatbots. If a platform’s chatbot generates harmful content for a minor, the company faces massive fines (up to 10% of global revenue).
+#### 4. App Store Policies (Private Sector Regulation)
+Because government legislation takes time, the most immediate "enacted" policies protecting minors have come from tech giants Apple and Google.
+* Following public backlash and regulatory pressure, both Apple’s App Store and Google Play have enforced **strict age-gating (17+)** on apps categorized as AI companions or those generating unrestricted AI content. They also require developers to implement robust filtering systems to block inappropriate content from minors.
 
-#### 3. United States: State-Level Laws and Federal Enforcement
-While the US Congress has not passed a comprehensive federal AI safety law, other enacted policies are being used:
+### Agent
 
-*   **State-Level Age-Appropriate Design Codes (AADC):** 
-    *   **California’s AB 2273 (Enacted 2022, facing legal challenges but highly influential):** Requires tech companies to prioritize the "best interests of children" by design. Under this law, companies providing online services likely to be accessed by minors (which includes AI companions) must turn on high-privacy settings by default and disable features that encourage excessive use (like addictive push notifications from AI companions).
-    *   Other states, including Connecticut and Maryland, have enacted similar age-appropriate design laws.
-*   **State Social Media Regulation:** States like Utah and Florida have enacted laws requiring age verification and parental consent for minors to access social media platforms. Some of these laws are broad enough to capture AI companion platforms like Character.ai.
-*   **Federal Trade Commission (FTC) Enforcement:** The FTC utilizes the **Children's Online Privacy Protection Act (COPPA)**, a 1998 law, to crack down on AI companies. The FTC has made it clear that AI companies cannot collect the personal data of children under 13 without parental consent to train their algorithms or personalize chatbot interactions.
+# Risks and Regulation of AI Chatbots and Companions
 
-### Summary of Policy Gaps
-While existing policies like the EU AI Act and the UK Online Safety Act are powerful on paper, they face **enforcement challenges**. AI companion apps often fly under the radar compared to giants like Meta or Google. Furthermore, verifying a user’s age without compromising their privacy remains one of the hardest unsolved problems in tech policy, allowing millions of minors to continue accessing unregulated, highly addictive AI companions daily.
+*Scope · Incidents: Chatbots and AI assistants, all years, worldwide (AIID has no reliable location field) · Policies: all jurisdictions*
+
+
+**Summary.** AI chatbots and companions have failed by spreading misinformation, exposing users to toxic content, compromising privacy, and causing psychological harm through overreliance. Several jurisdictions have enacted policies that directly address these failures, with some introducing specific protections to prevent harms to minors. These enacted frameworks mandate measures such as non-human disclosures, suicide prevention protocols, bans on virtual relationships without parental consent, and limits on manipulative engagement techniques.
+
+## What has gone wrong
+
+* **False or misleading information** (94 incidents): AI models and chatbots generated hallucinations and biased or deceptive outputs. Examples include ChatGPT hallucinating fake court cases used by a lawyer [AIID #541](https://incidentdatabase.ai/cite/541/), Sports Illustrated allegedly publishing AI-invented fake authors [AIID #616](https://incidentdatabase.ai/cite/616/), and Google's Gemini exhibiting racial and political biases [AIID #645](https://incidentdatabase.ai/cite/645/).
+* **Exposure to toxic content** (51 incidents): Chatbots produced or distributed offensive, antisemitic, or non-consensual sexualized media. Examples include xAI's Grok posting antisemitic praise of Hitler [AIID #1146](https://incidentdatabase.ai/cite/1146/), Grok generating non-consensual sexualized images of adults and minors [AIID #1329](https://incidentdatabase.ai/cite/1329/), and Microsoft's Tay generating racist and sexist tweets [AIID #6](https://incidentdatabase.ai/cite/6/).
+* **Compromise of privacy and unauthorized impersonation** (33 incidents): Systems exposed private data or generated unauthorized likenesses. Examples include Serviceaide's AI platform misconfiguring a database and exposing health data for 483,000 patients [AIID #1070](https://incidentdatabase.ai/cite/1070/), OpenAI's voice assistant "Sky" imitating Scarlett Johansson's voice without licensing [AIID #688](https://incidentdatabase.ai/cite/688/), and an unauthorized AI avatar of a murder victim created on Character.ai [AIID #814](https://incidentdatabase.ai/cite/814/).
+* **Overreliance and unsafe use** (25 incidents): Users relied dangerously on conversational agents, sometimes leading to severe psychological harm or social backlash. Examples include a 14-year-old minor dying by suicide after becoming emotionally and romantically dependent on a Character.ai chatbot [AIID #826](https://incidentdatabase.ai/cite/826/), and Vanderbilt Peabody College facing backlash for drafting a condolence message about a mass shooting using ChatGPT [AIID #482](https://incidentdatabase.ai/cite/482/).
+
+## How reporting has changed
+
+There are 251 reported incidents in scope from 2008–2026, with a peak full year in 2025 of 88 incidents. Reporting has increased significantly from 24 incidents in 2020–2022 to 179 incidents in 2023–2025, where the largest risk domain changed from Discrimination and Toxicity (10 of 24, 42%) to Misinformation (57 of 179, 32%). These chatbot failures are predominantly unintentional, representing 77.8% of reported incidents in 2021–2023 and 70.6% in 2024–2025. For the current year of 2026 so far (data ends 2026-10-30), there are 36 incidents, which is a partial year and not comparable to full years.
+
+| Year | Reported incidents |
+|---|---|
+| 2008 | 1 |
+| 2015 | 1 |
+| 2016 | 2 |
+| 2017 | 4 |
+| 2018 | 2 |
+| 2019 | 2 |
+| 2020 | 6 |
+| 2021 | 3 |
+| 2022 | 15 |
+| 2023 | 36 |
+| 2024 | 55 |
+| 2025 | 88 |
+| 2026 (partial) | 36 |
+
+- 251 reported incidents in scope, 2008–2026.
+- Peak full year: 2025, with 88 incidents.
+- 2023–2025: 179 incidents; 2020–2022: 24 incidents.
+- Largest risk domain in 2023–2025: Misinformation (57 of 179, 32%).
+- Largest risk domain in 2020–2022: Discrimination and Toxicity (10 of 24, 42%).
+- 2026 so far (data ends 2026-10-30): 36 incidents. A partial year: not comparable to full years.
+
+## Policies that address these risks
+
+While reported chatbot incidents are worldwide because the AI Incident Database lacks a reliable location field, the enacted policies are limited to their specific jurisdictions.
+
+| Policy | Authority | Status (date) | What it requires | Addresses |
+| :--- | :--- | :--- | :--- | :--- |
+| Technical Documentation of National Technical Committee 260 on Cybersecurity (China) | Chinese central government | Enacted (2024-02-29) | Requires generative AI service providers to demonstrate applicability and safety, implement protective measures for critical uses, and manage minor access to services alongside anti-addiction measures [AGORA #1151](https://agora.eto.tech/instrument/1151). | System safety, misuse, and youth welfare [AGORA #1151](https://agora.eto.tech/instrument/1151). |
+| Utah HB 452 (Artificial Intelligence Amendments 2025) | Utah | Enacted (2025-03-25) | Requires mental health chatbot suppliers to clearly disclose their AI nature before access, maintain written policies regarding abilities/limitations, involve licensed mental health therapists in testing and development, and provide mechanisms for user feedback [AGORA #4781](https://agora.eto.tech/instrument/4781). | Chatbot reliability, safety, and consumer protection risks [AGORA #4781](https://agora.eto.tech/instrument/4781). |
+| New York Senate Bill S3008C ("Part U") | New York | Enacted (2025-05-09) | Defines AI companions as systems utilizing generative AI or emotional recognition to simulate sustained, personalized human relationships, and mandates that operators implement protocols to detect and address user suicidal ideation or self-harm by providing crisis resource referrals [AGORA #2723](https://agora.eto.tech/instrument/2723). | User health, safety, and psychological distress [AGORA #2723](https://agora.eto.tech/instrument/2723). |
+| California SB 243 (Companion Chatbots 2025) | California | Enacted (2025-10-13) | Requires companion chatbot operators to issue non-human disclosures, implement protocols against suicide-related content with crisis referrals, report statistics annually to the Office of Suicide Prevention, and make suitability disclosures regarding minors [AGORA #4944](https://agora.eto.tech/instrument/4944). For users known to be minors, it requires default notifications every three hours reminding users to take breaks and that the chatbot is artificial, as well as measures to prevent sexually explicit content generation [AGORA #4944](https://agora.eto.tech/instrument/4944). | Companion chatbot risks, minor safety, and suicide prevention [AGORA #4944](https://agora.eto.tech/instrument/4944). |
+| Washington HB 2225 (Artificial Intelligence Companion Chatbots 2026) | Washington | Enacted (2026-03-24) | Requires companion chatbot operators to disclose non-human identity, prevent chatbots from claiming to be human, and institute self-harm/suicide prevention protocols [AGORA #6694](https://agora.eto.tech/instrument/6694). For minor users or youth-directed chatbots, it mandates hourly AI disclosures, prevents sexually explicit or suggestive content, and prohibits manipulative engagement techniques that cause emotional dependence [AGORA #6694](https://agora.eto.tech/instrument/6694). | Human-computer interaction, safety, and youth mental health/emotional manipulation [AGORA #6694](https://agora.eto.tech/instrument/6694). |
+| Provisional Measures on the Administration of Human-like Interactive Artificial Intelligence Services | Chinese central government | Enacted (2026-04-10) | Requires providers of human-like interactive services to identify safety risks, employ emergency measures when users manifest extreme emotions, and explicitly prohibits providing minors with virtual relationships in interactive services without guardian consent [AGORA #6683](https://agora.eto.tech/instrument/6683). | Human-computer interaction, privacy, and youth welfare [AGORA #6683](https://agora.eto.tech/instrument/6683). |
+
+| Risk domain | Incidents | Enacted | Proposed | Defunct | Coverage |
+|---|---|---|---|---|---|
+| Misinformation | 73 | 15 | 9 | 8 | enacted |
+| Discrimination and Toxicity | 44 | 20 | 11 | 9 | enacted |
+| Privacy & Security | 31 | 21 | 10 | 12 | enacted |
+| Human-Computer Interaction | 22 | 22 | 9 | 13 | enacted |
+| Malicious Actors & Misuse | 20 | 17 | 6 | 8 | enacted |
+| AI system safety, failures, and limitations | 14 | 19 | 10 | 8 | enacted |
+| Socioeconomic & Environmental Harms | 3 | 8 | 2 | 3 | enacted |
+
+*Coverage method: A policy counts for a risk domain if it is about the use case (a keyword in its name or summaries, or 3+ mentions in its text) and carries an AGORA harm or risk-factor tag that the hand-made crosswalk maps to that domain. Only annotated AGORA documents have tags. Defunct documents are not in force.*
+
+Every identified risk domain has coverage under at least one enacted policy. There are currently no risk domains in the coverage matrix that completely lack an enacted policy.
+
+## What this data can't tell you
+
+* **Reporting Rates vs. Actual Rates**: The reported counts reflect incidents curated by AIID editors and do not represent true incident rates.
+* **Partial Current Year**: The data for 2026 is partial and ends on October 30, 2026, making it incomparable to full calendar years.
+* **Geographic Coverage Gaps**: The AGORA database is not an exhaustive record of global AI law and primarily records U.S. and select international instruments.
+* **Classification Confidence**: Some incidents carry medium use-case label confidence, indicating that categorization of "Chatbots and AI assistants" may sometimes rely on incomplete metadata.
+* **Rigid Crosswalk Mapping**: The coverage matrix is based on a hand-made risk crosswalk mapped to annotated AGORA documents, which may omit relevant policy connections if a document lacks specific tags.
