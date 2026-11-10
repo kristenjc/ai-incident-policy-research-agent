@@ -1,13 +1,6 @@
 # AI Incident and Policy Research Agent 
 
----
-Each agent should come with a README.md that:
-
-Describes the project and who the target user is
-Where your data came from and how someone could load it (it’s not strictly necessary that the grader can load it, just that they understand where it came from).
-Lists three sample queries for the grader to test with. For each, give the answer you expect and the file, table or API endpoint it comes from.
-For each sample query, include the answer from the same model with no tools and no system prompt, next to your agent's answer. This will help us measure the effectiveness of how your agent uses the information even if the model already knows the domain.
----
+Link: https://ai-incident-policy-research-agent-git-108380990875.europe-west1.run.app/
 
 ## What is it?
 A data exploratory agent that investigates **reported AI failures** and **the policies that address them**, and generates a report that summarizes findings.  
@@ -32,6 +25,27 @@ uv run python scripts/baseline.py   # generate baseline outputs to compare answe
 ```
 
 Models default to `vertex_ai/gemini-3.5-flash` (Lead, Writer) and `vertex_ai/gemini-3.5-flash-lite` (researchers).
+
+## Repo Structure
+```
+project2-redo/
+├── app.py                    # FastAPI server and agent system: Lead, three researchers, Writer, citation check
+├── data_tools.py             # Functions that search and count the data; agents call these as tools
+├── index.html                # Chat interface served at /
+├── context_panel.py          # Server side of the panel showing each agent's context and timeline
+├── context-panel.js          # Browser side of that panel
+├── baselines.md              # Model alone vs. agent answers for the sample queries
+├── scripts/
+│   ├── prep_data.py          # Cleans raw AIID and AGORA downloads into data/processed/
+│   ├── classify_use_cases.py # Labels each incident with one of 17 AI use cases using Gemini
+│   └── baseline.py           # Generates baselines.md
+├── tests/
+│   └── test_flow.py          # End-to-end test with a fake model (no credentials needed)
+├── data/
+│   ├── raw/                  # Original AIID and AGORA downloads
+│   └── processed/            # Cleaned data the app loads at runtime
+└── pyproject.toml, uv.lock   # Dependencies (uv)
+```
 
 
 ## Data
@@ -75,39 +89,24 @@ User question
 
 ## Sample Queries
 
-1. For autonomous vehicles and driver assistance: what failures have been reported, how have they changed over time, and which policies address them?
-
-
-2. How have reported deepfake incidents changed fro 2020-2022 to 2023-2025, and what share are intentional misuse? What enacted state laws target them?
-
-
-3. What has gone wrong with AI chatbots and companions, and do any enacted policies address harms to minors?
 
 Expected answers below come from the processed files, computed with `data_tools.py`.
 Model-alone answers come from `scripts/baseline.py` (same model, no tools, no system prompt): see `baselines.md`.
 
-**1. "What failures have been reported for AI hiring tools, and which US policies address them? Which are actually enacted?"**
-- Expected: 37 incidents are labeled *Hiring and employment*. The most common MIT subdomain is *Unfair discrimination and
-  misrepresentation* (10), then privacy compromise (6) and lack of robustness (5). Examples: Amazon's recruiting tool
-  showing gender bias (AIID #37), an employee terminated by an automated system (AIID #35). Enacted: New York City's Local Law
-  on automated employment decision tools, which requires a bias audit within a year before use (AGORA #72, enacted
-  2021-12-11), and the NYC DCWP rules implementing it (AGORA #2002, 2023-07-05).
-- Source: `incidents.csv` + `incident_use_cases.csv` (use_case, mit_risk_subdomain); `agora_segments.csv` / `agora_documents.csv` (status).
-- Model alone: *(paste from baselines.md)*
-- Agent: *(paste from baselines.md)*
+1. For autonomous vehicles and driver assistance: what failures have been reported, how have they changed over time, and which policies address them?
 
-**2. "How did reported deepfake incidents change from 2020-2022 to 2023-2025, and what share were intentional misuse? Which enacted US state laws target deepfakes?"**
-- Expected: *Synthetic media and deepfakes* went from 43 incidents (2020–22) to 496 (2023–25). Intentional misuse went from
-  70% to 88% of them. *Fraud, scams, and targeted manipulation* is the largest subdomain (21 → 286). Enacted state laws
-  include California AB 2839 (AGORA #1549), Michigan HB 5144 (AGORA #1515) and Arizona SB 1359 (AGORA #1485), mostly about
-  deceptive election media.
-- Source: `incidents.csv` (year, mit_intent, mit_risk_subdomain) + `incident_use_cases.csv`; `agora_segments.csv`.
-- Model alone: *(paste)* · Agent: *(paste)*
+Expected Answer:
 
-**3. "For content recommendation and moderation systems, which kinds of reported AI failure have no enacted US policy addressing them?"**
-- Expected: 149 incidents. Only 20 US policy documents are about recommendation or moderation systems (2 enacted, 4
-  proposed, 14 defunct). *Malicious Actors & Misuse* (16 incidents) and *Socioeconomic & Environmental Harms* (8) have no
-  matching policy, and *Human-Computer Interaction* (4) has proposed policy only. Caveat: this depends on the hand-made crosswalk and keyword matching.
-- Source: `coverage_matrix` over `incidents.csv`, `incident_use_cases.csv`, `agora_documents.csv`, `risk_crosswalk.csv`, `use_case_policy_keywords.json`.
-- Model alone: *(paste)* · Agent: *(paste)*
+Refer to baselines.md for full outputs of Model w/ no tools and no system prompt vs Agent's Answer. 
+
+
+2. How have reported deepfake incidents changed fro 2020-2022 to 2023-2025, and what share are intentional misuse? What enacted state laws target them?
+
+Expected Answer: 
+Refer to baselines.md for full outputs of Model w/ no tools and no system prompt vs Agent's Answer. 
+
+3. What has gone wrong with AI chatbots and companions, and do any enacted policies address harms to minors?
+
+Expected Answer: 
+Refer to baselines.md for full outputs of Model w/ no tools and no system prompt vs Agent's Answer. 
 
