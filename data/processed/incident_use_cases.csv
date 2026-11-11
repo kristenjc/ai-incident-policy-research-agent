@@ -391,6 +391,7 @@ incident_id,use_case,secondary_use_case,confidence,model
 399,Chatbots and AI assistants,Other or unclear,medium,vertex_ai/gemini-3.5-flash-lite
 400,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
 401,Content recommendation and moderation,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
+402,Chatbots and AI assistants,,manual,manual
 403,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
 404,Facial recognition and biometrics,Education,medium,vertex_ai/gemini-3.5-flash-lite
 405,"Finance, insurance and credit",,high,vertex_ai/gemini-3.5-flash-lite
@@ -516,6 +517,7 @@ incident_id,use_case,secondary_use_case,confidence,model
 527,Hiring and employment,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
 528,"Customer service, retail and advertising",,high,vertex_ai/gemini-3.5-flash-lite
 529,Synthetic media and deepfakes,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
+530,Synthetic media and deepfakes,,manual,manual
 531,Facial recognition and biometrics,Government services and public administration,medium,vertex_ai/gemini-3.5-flash-lite
 532,Government services and public administration,,high,vertex_ai/gemini-3.5-flash-lite
 533,Autonomous vehicles and driver assistance,,high,vertex_ai/gemini-3.5-flash-lite
@@ -916,6 +918,7 @@ incident_id,use_case,secondary_use_case,confidence,model
 930,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
 931,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
 932,Facial recognition and biometrics,"Customer service, retail and advertising",medium,vertex_ai/gemini-3.5-flash-lite
+933,Synthetic media and deepfakes,,manual,manual
 934,Content recommendation and moderation,,medium,vertex_ai/gemini-3.5-flash-lite
 935,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
 936,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
@@ -1002,6 +1005,7 @@ incident_id,use_case,secondary_use_case,confidence,model
 1017,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
 1018,Synthetic media and deepfakes,Chatbots and AI assistants,high,vertex_ai/gemini-3.5-flash-lite
 1019,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1020,Chatbots and AI assistants,,manual,manual
 1021,Synthetic media and deepfakes,Hiring and employment,high,vertex_ai/gemini-3.5-flash-lite
 1022,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
 1023,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
@@ -1228,6 +1232,8 @@ incident_id,use_case,secondary_use_case,confidence,model
 1244,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
 1245,Education,Synthetic media and deepfakes,high,vertex_ai/gemini-3.5-flash-lite
 1246,Synthetic media and deepfakes,"Customer service, retail and advertising",high,vertex_ai/gemini-3.5-flash-lite
+1247,Chatbots and AI assistants,,manual,manual
+1248,Chatbots and AI assistants,,manual,manual
 1249,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
 1250,Law enforcement and criminal justice,,medium,vertex_ai/gemini-3.5-flash-lite
 1251,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
@@ -1294,6 +1300,7 @@ incident_id,use_case,secondary_use_case,confidence,model
 1312,Law enforcement and criminal justice,,medium,vertex_ai/gemini-3.5-flash-lite
 1313,Robotics and industrial automation,Software development and AI agents,medium,vertex_ai/gemini-3.5-flash-lite
 1314,Synthetic media and deepfakes,"Finance, insurance and credit",high,vertex_ai/gemini-3.5-flash-lite
+1315,Synthetic media and deepfakes,,manual,manual
 1316,Content recommendation and moderation,,high,vertex_ai/gemini-3.5-flash-lite
 1317,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
 1318,Education,,high,vertex_ai/gemini-3.5-flash-lite
@@ -1332,6 +1339,7 @@ incident_id,use_case,secondary_use_case,confidence,model
 1351,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
 1352,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite
 1353,Facial recognition and biometrics,Law enforcement and criminal justice,high,vertex_ai/gemini-3.5-flash-lite
+1354,Synthetic media and deepfakes,,manual,manual
 1355,Synthetic media and deepfakes,Content recommendation and moderation,high,vertex_ai/gemini-3.5-flash-lite
 1356,Chatbots and AI assistants,Other or unclear,high,vertex_ai/gemini-3.5-flash-lite
 1357,Synthetic media and deepfakes,,high,vertex_ai/gemini-3.5-flash-lite

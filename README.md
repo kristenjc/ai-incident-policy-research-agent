@@ -64,7 +64,7 @@ To rebuild processed data from the raw downloads: `uv run scripts/prep_data.py b
 This only needs to be run once offline. The outputs are committed to `data/processed/`, so the application doesn't use `data/raw/`.
 
 1. **`scripts/prep_data.py build`** cleans both AI Incident data and AGORA data and writes `risk_crosswalk.csv`, `MANIFEST.json` (row counts, coverage, caveats).
-2. **`scripts/classify_use_cases.py run`** labels each incident with one of 17 use cases (`use_case_taxonomy.json`), plus an optional secondary use case and a confidence. AIID has no use-case field, so this is what lets the agent pull reported incidents related to a user-specified use case. Model: Gemini 3.5 Flash-Lite at temperature 0; raw responses are cached in `data/raw/use_case_labels.jsonl`.
+2. **`scripts/classify_use_cases.py run`** labels each incident with one of 17 use cases (`use_case_taxonomy.json`), plus an optional secondary use case and a confidence. AIID has no use-case field, so this is what lets the agent pull reported incidents related to a user-specified use case. Model: Gemini 3.5 Flash-Lite at temperature 0; raw responses are cached in `data/raw/use_case_labels.jsonl`. The model returned no usable answer for 8 incidents (likely blocked by its safety filters: sexual content involving minors, non-consensual imagery, or defamation of a named person), so those 8 were labelled by hand and are marked `manual` in the `confidence` and `model` columns. All 1,784 incidents have a use case.
 3. **Hand-made files** that link the two datasets:
    - `risk_crosswalk.csv`: maps each MIT risk domain to AGORA harm and risk-factor tags (24 pairs). This is not an official mapping.
    - `use_case_policy_keywords.json`: search phrases per use case (e.g. "deepfake", "companion chatbot"). AGORA's own application tags don't line up with our use cases, so policies are matched by text: a document is "about" a use case if a phrase is in its name or summaries, or appears 3+ times in its text.
@@ -119,14 +119,14 @@ Refer to baselines.md [(No Tool, No System Prompt) Model's Answer to Query 1](ba
 ### 2. How have reported deepfake incidents changed from 2020–2022 to 2023–2025, and what share are intentional misuse? What enacted state laws target them?
 
 **Expected answer**
-- **Change:** 43 incidents in 2020–2022 → 496 in 2023–2025, about 11.5 times as many. Peak full year 2025 with 248.
-- **Intentional misuse:** 30 of 43 (70%) in 2020–2022 → 437 of 496 (88%) in 2023–2025 (73% → 92% if unclassified incidents are excluded). Most fall under "Malicious Actors & Misuse", led by fraud, scams and targeted manipulation.
+- **Change:** 43 incidents in 2020–2022 → 499 in 2023–2025, about 11.6 times as many. Peak full year 2025 with 250.
+- **Intentional misuse:** 30 of 43 (70%) in 2020–2022 → 440 of 499 (88%) in 2023–2025 (73% → 92% if unclassified incidents are excluded). Most fall under "Malicious Actors & Misuse", led by fraud, scams and targeted manipulation.
 - **Enacted state laws:** 44 enacted documents from 21 US states are about deepfakes or synthetic media (most from California 7, New Hampshire 5, New York 5), plus 5 enacted federal documents. Examples: Minnesota HF 1370 (2023) [AGORA #1517], Utah HB 148 (2024) [AGORA #1532], Washington HB 1999 (2024) [AGORA #1537], California AB 2839 (2024) [AGORA #1549], Colorado SB 25-288 (2025) [AGORA #4523]. They target election deepfakes and non-consensual intimate images.
 
 **Where it comes from**
 - Files: `incidents.csv` (`year`, `mit_intent`, `mit_risk_domain`) joined to `incident_use_cases.csv`; `agora_documents.csv` filtered to `status = Enacted`, `jurisdiction = United States`, and a state `authority`.
 - Functions: `dt.compare_periods("2020-2022", "2023-2025", group_by="intent", use_case="Synthetic media and deepfakes")`, `dt.coverage_matrix("Synthetic media and deepfakes", jurisdiction="United States")`.
-- API: `GET /api/counts?use_case=Synthetic media and deepfakes&year_from=2020&year_to=2022` → `"incidents": 43`; with `year_from=2023&year_to=2025` → `"incidents": 496`.
+- API: `GET /api/counts?use_case=Synthetic media and deepfakes&year_from=2020&year_to=2022` → `"incidents": 43`; with `year_from=2023&year_to=2025` → `"incidents": 499`.
 
 **Model vs Agent's Answer** 
 
@@ -135,14 +135,14 @@ Refer to baselines.md [(No Tool, No System Prompt) Model's Answer to Query 2](ba
 ### 3. What has gone wrong with AI chatbots and companions, and do any enacted policies address harms to minors?
 
 **Expected answer**
-- **Failures:** 251 reported incidents. The largest risk domains are misinformation (73, almost all "false or misleading information", e.g. ChatGPT inventing case law used in court [AIID #541]), discrimination and toxicity (44, mostly exposure to toxic content), privacy and security (31), and human-computer interaction (22, overreliance and unsafe use, e.g. the Tessa eating-disorder chatbot giving diet advice [AIID #545]). 163 are unintentional and 38 intentional.
-- **Over time:** 24 incidents in 2020–2022 → 179 in 2023–2025; peak full year 2025 with 88.
+- **Failures:** 255 reported incidents. The largest risk domains are misinformation (75, almost all "false or misleading information", e.g. ChatGPT inventing case law used in court [AIID #541]), discrimination and toxicity (45, mostly exposure to toxic content), privacy and security (32), and human-computer interaction (22, overreliance and unsafe use, e.g. the Tessa eating-disorder chatbot giving diet advice [AIID #545]). 167 are unintentional and 38 intentional.
+- **Over time:** 25 incidents in 2020–2022 → 182 in 2023–2025; peak full year 2025 with 91.
 - **Policies for minors: yes.** 114 AGORA documents are about chatbots (48 enacted). Enacted laws with specific protections for minors: California SB 243 (2025) [AGORA #4944], Washington HB 2225 (2026) [AGORA #6694], Colorado HB 1263 (2026) [AGORA #6741], Idaho SB 1297 (2026) [AGORA #6727] and Hawaii SB 3001 (2026) [AGORA #5401]. Common requirements: disclose that the user is talking to an AI, suicide and self-harm protocols, and extra safeguards for minors (e.g. no sexually explicit content, limits on emotional dependence).
 
 **Where it comes from**
 - Files: `incidents.csv` (`mit_risk_domain`, `mit_risk_subdomain`, `mit_intent`, `year`) joined to `incident_use_cases.csv`; `agora_documents.csv` (`short_summary`, `status`) and `agora_segments.csv` (`text`) for the minor-protection provisions.
 - Functions: `dt.count_incidents("risk_domain", use_case="Chatbots and AI assistants")`, `dt.search_policy_text("companion chatbot minors", status="Enacted")`.
-- API: `GET /api/counts?use_case=Chatbots and AI assistants` → `"incidents": 251`.
+- API: `GET /api/counts?use_case=Chatbots and AI assistants` → `"incidents": 255`.
 
 **Model vs Agent's Answer** 
 

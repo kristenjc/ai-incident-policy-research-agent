@@ -129,9 +129,9 @@ def main():
     page = client.get("/api/incidents", params={"use_case": "Hiring and employment", "year": 2021}).json()
     assert page["total"] == 8 and len(page["items"]) == 8, page["total"]
     big = client.get("/api/incidents", params={"use_case": "Synthetic media and deepfakes", "offset": 25}).json()
-    assert big["total"] == 680 and len(big["items"]) == 25 and big["offset"] == 25
+    assert big["total"] == 684 and len(big["items"]) == 25 and big["offset"] == 25
     csv_text = client.get("/api/incidents.csv", params={"use_case": "Synthetic media and deepfakes"}).text
-    assert csv_text.count("\n") >= 681, csv_text.count("\n")
+    assert csv_text.count("\n") >= 685, csv_text.count("\n")
     print("drill-down ok")
     c = client.get("/api/counts", params={"use_case": "Hiring and employment", "jurisdiction": "United States"}).json()
     assert c["incidents"] == 37 and c["policies"] == 1155, c

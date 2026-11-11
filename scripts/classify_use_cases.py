@@ -114,6 +114,21 @@ async def label_one(litellm, sem, model, r) -> dict:
     return empty
 
 
+# Hand-written labels for incidents the model never returned a usable answer for (likely blocked by its
+# safety filters: sexual content involving minors, non-consensual imagery, defamation of a named person).
+# Applied only when the model has no label for them, and marked "manual" in the confidence and model columns.
+MANUAL_LABELS = {
+    "402": "Chatbots and AI assistants",       # GPT-3 game manipulated into generating sexual content involving children
+    "530": "Synthetic media and deepfakes",    # Telegram channels selling non-consensual deepfake porn
+    "933": "Synthetic media and deepfakes",    # deepfake nudes of classmates, Palma de Mallorca
+    "1020": "Chatbots and AI assistants",      # exposed Llama.cpp server with CSAM roleplay prompts
+    "1247": "Chatbots and AI assistants",      # Meta AI defamation claims about Robby Starbuck
+    "1248": "Chatbots and AI assistants",      # Google Bard/Gemini/Gemma defamation claims about Robby Starbuck
+    "1315": "Synthetic media and deepfakes",   # AI nude images of middle school students, Louisiana
+    "1354": "Synthetic media and deepfakes",   # AI-altered fake nude images, Pensacola
+}
+
+
 async def run(model: str, limit: int | None, concurrency: int) -> None:
     import litellm  # imported here so `sample` / `score` work without Vertex set up
 
@@ -135,6 +150,9 @@ async def run(model: str, limit: int | None, concurrency: int) -> None:
                 done[rec["incident_id"]] = rec
                 f.write(json.dumps(rec) + "\n")
                 f.flush()
+    for iid, uc in MANUAL_LABELS.items():
+        if iid not in done and iid in set(inc["incident_id"]):
+            done[iid] = {"incident_id": iid, "use_case": uc, "secondary_use_case": "", "confidence": "manual", "model": "manual"}
     out = pd.DataFrame(done.values()).reindex(columns=["incident_id", "use_case", "secondary_use_case", "confidence", "model"])
     out = out.sort_values("incident_id", key=lambda s: s.astype(int))
     out.to_csv(DATA / "incident_use_cases.csv", index=False)

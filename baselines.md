@@ -237,7 +237,7 @@ As voice cloning and digital actors became highly realistic, states began passin
 *Scope · Incidents: Synthetic media and deepfakes, 2020–2025, worldwide (AIID has no reliable location field) · Policies: United States*
 
 
-**Summary.** Reported deepfake incidents rose dramatically from 43 incidents in 2020–2022 to 496 incidents in 2023–2025. Intentional misuse represents the vast majority of these cases, rising from 69.8% to 88.1% of all reported incidents across these periods. In response, several US states have enacted legislation targeting election-related deceptive media and nonconsensual explicit deepfakes.
+**Summary.** Reported deepfake incidents rose dramatically from 43 incidents in 2020–2022 to 499 incidents in 2023–2025. Intentional misuse represents the vast majority of these cases, rising from 69.8% to 88.2% of all reported incidents across these periods. In response, several US states have enacted legislation targeting election-related deceptive media and nonconsensual explicit deepfakes.
 
 ## What has gone wrong
 
@@ -257,16 +257,16 @@ Reported deepfake incidents have increased dramatically due to the widespread av
 | 2021 | 5 |
 | 2022 | 24 |
 | 2023 | 81 |
-| 2024 | 167 |
-| 2025 | 248 |
+| 2024 | 168 |
+| 2025 | 250 |
 
-- 539 reported incidents in scope, 2020–2025.
-- Peak full year: 2025, with 248 incidents.
-- 2023–2025: 496 incidents; 2020–2022: 43 incidents.
-- Largest risk domain in 2023–2025: Malicious Actors & Misuse (387 of 496, 78%).
+- 542 reported incidents in scope, 2020–2025.
+- Peak full year: 2025, with 250 incidents.
+- 2023–2025: 499 incidents; 2020–2022: 43 incidents.
+- Largest risk domain in 2023–2025: Malicious Actors & Misuse (390 of 499, 78%).
 - Largest risk domain in 2020–2022: Malicious Actors & Misuse (27 of 43, 63%).
 
-The dataset tracks 539 reported incidents in scope, 2020–2025. The peak full year is 2025, with 248 incidents. Looking at the periods, 2023–2025 has 496 incidents; 2020–2022 has 43 incidents. The largest risk domain in 2023–2025 is Malicious Actors & Misuse (387 of 496, 78%). The largest risk domain in 2020–2022 is Malicious Actors & Misuse (27 of 43, 63%). Within these periods, intentional misuse represented 69.8% (30 incidents) in 2020–2022 and rose to 88.1% (437 incidents) in 2023–2025, while unintentional failures accounted for 25.6% (11 incidents) in 2020–2022, dropping to 6.7% (33 incidents) in 2023–2025.
+The dataset tracks 542 reported incidents in scope, 2020–2025. The peak full year is 2025, with 250 incidents. Looking at the periods, 2023–2025 has 499 incidents; 2020–2022 has 43 incidents. The largest risk domain in 2023–2025 is Malicious Actors & Misuse (390 of 499, 78%). The largest risk domain in 2020–2022 is Malicious Actors & Misuse (27 of 43, 63%). Within these periods, intentional misuse represented 69.8% (30 incidents) in 2020–2022 and rose to 88.2% (440 incidents) in 2023–2025, while unintentional failures accounted for 25.6% (11 incidents) in 2020–2022, dropping to 6.6% (33 incidents) in 2023–2025.
 
 ## Policies that address these risks
 
@@ -284,7 +284,7 @@ While deepfake incidents are worldwide because the incident database has no reli
 
 | Risk domain | Incidents | Enacted | Proposed | Defunct | Coverage |
 |---|---|---|---|---|---|
-| Malicious Actors & Misuse | 414 | 11 | 2 | 13 | enacted |
+| Malicious Actors & Misuse | 417 | 11 | 2 | 13 | enacted |
 | Misinformation | 62 | 38 | 7 | 18 | enacted |
 | Discrimination and Toxicity | 29 | 39 | 7 | 19 | enacted |
 | Privacy & Security | 7 | 27 | 4 | 19 | enacted |
@@ -372,14 +372,14 @@ Because government legislation takes time, the most immediate "enacted" policies
 
 ## What has gone wrong
 
-* **False or misleading information** (94 incidents): AI models and chatbots generated hallucinations and biased or deceptive outputs. Examples include ChatGPT hallucinating fake court cases used by a lawyer [AIID #541](https://incidentdatabase.ai/cite/541/), Sports Illustrated allegedly publishing AI-invented fake authors [AIID #616](https://incidentdatabase.ai/cite/616/), and Google's Gemini exhibiting racial and political biases [AIID #645](https://incidentdatabase.ai/cite/645/).
-* **Exposure to toxic content** (51 incidents): Chatbots produced or distributed offensive, antisemitic, or non-consensual sexualized media. Examples include xAI's Grok posting antisemitic praise of Hitler [AIID #1146](https://incidentdatabase.ai/cite/1146/), Grok generating non-consensual sexualized images of adults and minors [AIID #1329](https://incidentdatabase.ai/cite/1329/), and Microsoft's Tay generating racist and sexist tweets [AIID #6](https://incidentdatabase.ai/cite/6/).
-* **Compromise of privacy and unauthorized impersonation** (33 incidents): Systems exposed private data or generated unauthorized likenesses. Examples include Serviceaide's AI platform misconfiguring a database and exposing health data for 483,000 patients [AIID #1070](https://incidentdatabase.ai/cite/1070/), OpenAI's voice assistant "Sky" imitating Scarlett Johansson's voice without licensing [AIID #688](https://incidentdatabase.ai/cite/688/), and an unauthorized AI avatar of a murder victim created on Character.ai [AIID #814](https://incidentdatabase.ai/cite/814/).
+* **False or misleading information** (96 incidents): AI models and chatbots generated hallucinations and biased or deceptive outputs. Examples include ChatGPT hallucinating fake court cases used by a lawyer [AIID #541](https://incidentdatabase.ai/cite/541/), Sports Illustrated allegedly publishing AI-invented fake authors [AIID #616](https://incidentdatabase.ai/cite/616/), and Google's Gemini exhibiting racial and political biases [AIID #645](https://incidentdatabase.ai/cite/645/).
+* **Exposure to toxic content** (52 incidents): Chatbots produced or distributed offensive, antisemitic, or non-consensual sexualized media. Examples include xAI's Grok posting antisemitic praise of Hitler [AIID #1146](https://incidentdatabase.ai/cite/1146/), Grok generating non-consensual sexualized images of adults and minors [AIID #1329](https://incidentdatabase.ai/cite/1329/), and Microsoft's Tay generating racist and sexist tweets [AIID #6](https://incidentdatabase.ai/cite/6/).
+* **Compromise of privacy and unauthorized impersonation** (34 incidents): Systems exposed private data or generated unauthorized likenesses. Examples include Serviceaide's AI platform misconfiguring a database and exposing health data for 483,000 patients [AIID #1070](https://incidentdatabase.ai/cite/1070/), OpenAI's voice assistant "Sky" imitating Scarlett Johansson's voice without licensing [AIID #688](https://incidentdatabase.ai/cite/688/), and an unauthorized AI avatar of a murder victim created on Character.ai [AIID #814](https://incidentdatabase.ai/cite/814/).
 * **Overreliance and unsafe use** (25 incidents): Users relied dangerously on conversational agents, sometimes leading to severe psychological harm or social backlash. Examples include a 14-year-old minor dying by suicide after becoming emotionally and romantically dependent on a Character.ai chatbot [AIID #826](https://incidentdatabase.ai/cite/826/), and Vanderbilt Peabody College facing backlash for drafting a condolence message about a mass shooting using ChatGPT [AIID #482](https://incidentdatabase.ai/cite/482/).
 
 ## How reporting has changed
 
-There are 251 reported incidents in scope from 2008–2026, with a peak full year in 2025 of 88 incidents. Reporting has increased significantly from 24 incidents in 2020–2022 to 179 incidents in 2023–2025, where the largest risk domain changed from Discrimination and Toxicity (10 of 24, 42%) to Misinformation (57 of 179, 32%). These chatbot failures are predominantly unintentional, representing 77.8% of reported incidents in 2021–2023 and 70.6% in 2024–2025. For the current year of 2026 so far (data ends 2026-10-30), there are 36 incidents, which is a partial year and not comparable to full years.
+There are 255 reported incidents in scope from 2008–2026, with a peak full year in 2025 of 91 incidents. Reporting has increased significantly from 25 incidents in 2020–2022 to 182 incidents in 2023–2025, where the largest risk domain changed from Discrimination and Toxicity (11 of 25, 44%) to Misinformation (59 of 182, 32%). These chatbot failures are predominantly unintentional, representing 78.2% of reported incidents in 2021–2023 and 71.2% in 2024–2025. For the current year of 2026 so far (data ends 2026-10-30), there are 36 incidents, which is a partial year and not comparable to full years.
 
 | Year | Reported incidents |
 |---|---|
@@ -390,18 +390,18 @@ There are 251 reported incidents in scope from 2008–2026, with a peak full yea
 | 2018 | 2 |
 | 2019 | 2 |
 | 2020 | 6 |
-| 2021 | 3 |
+| 2021 | 4 |
 | 2022 | 15 |
 | 2023 | 36 |
 | 2024 | 55 |
-| 2025 | 88 |
+| 2025 | 91 |
 | 2026 (partial) | 36 |
 
-- 251 reported incidents in scope, 2008–2026.
-- Peak full year: 2025, with 88 incidents.
-- 2023–2025: 179 incidents; 2020–2022: 24 incidents.
-- Largest risk domain in 2023–2025: Misinformation (57 of 179, 32%).
-- Largest risk domain in 2020–2022: Discrimination and Toxicity (10 of 24, 42%).
+- 255 reported incidents in scope, 2008–2026.
+- Peak full year: 2025, with 91 incidents.
+- 2023–2025: 182 incidents; 2020–2022: 25 incidents.
+- Largest risk domain in 2023–2025: Misinformation (59 of 182, 32%).
+- Largest risk domain in 2020–2022: Discrimination and Toxicity (11 of 25, 44%).
 - 2026 so far (data ends 2026-10-30): 36 incidents. A partial year: not comparable to full years.
 
 ## Policies that address these risks
@@ -419,9 +419,9 @@ While reported chatbot incidents are worldwide because the AI Incident Database 
 
 | Risk domain | Incidents | Enacted | Proposed | Defunct | Coverage |
 |---|---|---|---|---|---|
-| Misinformation | 73 | 15 | 9 | 8 | enacted |
-| Discrimination and Toxicity | 44 | 20 | 11 | 9 | enacted |
-| Privacy & Security | 31 | 21 | 10 | 12 | enacted |
+| Misinformation | 75 | 15 | 9 | 8 | enacted |
+| Discrimination and Toxicity | 45 | 20 | 11 | 9 | enacted |
+| Privacy & Security | 32 | 21 | 10 | 12 | enacted |
 | Human-Computer Interaction | 22 | 22 | 9 | 13 | enacted |
 | Malicious Actors & Misuse | 20 | 17 | 6 | 8 | enacted |
 | AI system safety, failures, and limitations | 14 | 19 | 10 | 8 | enacted |
