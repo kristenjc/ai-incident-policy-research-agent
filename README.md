@@ -19,7 +19,7 @@ Ask about reported incidents related to a specific AI use case (ie. Ai hiring, d
 ```bash
 gcloud auth application-default login
 uv run app.py                       # http://localhost:8000
-uv run data_tools.py                # self-check of the data tools (no model needed)
+uv run data_tools.py                # self-check of the data tools
 uv run python tests/test_flow.py    # end-to-end check of the agent wiring with a scripted model (no credentials needed)
 uv run python scripts/baseline.py   # generate baseline outputs to compare answers from the same model with no tools and no system prompt vs. my agent's answer.
 ```
@@ -50,21 +50,30 @@ project2-redo/
 
 ## Data
 
-| Source | What we use | Where it came from | Files |
-|---|---|---|---|
-| [AI Incident Database](https://incidentdatabase.ai) (AIID) | 1,784 reported incidents, 1983 to 2026-10-30, with MIT risk taxonomy (84% coverage), CSETv1 (11%) and GMF (1.5%) classifications | Excel export from the AIID site, downloaded 2026-11-02 (`data/raw/AIID_Excel_Export-20261102.xlsx`) | `data/processed/incidents.csv` |
-| [AGORA](https://agora.eto.tech) | 1,255 AI law, bill, rule and policy documents with status (546 enacted, 287 proposed, 422 defunct), tags, summaries, and 10,215 text segments | Bulk download from AGORA (`data/raw/documents.csv`, `data/raw/segments.csv`, `data/raw/authorities.csv`) | `data/processed/agora_documents.csv`, `data/processed/agora_segments.csv` |
+### Where it came from
 
-Some processing was done on the raw data to make it more usable for this proejct. See files in (`scripts/`):
-- `prep_data.py`: cleans both datasets, keeps useful columns, and joins AGORA tags onto documents and segments. Writes `MANIFEST.json` with counts and caveats.
-- `classify_use_cases.py`: labels every reported incident with one of 17 use cases (`data/processed/use_case_taxonomy.json`) using Gemini Flash-Lite, with a confidence (1,600 high, 146 medium, 30 low). Output: `data/processed/incident_use_cases.csv`. AIID has no field like this, so this was done so we can get all reported incidents for a specific use case. 
-- `data/processed/risk_crosswalk.csv`: a hand-made map from MIT risk domains to AGORA harm and risk-factor tags. This links the AI Incident and AGORA Policy dataset. This is not an official mapping.
-- `data/processed/use_case_policy_keywords.json`: hand-written search phrases per use case. AGORA's own application tags don't line up with our AI use cases, so policy search is by text.
+| Source | What it is | Raw files in `data/raw/` |
+|---|---|---|
+| [AI Incident Database](https://incidentdatabase.ai) (AIID) | Reported AI failures, each with a title, description, date, deployer/developer, and classifications from three taxonomies (MIT AI Risk Repository, CSETv1, GMF) | `AIID_Excel_Export-20261102.xlsx`: the site's Excel export, downloaded on 2026-11-02. |
+| [AGORA](https://agora.eto.tech) (Emerging Technology Observatory) | AI laws, bills, rules and policies, with status, authority, summaries, thematic tags, and the full text split into sections ("segments") | `documents.csv`, `segments.csv`, `authorities.csv`: AGORA's bulk CSV download, downloaded on 2026-11-02. |
 
-**Limitations of the Data** 
-- AIID counts are *reported* incidents, drawn from news coverage. They are not true incident rates.
-- 2026 is a partial year.
-- AGORA mostly consists of US documents, and not a complete record of all AI law. Many documents are proposed or defunct bills, and not enacted bills. 
+### Data Processing
+
+To rebuild processed data from the raw downloads: `uv run scripts/prep_data.py build`, then `uv run scripts/classify_use_cases.py run` (needs Vertex AI access).
+
+This only needs to be run once offline. The outputs are committed to `data/processed/`, so the application doesn't use `data/raw/`.
+
+1. **`scripts/prep_data.py build`** cleans both AI Incident data and AGORA data and writes `risk_crosswalk.csv`, `MANIFEST.json` (row counts, coverage, caveats).
+2. **`scripts/classify_use_cases.py run`** labels each incident with one of 17 use cases (`use_case_taxonomy.json`), plus an optional secondary use case and a confidence. AIID has no use-case field, so this is what lets the agent pull reported incidents related to a user-specified use case. Model: Gemini 3.5 Flash-Lite at temperature 0; raw responses are cached in `data/raw/use_case_labels.jsonl`.
+3. **Hand-made files** that link the two datasets:
+   - `risk_crosswalk.csv`: maps each MIT risk domain to AGORA harm and risk-factor tags (24 pairs). This is not an official mapping.
+   - `use_case_policy_keywords.json`: search phrases per use case (e.g. "deepfake", "companion chatbot"). AGORA's own application tags don't line up with our use cases, so policies are matched by text: a document is "about" a use case if a phrase is in its name or summaries, or appears 3+ times in its text.
+
+
+### Limitations of the data
+- AIID counts are *reported* incidents, drawn from news coverage. They are not true incident rates, and 2026 is a partial year (data ends 2026-10-30).
+- AGORA is mostly US documents (1,155 of 1,255) and not a complete record of AI law. Many documents are proposed or defunct bills, not law in force.
+- Use-case labels were assigned by an LLM, and the risk crosswalk and policy keywords are hand-made. These are NOT official classifications.
 
 ## How it works
 
@@ -89,24 +98,52 @@ User question
 
 ## Sample Queries
 
+Expected answers are computed directly from the processed files with `data_tools.py` (no model involved), so they are the numbers the agent's report should match. Full side-by-side outputs (model with no tools and no system prompt vs. this agent) are in `baselines.md`.
 
-Expected answers below come from the processed files, computed with `data_tools.py`.
-Model-alone answers come from `scripts/baseline.py` (same model, no tools, no system prompt): see `baselines.md`.
+### 1. For autonomous vehicles and driver assistance: what failures have been reported, how have they changed over time, and which policies address them?
 
-1. For autonomous vehicles and driver assistance: what failures have been reported, how have they changed over time, and which policies address them?
+**Expected answer**
+- **Failures:** 123 reported incidents, 2014–2026. The most-reported include the 2016 Tesla Autopilot fatal crash [AIID #52] and the 2018 Uber self-driving car that killed a pedestrian [AIID #4].
+- **Over time:** a handful per year until 2018; peak full year 2022 with 20. 2020–2022 had 37 incidents and 2023–2025 had 31, so no rising trend. Safety failures are 92% then 84% of each period. 2026 has 20 so far (partial year).
+- **Policies:** 64 AGORA documents are about autonomous vehicles (61 US): 29 enacted, 19 proposed, 16 defunct. The enacted ones most focused on AVs are state laws, e.g. California AB 1777 (2024) [AGORA #4104], California SB 480 (2025) [AGORA #4992], Connecticut SB 260 (2017) [AGORA #1664] and Iowa SB 302 (2019) [AGORA #1621].
 
-Expected Answer:
+**Where it comes from**
+- Files: `incidents.csv` (`year`, `mit_risk_domain`, `mit_risk_subdomain`, `report_count`) joined to `incident_use_cases.csv` (`use_case`); `agora_documents.csv` (`status`, `authority`, `jurisdiction`) and `agora_segments.csv` (text), matched with `use_case_policy_keywords.json`.
+- Functions: `dt.chart_for_scope(["Autonomous vehicles and driver assistance"])`, `dt.coverage_matrix("Autonomous vehicles and driver assistance")`.
+- API: `GET /api/counts?use_case=Autonomous vehicles and driver assistance` → `"incidents": 123`; `GET /api/incidents.csv?use_case=Autonomous vehicles and driver assistance` lists them.
 
-Refer to baselines.md for full outputs of Model w/ no tools and no system prompt vs Agent's Answer. 
+**Model vs Agent's Answer** 
 
+Refer to baselines.md [(No Tool, No System Prompt) Model's Answer to Query 1](baselines.md#no-tool-no-system-prompt-models-answer-to-query-1) and [Agent's Answer to Query 1](baselines.md#agents-answer-to-query-1) for see the full output.
 
-2. How have reported deepfake incidents changed fro 2020-2022 to 2023-2025, and what share are intentional misuse? What enacted state laws target them?
+### 2. How have reported deepfake incidents changed from 2020–2022 to 2023–2025, and what share are intentional misuse? What enacted state laws target them?
 
-Expected Answer: 
-Refer to baselines.md for full outputs of Model w/ no tools and no system prompt vs Agent's Answer. 
+**Expected answer**
+- **Change:** 43 incidents in 2020–2022 → 496 in 2023–2025, about 11.5 times as many. Peak full year 2025 with 248.
+- **Intentional misuse:** 30 of 43 (70%) in 2020–2022 → 437 of 496 (88%) in 2023–2025 (73% → 92% if unclassified incidents are excluded). Most fall under "Malicious Actors & Misuse", led by fraud, scams and targeted manipulation.
+- **Enacted state laws:** 44 enacted documents from 21 US states are about deepfakes or synthetic media (most from California 7, New Hampshire 5, New York 5), plus 5 enacted federal documents. Examples: Minnesota HF 1370 (2023) [AGORA #1517], Utah HB 148 (2024) [AGORA #1532], Washington HB 1999 (2024) [AGORA #1537], California AB 2839 (2024) [AGORA #1549], Colorado SB 25-288 (2025) [AGORA #4523]. They target election deepfakes and non-consensual intimate images.
 
-3. What has gone wrong with AI chatbots and companions, and do any enacted policies address harms to minors?
+**Where it comes from**
+- Files: `incidents.csv` (`year`, `mit_intent`, `mit_risk_domain`) joined to `incident_use_cases.csv`; `agora_documents.csv` filtered to `status = Enacted`, `jurisdiction = United States`, and a state `authority`.
+- Functions: `dt.compare_periods("2020-2022", "2023-2025", group_by="intent", use_case="Synthetic media and deepfakes")`, `dt.coverage_matrix("Synthetic media and deepfakes", jurisdiction="United States")`.
+- API: `GET /api/counts?use_case=Synthetic media and deepfakes&year_from=2020&year_to=2022` → `"incidents": 43`; with `year_from=2023&year_to=2025` → `"incidents": 496`.
 
-Expected Answer: 
-Refer to baselines.md for full outputs of Model w/ no tools and no system prompt vs Agent's Answer. 
+**Model vs Agent's Answer** 
 
+Refer to baselines.md [(No Tool, No System Prompt) Model's Answer to Query 2](baselines.md#no-tool-no-system-prompt-models-answer-to-query-2) and [Agent's Answer to Query 2](baselines.md#agents-answer-to-query-2) for see the full output.
+
+### 3. What has gone wrong with AI chatbots and companions, and do any enacted policies address harms to minors?
+
+**Expected answer**
+- **Failures:** 251 reported incidents. The largest risk domains are misinformation (73, almost all "false or misleading information", e.g. ChatGPT inventing case law used in court [AIID #541]), discrimination and toxicity (44, mostly exposure to toxic content), privacy and security (31), and human-computer interaction (22, overreliance and unsafe use, e.g. the Tessa eating-disorder chatbot giving diet advice [AIID #545]). 163 are unintentional and 38 intentional.
+- **Over time:** 24 incidents in 2020–2022 → 179 in 2023–2025; peak full year 2025 with 88.
+- **Policies for minors: yes.** 114 AGORA documents are about chatbots (48 enacted). Enacted laws with specific protections for minors: California SB 243 (2025) [AGORA #4944], Washington HB 2225 (2026) [AGORA #6694], Colorado HB 1263 (2026) [AGORA #6741], Idaho SB 1297 (2026) [AGORA #6727] and Hawaii SB 3001 (2026) [AGORA #5401]. Common requirements: disclose that the user is talking to an AI, suicide and self-harm protocols, and extra safeguards for minors (e.g. no sexually explicit content, limits on emotional dependence).
+
+**Where it comes from**
+- Files: `incidents.csv` (`mit_risk_domain`, `mit_risk_subdomain`, `mit_intent`, `year`) joined to `incident_use_cases.csv`; `agora_documents.csv` (`short_summary`, `status`) and `agora_segments.csv` (`text`) for the minor-protection provisions.
+- Functions: `dt.count_incidents("risk_domain", use_case="Chatbots and AI assistants")`, `dt.search_policy_text("companion chatbot minors", status="Enacted")`.
+- API: `GET /api/counts?use_case=Chatbots and AI assistants` → `"incidents": 251`.
+
+**Model vs Agent's Answer** 
+
+Refer to baselines.md [(No Tool, No System Prompt) Model's Answer to Query 3](baselines.md#no-tool-no-system-prompt-models-answer-to-query-3) and [Agent's Answer to Query 3](baselines.md#agents-answer-to-query-3) for see the full output.

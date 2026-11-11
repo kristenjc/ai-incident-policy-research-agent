@@ -16,7 +16,6 @@ Outputs (data/processed/)
   incident_use_cases.csv    incident_id, use_case, secondary_use_case, confidence, model
   use_case_taxonomy.json    label -> definition (the Lead uses it to map a user's words to a label)
   use_case_check.csv        the hand-check sheet (sample/score only)
-Machine labels are a caveat: report the hand-checked accuracy in the README.
 """
 
 import argparse
