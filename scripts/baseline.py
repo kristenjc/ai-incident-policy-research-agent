@@ -39,11 +39,11 @@ async def agent(q: str) -> str:
 
 async def main():
     with_agent = "--agent" in sys.argv
-    out = ["# Baselines: same model, no tools, no system prompt\n"]
+    out = ["# Sample Outputs Comparing Model's Answer vs Agent's Answer\n"]
     for i, q in enumerate(QUERIES, 1):
-        out.append(f"## Query {i}\n\n> {q}\n\n### Model alone\n\n{await bare(q)}\n")
+        out.append(f"## Query {i}\n\n> {q}\n\n## (No Tool, No System Prompt) Model's Answer to Query {i}\n\n{await bare(q)}\n")
         if with_agent:
-            out.append(f"### Agent\n\n{await agent(q)}\n")
+            out.append(f"## Agent's Answer to Query {i}\n\n{await agent(q)}\n")
         print(f"query {i} done")
         await asyncio.sleep(10)
     (ROOT / "baselines.md").write_text("\n".join(out))
