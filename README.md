@@ -14,7 +14,7 @@ Ask about reported incidents related to a specific AI use case (ie. Ai hiring, d
 - **Governance and policy teams** looking for gaps in current policies pertaining to different AI use cases.
 - **Researchers and Students** interested in tracking patterns in reported AI incidents.
 
-## How to get started?
+## How to run locally?
 
 ```bash
 gcloud auth application-default login
