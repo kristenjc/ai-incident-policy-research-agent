@@ -60,9 +60,7 @@
   .ghost { background: none; border: 1px solid var(--line); border-radius: 0; padding: 0.4rem 0.8rem; font-size: var(--fs-sm); }
   .ghost:hover { border-color: var(--ink); }
   .hint { font-size: var(--fs-sm); color: var(--muted); }
-  details.caveats { font-size: var(--fs-base); color: var(--text2); margin-top: 0.3rem; }
-  details.caveats summary { cursor: pointer; color: var(--muted); font-size: var(--fs-sm); }
-  details.caveats ul { margin: 0.5rem 0 0 1.1rem; }
+  .about .limits { margin: 0 0 0 1.1rem; padding: 0; display: grid; gap: 0.15rem; }
 
   /* Agents at work */
   #work { display: none; }
@@ -227,8 +225,13 @@
   <section class="about">
     <div><h3>Dataset Used</h3><a href="https://incidentdatabase.ai" target="_blank">AI Incident Database</a> and <a href="https://agora.eto.tech" target="_blank">AGORA</a>, retrieved Nov 2, 2026.<span id="dsnums"></span></div>
     <div><h3>Generated Output</h3>A cited report with incident examples, trend analysis, and relevant policy passages.</div>
-    <div><h3>Limitations</h3>AI Incidents reflect news coverage, not true incident rates. Policies are mostly US, and many are bills, not law. Each reported incident is labeled with a use case by an LLM. MIT Risk Domain and AGORA tags are mapped by an LLM in order to identify relevant policies. 
-      <details class="caveats"><summary>All caveats</summary><ul id="caveats"></ul></details></div>
+    <div><h3>Limitations</h3>
+      <ul class="limits">
+        <li>Reported incidents reflect news coverage, not true incident rates.</li>
+        <li>Policies are mostly US, and many are bills, not law in force.</li>
+        <li>Use case labels were assigned to each incident by an LLM.</li>
+        <li>Mapping between MIT risk domains and AGORA policy tags are hand-made, not official..</li>
+      </ul></div>
   </section>
 
   <section class="card" id="composer">
@@ -333,7 +336,6 @@ async function loadMeta() {
     $("yto").insertAdjacentHTML("beforeend", `<option>${y}</option>`);
   }
   for (const j of Object.keys(meta.jurisdictions).filter((j) => j !== "Unknown")) $("juris").insertAdjacentHTML("beforeend", `<option>${esc(j)}</option>`);
-  $("caveats").innerHTML = meta.caveats.map((c) => `<li>${esc(c)}</li>`).join("");
   renderSamples();
   filtersChanged();
 }
